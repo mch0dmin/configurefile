@@ -1,0 +1,15 @@
+filetype on
+set autoindent
+set tabstop=4
+set tabstop=4
+set shiftwidth=4
+set showmatch
+set cindent
+set completeopt=longest,menu
+set cursorline
+syntax on
+set nobackup
+set mouse=a
+set mouse=v
+set fileencodings=gb2312,utf-8
+set termencoding=uft-8
