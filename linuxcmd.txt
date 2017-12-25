@@ -1,0 +1,1127 @@
+
+15:41 2017/12/25
+退出vim：
+:x
+ZZ
+
+14:41 2017/12/22
+Linux添加命令到PATH中：
+在/etc/profile或/etc/bashrc或~/.bashrc或~/.bashrc_profile等环境配置文件中添加PATH：
+export PATH=$PATH:/monchickey/ffmpeg/bin
+
+10:30 2017/12/18
+Ubuntu命令卸载：
+比如想卸载掉服务器上的跑火车命令：sl
+sudp apt-get remove sl
+sudo apt-get remove +软件的名字
+
+20:14 2017/12/13
+使内核在休眠时，也可以打印信息:
+首先：
+在make menuconfig中打开：
+1、Power Managerment options下的：
+	Power Management Debug Support 
+	Extra PM attributes in sysfs for low-level debugging/testing
+	Test suspend/resume and wakealarm during bootup 
+2、System type下的：Support PM_DBGOUT
+
+然后，在内核代码中搜索：$> grep -rn "suspend_console"
+可以将这个函数出现的位置全部注释掉！
+
+这样，内核在进入休眠和唤醒时，就会打印相关操作信息！	
+
+9:55 2017/12/8
+创建快捷方式/软链接：
+	ln -s 源目录 目标快捷方式
+	ln -s ~/workdir/lab cdlab
+删除软连接：
+	正确：rm -rf ./cdlab	(删除软连接，但不删除实际数据)
+	错误：rm -rf ./cdlab/	(这样会把源目录下的内容删除)
+
+14:38 2017/12/7
+编译Linux内核分为两种：编译PC端用的Linux内核和交叉编译arm平台的Linux内核；
+如果是交叉编译ARM平台的Linux，
+先拷贝arch/arm/configs/目录下的，
+arm的CPU相关的配置文件，到内核跟目录，重命名为.config，
+(1)	cp arch/armconfig/xxx_defconfig .config
+(2)	make menuconfig	选择需要的配置
+(3)	make
+
+9:51 2017/12/7
+如果要测试程序的哪个过程比较耗时，
+可以写一个打印时间戳的函数，
+在程序每个过程的前后打印时间戳(并且打印这个过程前后两个时间戳的差值)，
+通过时间判断哪个过程耗时；
+
+10:20 2017/12/1
+vim打开光标所在的头文件：gf
+gf默认是在当前目录下找，
+如果找不到，则会在path指定的路径中寻找；
+
+也可以进行设置：
+如果头文件在../include，可以[:set path=../include];
+如果有多个，则使用逗号分隔，[:set path=../../3dparty/include, ../include];
+更多请使用，[:help path];
+
+
+18:59 2017/11/24
+在进行文件读写时，
+只要不关闭文件描述符，
+文件指针是会进行移动的；
+
+17:09 2017/11/24
+不同进制的数也是可以做比较的！
+
+13:45 2017/11/24
+printf()的格式控制符中使用了%#x，
+就表示在输出时是以带0x前缀的十六进制形式输出后面的对应参数；
+也就是说，它的作用和%x相同，只不过%x不会输出前面的"0x"；
+
+11:10 2017/11/24
+通过ssh连接，上传和下载文件到服务器和本地：
+sz：将选定的文件发送(send)到本地机器；
+rz：运行该命令会弹出一个文件选择窗口，从本地选择文件上传到服务器；
+单独用rz会有两个问题：上传中断、上传文件变化(md5不同)，解决办法是用[rz -be]，
+并且去掉弹出对话框中"Upload files as ascii"前的勾选；
+-b	binary	用binary的方式上传下载，不解释字符为ascii;
+-e	强制escape所有控制字符，比如ctrl+x，DEL等；
+
+10:59 2017/11/24
+C语言中U8,U16,U32和int区别：
+U8		unsigned char
+U16		unsigned short
+U32		unsigned int
+表示定义的类型位数，8位char，16位short，32位int，一般int在32位机器上就是表示32位的！
+
+11:35 2017/11/17
+vim中删除第3行到第5行:
+:3,5d
+
+10:32 2017/11/17
+Makefile中"="号的差别：
+= 是最基本的赋值
+:= 是覆盖之前的值
+?= 是如果没有被赋值过就赋予等号后面的值
++= 是添加等号后面的值
+
+18:46 2017/11/16
+Linux C创建目录的方法步骤：
+#include <unistd.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+void mkdir_()
+{
+    char dirname_pic[20] = "Image";
+	if(access(dirname_pic, F_OK) < 0) {		//	判断这个文件夹是否存在
+        if(mkdir(dirname_pic, 0777) < 0) {	//	创建文件夹，指定权限
+            perror("dirname_pic:mkdir()");
+        }
+    }
+}
+
+如果想要在这个文件夹下写入文件，
+可以使用字符串连接函数，
+将文件夹的名字和文件的名字连接到一起，
+比如：
+sprintf(curT, "Image/%04d%02d%02d_%02d%02d%02d.jpg",   \
+                (1900+p->tm_year),  \
+                (1+p->tm_mon),  \
+                p->tm_mday, \                                            
+                p->tm_hour, \
+                p->tm_min,  \
+                p->tm_sec);
+
+
+15:12 2017/11/16
+关闭守护进程：
+ps -ef | grep "./daemon"
+可以查看到守护进程的进程号，
+然后使用kill -9 pid，
+就可以杀掉这个进程；
+
+15:09 2017/11/16
+tail -f filename
+可以查看文件的动态变化，
+比如每隔一段时间往文件中写入一句话，
+使用这个命令就可以看到文件的变化；
+
+19:26 2017/11/14
+使用tftp从板卡上发送文件给服务器，
+出现权限问题的错误，
+可能是发送的文件与服务器上的文件重名！
+
+9:36 2017/11/10
+在Linux终端如果输入的命令太长，
+可以使用反斜杠(\)来转义[Enter]键，
+使命令延续到下一行！
+反斜杠后立刻接特殊字符，才能完成转义！
+shell命令中不论空几格，都视为一格！
+
+9:33 2017/11/10
+Linux中的bc计算器默认仅输出整数，
+如果要输出小数，
+必须进行设置：scale=number，
+number表示小数点后的位数；
+bc支持的运算：+ - * / % ^
+quit退出！
+
+18:48 2017/11/9
+在脚本中变量赋值和取值：
+TARGET=target
+echo ${TARGET}
+
+10:17 2017/11/9
+删除.swp文件：rm .*swp
+10:14 2017/11/9
+vim中跳到单词尾部：e
+
+15:25 2017/11/8
+查询vim中某个字符串有多少个：
+在命令模式下输入：
+%s/string/&/gn(回车)
+
+9:45 2017/11/8
+shell脚本中的shift：移位置参数，没调用一次，根据后面指定的值，移动“值”的位置；
+默认为移动1单位位置，如果写为：shift 2，则移动2单位位置；
+
+shift相当于一个命令，直接写shift相当于执行这个命令；
+
+$> cat shift.sh 
+#!/bin/bash
+echo $1
+shift 
+echo $1
+shift 2
+echo $1
+$> ./shift.sh a b c d e
+a
+b
+d
+
+运行此脚本,$1表示第一个参数，所以第一个echo $1输出a，
+接着调用shift，参数指针向后移动一位，所以第二个echo $1输出b；
+接着调用shift 2，参数指针向后移动两位，所以第三个echo $1输出d；
+
+用处：用于接收参数！
+
+17:25 2017/11/7
+cut命令:	将一段数据经过分析，取出我们想要的；
+一般来说，选取信息通常是针对“行”来进行的，
+并不是整篇信息分析的；
+
+-b	以字节为单位进行分割，这些自己位置将忽略多字节字符边界，除非也指定了-n标志；
+-c	以字符为单位进行分割；
+-d	自定义分隔符，默认为制表符；
+-f	与-d一起使用，指定显示哪个区域；
+-n	取消分割多字节字符，仅和-b标志一起使用；
+
+(1)	提取每一行的第三个字节
+$> who | head -n 3
+miaoch   pts/6        2017-11-07 09:27 (172.17.1.23)
+zhuorh   pts/15       2017-11-07 15:08 (172.17.1.11)
+litong   pts/16       2017-11-07 09:33 (172.17.1.43)
+$> who | head -n 3 | cut -b 5
+c
+r
+n
+(2)	以字节定位中，提取第3,4,5和第8个字节
+-b支持形如3-5的写法，而且多个定位之间用逗号隔开就可以！
+$> who | head -n 3 | cut -b 1-3,5
+miac
+zhur
+litn
+(3)	
+
+17:13 2017/11/7
+du -sh * | sort -n 统计当前文件夹(目录)大小，并按文件大小排序
+
+15:31 2017/11/7
+脚本中实现变量自增：
+i = `expr $i + 1`;
+
+15:26 2017/11/7
+在写脚本时，
+尤其是在嵌入式环境下，
+#!/bin/bash出错，
+可以写成【#!/bin/sh】；
+
+9:50 2017/11/7
+批量删除文件：
+思路就是先用find命令将符合要求的文件找出，
+然后管道定向到后面执行的命令！
+
+//删除当前目录下类型是文件，大小为0的文件！
+find . -type f -size 0 | xargs rm
+find . -type f -size 0 -exec rm	有弊端，当文件过多时出现bug
+
+找出当前目录下小于2k的文件
+$> find . -type f -size -2k	(大于时用+号)
+
+find . -type f -name "*.sh"	找出名字是以.sh结尾的文件
+
+find -mtime +1	找超过1天的文件，-1表示1天以内的文件！
+
+反向查找：
+找出名字不是以.sh结尾的文件：
+$> find -not -name "*.sh"
+.
+./file
+
+
+9:48 2017/11/7
+批量创建文件：
+#!/bin/bash
+for i in `seq -w 10`
+do
+	touch file$i
+done 
+
+$> ls file*
+file01  file02  file03  file04  file05  file06  file07  file08  file09  file10
+
+9:31 2017/11/7
+seq：用于产生某个数到另外一个数之间的所有整数；
+例如：seq 1 10	结果是1 2 …… 10	(默认以\n分隔)
+
+-s	指定分隔符，默认是换行(\n);
+$> seq -s "=" 10
+1=2=3=4=5=6=7=8=9=10
+
+-w	用0填充，等宽显示：
+$> seq -s " " -w 10	(以空格分隔，等宽输出)
+01 02 03 04 05 06 07 08 09 10
+
+-f	指定格式(类似printf)
+$> seq -f "%3g" 10
+%后面质地on个数字的位数默认是"%g",
+"%3g"那么数字位数不足部分是空格；
+%前面制定字符串：
+
+$> seq -f "str%3g" 9 11
+str  9
+str 10
+str 11
+$> seq -f "str%03g" 9 11
+str009
+str010
+str011
+
+-w和-f不能一起使用；
+
+seq经常用于for循环：
+#!/bin/bash
+for i in `seq 10`
+do
+	echo $i+1
+done 
+或者是for i in $(seq 1 10)
+
+18:52 2017/11/6
+getopt接收脚本参数：
+	9:31 2017/11/7
+	看到这个问题时再补充，
+	之前在csdn学院上看到的这个教程，
+	不能运行！
+
+15:45 2017/10/26
+查看执行文件依赖哪些库：
+readelf camera_test -ld
+
+这些库可能需要添加的Makefile中
+
+11:08 2017/10/25
+Linux下svn的使用：
+svn help	查看有哪些命令
+
+从服务器上拖文件：
+svn checkout url_server或svn co
+
+更新文件：
+svn update/svn up
+
+添加文件：
+svn add filename
+
+提交文件：
+svn commit -m '注释'
+svn ci
+
+查看日志：
+svn log
+
+	10:57 2017/11/1
+	在svn版本中，修改了A文件的内容(A文件之前就是存在的)，
+	修改后需要提交，则命令为：svn commit A -m 'modify a content'，
+	提交之后，再运行命令：svn update,则使用命令svn log就可以看到记录了！
+
+查看状态：
+svn status|stat	显示工作副本中目录与文件的状态；
+	未指定参数时，只显示本地修改的条目(没有网络访问)
+	使用-q时，只显示本地修改条目的摘要信息；
+	使用-u时，增加工作版本和服务器上版本过期信息；
+	使用-v时，显示每个条目的完整版本信息；
+第一栏，表示一个项目时增加、删除还是修改
+	""	无修改
+	"A"	增加 
+	"C"	冲突
+	"D"	删除
+	"I"	忽略
+	"M"	改变
+	"R"	替换
+	"X"	未纳入版本控制的目录，被外部引用的目录所创建
+	"?"	未纳入版本控制
+	"!"	该项目已遗失(被非SVN命令删除)或不完整
+	"~"	版本控制下的项目与其他类型的项目重名
+第二栏，显示目录或文件的属性状态
+	""	无修改
+	"C"	冲突
+	"M"	改变
+第三栏，工作副本目录是否被锁定
+	""	未锁定
+	"L"	锁定
+第四栏，已调度的提交是否包含副本历史
+	""	没有历史
+	"+"	包含历史
+参考链接：http://blog.csdn.net/hufengvip/article/details/8265162
+	
+甲乙同时从版本库里面checkout出相同的版本A的X文件，
+此时，甲没有修改X，乙修改并提交了X，
+那么如果甲做update，那么X的文件状态是U(update)，更新；
+相反，如果甲对X进行了修改，乙进行了修改且提交，此时甲做update，
+那么X文件的状态是G(merge合并)，将甲本地修改的版本和乙提交的版本进行合并。
+
+
+
+10:37 2017/10/23
+linux计算程序运行的时间：
+在运行程序之前加上命令time，如：
+[root@casky slpc]# time ./similarity image/2_0.jpg image/2_1.jpg 
+iDiffNum = 8
+two image are somewhat similar!
+tv_usec :1221923  vs
+real    0m 1.29s
+user    0m 1.20s
+sys     0m 0.08s
+
+10:33 2017/10/17
+vim插件，实现.h和.cpp之间的切换：
+插件名字：a.vim
+自己是在github上下载的：https://github.com/vim-scripts/a.vim
+git clone https://github.com/vim-scripts/a.vim.git
+下载之后，将a.vim目录拷贝到~/.vim/plugin目录下，
+plugin目录可能不存在，自己新建一个就ok；
+
+然后重启vim，就是关闭再打开！
+
+头/源文件切换命令
+	:A 头文件／源文件切换
+	:AS 分割窗后并切换头/源文件(切割为上下两个窗口)
+	:AV 垂直切割窗口后切换头/源文件(切割为左右两个窗口)
+	:AT 新建Vim标签式窗口后切换
+	:AN 在多个匹配文件间循环切换
+	将光标所在处单词作为文件名打开
+	:IH 切换至光标所在文件
+	:IHS 分割窗口后切换至光标所在文件(指将光标所在处单词作为文件名打开)
+	:IHV 垂直分割窗口后切换
+	:IHT 新建标签式窗口后切换
+	:IHN 在多个匹配文件间循环切换
+快捷键操作
+	<Leader>ih 切换至光标所在文件*
+	<Leader>is 切换至光标所在处(单词所指)文件的配对文件(如光标所在处为foo.h，则切换至foo.c/foo.cpp...)
+	<Leader>ihn 在多个匹配文件间循环切换
+	*<Leader>指Vim所定义的映射(map)前缀，在Vim配置文件中可过变量'mapleader'进行设置，缺省为'\'。
+
+
+16:16 2017/10/16
+vim删除光标后的内容：d$	| D
+删除光标后n个字：nx	(n为数字)
+
+15:56 2017/10/16
+vim比较两个文件：
+vimdiff file01 file02
+或者
+vim -d file01 file02
+
+vim中打开和关闭折叠：zo	| zc
+]c	跳到下一个不同处
+[c	跳到上一个不同处
+ctrl+w+w	切换窗口
+
+dp	把当前文件中的光标所在行复制到另一个文件
+do	把另一个文件中的内容复制到当前文件光标所在行
+
+
+16:12 2017/10/12
+vim批量注释：
+ctrl+v进入列编辑模式，
+向上或向下移动光标，
+把需要注释的行的开头标记起来，
+然后按大写的I(shift+i),
+再插入注释符，比如"//"，
+再按Esc，
+就会全部注释了！
+
+批量去掉注释：
+ctrl+v进入列编辑模式，
+横向选中列的个数(如"//"注释符号，需要选中两列)，
+然后按d，
+就会删除注释符号；
+
+使用下面命令在指定的行首添加注释：
+:起始行号,结束行号s/^/注释符/g
+取消注释：
+:起始行号,结束行号s/^注释符//g
+例子：
+在10 - 20行添加 // 注释
+:10,50s#^#//#g
+在10 - 20行删除 // 注释
+:10,20s#^//##g
+
+13:53 2017/10/12
+Linux创建文件名添加当前系统日期时间的方法：
+eg:
+	mkdir `date +%Y%m%d%H%M`
+	YmdHM代表年月日时分，
+	`是键盘上的~
+	date命令和后面的日期格式的+号之前有一个空格，
+	直接连写不能生成日期
+	
+	如果想在日期前后加自己想要的字符串：
+	$> mkdir demo`date +%Y%m%d`
+	demo20171012
+
+10:01 2017/10/12
+!vim	可以快速打开最后关闭的一个vim；
+:syntax enable	语法高亮
+:syntax off		关闭语法高亮
+
+9:40 2017/10/12
+vim安装ctags插件：
+下载地址： http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz
+tar xvzf ctags-5.8.tar.gz
+cd ctags-5.8
+./configure
+make
+sudo make install
+
+安装完成后，可执行catgs --version查看ctags的版本；
+
+进入项目代码中，执行：[ ctags -R ]会生成一个tags文件，
+或者 [ ctags -R /project/code ] 也会生成tags文件；
+
+最后，在vimrc中添加：
+set tags+=/project/code/tags
+或者在vim中运行命令:
+:set tags+=/project/code/tags
+
+然后可以使用Ctrl+]就可以自动跳至函数定义处，
+ctrl+t可以返回上次查看位置；
+
+常用命令：
+ctags -R *
+vi -t tag(把tag替换为想要查找的变量或函数名)
+:ts	tags list
+:tp	tags preview
+:tn	tags next
+ctrl+]	跳转到定义处
+g]	不跳转，列出有多少个func tags可选
+g ctrl+]	一般同g]，但如果func tag只有一个，则直接跳转过去
+ctrl+t	退回至跳转前
+:ta x	跳转到符号x的定义处，如果有多个符号，直接跳转到第一处
+:ts x	列出符号x的定义
+:tj x	可看作是上面两条命令的合并，如果只找到一个符号定义，那么直接跳转到符号定义处，如果有多个，则让用户自己选择
+
+19:54 2017/10/11
+$UID判断用户是不是root；
+[ $UID -ne 0 ] && echo "not root"
+
+root用户的UID是0
+
+19:51 2017/10/11
+不输出脚本的信息：
+ls /etc > /dev/null 2>&1
+1表示标准输出，
+2表示标准错误输出，
+上面代码就是将标准输出和标准错误输出都重定向到/dev/null(喂桶)中。
+
+19:49 2017/10/11
+$?的值判断上一条命令是否执行成功，0为成功，非0为失败！
+
+15:51 2017/10/11
+vim中选中一个单词：ve	或者  viw
+
+10:25 2017/10/11
+vim 中跳转到光标的上次位置：
+ctrl+o
+ctrl+i
+装了ctag插件可以跳转
+ctrl+]	查看函数调用
+
+10:05 2017/10/11
+在vim中查看man手册，
+就是光标所在位置的内容，
+如果在man手册中存在，
+则按shift+k可以快速打开man手册！
+
+14:49 2017/10/10
+vim高亮显示单词并查找
+shift + *	向下查找并高亮显示
+shift + #	向上查找并高亮显示
+g + d		高亮显示光标所属单词，n查找！
+
+9:57 2017/10/10
+更改文件的用户权限：chown miaoch filename
+更改文件的用户组权限：chgrp miaoch filename
+
+17:36 2017/10/9
+将shelllog中的内容合并到此文件！
+
+9:19 2017/10/9
+Linux中括号中：(左右两个中括号都用空格分隔)
+-z	判断是否是空值
+-f	判断文件是否存在
+-d	判断目录是否存在
+-x	判断是否具有可执行权限
+!	取反
+! -z	判断是否不是空值
+! -d	如果目录不存在
+
+[ -z $test ] && echo 0 || echo 1	判断test是不是空值，test为空值，则返回0，否则返回1.
+[ ! -z $test ] && echo 0 || echo 1	如果test不为空值，则返回0，否则返回1.
+
+11:01 2017/9/29
+shell脚本中
+单中括号：[   ] 是比较进行数字的比较！
+双中括号:[[   ]]，既可以比较数字，也可以比较字符串！
+
+a=3
+
+b=2
+[ $a -eq $b ] && echo "yes" || echo "no"	
+# -eq表示等于，这句脚本的意思是：a等于b吗？若是，则回显yes，否则，回显no;
+
+-eq		=
+-ne		!=
+
+
+
+18:10 2017/9/28
+cat打印菜单
+$> cat catsh.sh 
+cat << EOF
+	
+	Please select one:
+	1)	JGB
+	2)	MLT
+	3)	GBJD
+	4)	DM
+EOF
+
+read -p "Please select one:" selection
+
+$> 
+
+$> ./catsh.sh 
+	
+	Please select one:
+	1)	JGB
+	2)	MLT
+	3)	GBJD
+	4)	DM
+Please select one:1
+
+
+17:14 2017/9/28
+直接赋值：直接在终端输入【变量名=变量值】
+间接赋值：
+read -p "Please enter a number" a
+
+运行上面脚本，会提示用户用户一个数字，然后将用户输入的数字赋值给a;
+$> readread -p "Please enter a number:" a
+Please enter a number:123
+$> echo $a
+123
+$> 
+
+
+10:45 2017/10/9
+bc计算器
+
+在终端输入bc即可进入计算器模式；
+
++ - * 可直接输入计算；
+$> bc
+bc 1.06.95
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'. 
+10+55.2+12.5+2+1+106.5+202+1+1+1+30+48+24.4+10+300+50
+854.6
+20*5
+100
+3-50
+-47
+
+如果算除法，则需要指定小数点后取几位：scale=[number]，小数点后取number位！
+10/3
+3
+scale=2
+10/3
+3.33
+
+算余数：
+10%4
+2
+
+算指数：
+10^4
+10000
+
+退出：quit
+
+13:56 2017/9/29
+set命令
+$> set | grep PS1
+PS1='\[\e[1;32m\]$>\e[0m '
+
+11:50 2017/9/28
+压缩zip文件：
+zip zipname.zip file1 file2 fil32 ...
+
+unzip zipname.zip
+
+10:21 2017/9/28
+:%s/str1/str2/g   替换每一行中所有str1为str2 常用！
+
+:s/str1/str2/g 替换当前行所有str1为str2
+
+:s/old/new              将光标所在行第一个 old 替换为 new  
+:s/old/new/g            将光标所在行所有 old 替换为 new  
+:%s/old/new/gc          全文执行替换,询问是否替换  
+:3,10s/old/new/gic      将第3行到第10行内容替换，忽略大小写，且每个询问是否替换 
+
+10:13 2017/9/28
+查看当前系统支持的shell：
+cat /etc/shells
+
+查看各个shell的版本，
+在后面加"--version",
+bash --version
+
+14:34 2017/9/26
+vim清空文件中的内容：ggdG
+
+14:33 2017/9/26
+复制small中的内容
+
+9:49 2017/8/24
+Linux查找包含有某字符串的所有文件：
+	grep -rn "mch0dmin" *
+@--> 对比两个文件
+	vimdiff file1 file2
+		+--- 7lines:-----	表示折叠的行
+		----------------	表示删除的行
+		zo可以把折叠的行打开，zc可以把折叠的行关闭(直接zo，不是:zo)
+		]c	表示跳到下一个不同处
+		[c	表示跳到上一个不同处
+		ctrl+w+w	切换窗口
+		dp	将左边光标所在行复制到右边对应的行
+		do	将右边光标所在行复制到左边对应的行
+	diff file1 file2
+	diff -r dir1 dir2
+@--> vim恢复
+	vim -r filename
+	vim -r .open.swp
+@--> linux查看一个文件的大小
+	du --max-depth 1 -lh [文件路径，可以是绝对路径]
+	du --max-depth=1 -lh [文件路径] 有的系统可能是=1
+@--> 查看java安装在哪个目录
+	which java
+@--> 显示文件的某几行
+	从第3000行开始，显示1000行，即显示3000~3999行
+	cat filename | tail -n +3000 | head -n 1000
+	显示1000行到3000行
+	cat filename | head -n 3000 | tail -n +1000
+	注意两种方法的顺序
+
+	tail -n 1000	显示最后的1000行
+	tail -n +1000	从最后1000行开始显示，显示1000行以后的
+	head -n 1000	显示前面的1000行
+
+	sed -n '5, 10p' filename	查看文件的第五行到第10行
+	
+	cat filename | grep -n ""	打印出要查找的起始行号和结束行号
+	[root@localhost .note]# cat small -n | grep "终端"
+		149	@-->在终端输入[env]或[printenv]可以查看当前环境变量
+		190	@-->终端设置舒服颜色：
+	[root@localhost .note]# cat small | grep "终端" -n
+	149:@-->在终端输入[env]或[printenv]可以查看当前环境变量
+	190:@-->终端设置舒服颜色：
+
+@--> evince打开某些pdf文件出现乱码的解决方法：
+	rpm -ivh poppler-data-0.4.0-1.el6.noarch.rpm  安装这个包，但是提示我已经安装过了
+
+	[root@localhost conf.d]# pwd
+	/etc/fonts/conf.d
+	[root@localhost conf.d]# mv 49-sansserif.conf 49-sansserif.conf.bak
+	
+	将49号文件作废，然后就可以正常打开了;
+
+@--> mv 命令移动非空目录
+	加上-b参数，这个参数会在目标路径备份一份目录，备份目录后面~表示
+
+@--> 卸载openoffice
+	rpm -e `rpm -qa | grep openoffice`
+	rpm -qa | grep ooobasis
+@--> 在vim中增加命令执行的结果
+	命令模式下[:r !date] //添加当前日期
+@--> mplayer单曲循环
+	[root@localhost me]# mplayer -loop 0 小幸运-原声带-1774490672-1.mp3 
+
+@--> 打开linux的配置编辑器
+	[Alt + F2]打开[运行应用程序]的窗口；
+	输入[gconf-editor];
+@--> 看代码
+	遇到一堆代码文件，想要修改，先看实现某个功能时用到了哪些文件，比如查看Makefile看用到了哪些文件;
+@-->vim 全选命令
+	ggVG
+@-->ssh下载文件
+	scp -r root@target_ip:/filepath/filename root@local_ip:/path
+	如果路径名中有空格，用双引号将有空格的名字包起来
+@--> 查看linux系统是多少位
+[root@localhost ~]# getconf LONG_BIT
+64
+
+[root@localhost ~]# lsb_release -a
+LSB Version:	:base-4.0-amd64:base-4.0-noarch:core-4.0-amd64:core-4.0-noarch:graphics-4.0-amd64:graphics-4.0-noarch:printing-4.0-amd64:printing-4.0-noarch
+Distributor ID:	RedHatEnterpriseServer
+Description:	Red Hat Enterprise Linux Server release 6.4 (Santiago)
+Release:	6.4
+Codename:	Santiago
+
+@-->alias多层引号
+	alias xflux='xflux -g "40'236" -k "116'217"'
+@-->vim中执行shell命令
+:!cmd
+底行模式下输入:!，然后输入想要执行的命令
+@-->有时候出现下面的警告，处理方式可能是包含头文件<stdlib.h>
+	getenv.c:8: 警告：赋值时将整数赋给指针，未作类型转换
+@-->flux
+	./xflux -g 40'236 -k 116'217
+@-->提高网速
+	 ifconfig em1 mtu 1000
+
+@-->标准输入是行缓冲
+@-->builtin	内部命令
+	man builtin
+@-->Makefile
+OBJS	变量
+CFLAGS	编译选项
+$@		目标文件
+$^		依赖的文件
+%		代替字符串
+CC		CC=gcc
+LDFLAGS	链接的库
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+例子：
+OBJS+=main.o tool1.o tool2.o
+CFLAGS+=-c -g -Wall
+CC=gcc
+mytool:$(OBJS)
+	$(CC) $^ -o $@
+
+%.o:%.c
+	$(CC) $(CFLAGS) $^ -o $@
+
+clean:
+	rm -rf *.o mytool
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	例子：
+	如果使用某个函数需要先定义一个宏，可以将这个宏写在makefile中，使用-D
+	如果需要链接某个动态库，也可以将这个库写在makefile中，使用-l
+	CFLAGS+=-D_XOPEN_SOURCE
+	LDFLAGS+=-lcrypt
+
+	[root@localhost mynote]# cat note_makefile | more
+	OBJS	变量
+	CFLAGS	编译选项
+	$@		目标文件
+	$^		依赖的文件
+	%		代替字符串
+	CC		CC=gcc
+	LDFLAGS	链接的库
+
+
+	例子：
+	OBJS+=main.o tool1.o tool2.o
+	CFLAGS+=-c -g -Wall
+	CC=gcc
+
+mytool:$(OBJS)
+	$(CC) $^ -o $@
+
+	%.o:%.c
+	$(CC) $(CFLAGS) $^ -o $@
+
+	clean:
+	rm -rf *.o mytool
+
+
+	例子：
+	如果使用某个函数需要先定义一个宏，可以将这个宏写在makefile中，使用-D
+	如果需要链接某个动态库，也可以将这个库写在makefile中，使用-l
+	CFLAGS+=-D_XOPEN_SOURCE
+	LDFLAGS+=-lcrypt
+
+@-->修改配置文件之后，要使用source命令使配置文件生效,如：source ~/.bashrc
+@-->如果显示的内容比较多，可以在后面加less，如：
+	ls | less
+	cat filename | less
+	按q退出
+@-->wc -l 可以计算总数
+	比如查看当前目录下有多少个文件可以使用命令：[ls | wc -l]
+	[root@localhost ~]# ls
+	anaconda-ks.cfg  books  homework            linux        minicom.log  workdir  视频  下载
+	azb              bz     install.log         linux_qtsrc  music        公共的   图片  音乐
+	bak              cd.sh  install.log.syslog  linux_src    uboot_src    模板     文档  桌面
+	[root@localhost ~]# ls | wc -l
+	24
+
+
+@-->在终端输入[env]或[printenv]可以查看当前环境变量
+	[root@localhost ~]# printenv | grep USERNAME
+	USERNAME=root
+	[root@localhost ~]# env | grep USERNAME
+	USERNAME=root
+
+@-->which cmd	可以查看cmd的路径
+	[root@localhost mynote]# which man
+	alias man='man -a'
+		/usr/bin/man
+
+@-->查看系统登录信息
+	last -x | more
+
+@-->进制转换shell
+	例如计算十进制数99的二进制：
+		[root@localhost apue]# no=99
+		[root@localhost apue]# echo "obase=2;ibase=10;$no" | bc
+		1100011
+
+@-->Linux关闭防火墙：
+	service iptables stop
+
+@-->通过ftp获得文件，mirror是下载目录，get是文件
+	ftp连接：
+	方法一：在shell行中输入lftp ip_address
+	方法二：主菜单-->位置-->连接到服务器-->选择公开FTP(没有密码的情况下)-->在服务器一栏中输入ip_address-->点击连接；
+	方法三：在浏览器中连接
+@-->vim使用查找命令会使匹配的字符高亮，但如何恢复？
+	输入:[:set nohlsearch](下次查找也不亮) 或[:nohl](下次查找仍然亮)
+
+@-->vim设置高亮显示查找的字符串：
+	在/etc/vimrc中添加一行：set hlsearch
+
+@-->vim中使代码对齐：
+	在命令模式下，按[v]进入可视，然后选择需要对齐的代码，最后按等于号[=]
+@-->vim分屏
+	vim *.c -o	水平
+	vim *.c -O	垂直
+@-->如何查看一个文件占用多少字节
+	du -b filename
+	du -lh filename
+	ll filename
+@-->在写程序时，有时候需要写多个.c文件，这些.c文件中所包含的大量的头文件，并且重复，这时就可以先写一个自己的.h文件(my.h)，将这些重复的头文件写入到my.h中，然后在.c文件中包含my.h，就不必多次写重复的头文件了；	#include "my.h"
+
+@-->设置终端颜色：
+	文本颜色：#708284
+	背景颜色：#07242E
+
+@-->将数字转换为字符串----sprintf()
+
+@--> vim窗口分割
+	(1) 水平分割
+		:split		开启另一个窗口查看同一文件
+		:split filename	开启另一窗口查看指定文件
+	(2) 垂直分割
+		:vsplit		
+		:vsplit filename
+	(3)	窗口之间切换
+		ctrl+w+w
+
+10:36 2017/9/8
+ctrl组合键
+Linux终端下，ctrl+s的作用是暂停该终端，若退出暂停状态按ctrl+q;
+ctrl+c	终止当前正在执行的程序
+ctrl+d	相当于exit命令，退出当前会话
+Ctrl+d代表键盘输入结束(End Of File, EOF或End Of Input)，
+也可以替代exit的输入。
+ctrl+z	将当前运行的程序放到后台运行，与运行时加&类似；
+Ctrl + s:在终端下是有特殊用途的，那就是暂停该终端，
+Ctrl + q 退出这种状态，让终端继续运行
+
+10:33 2017/9/8
+使正在运行的进程暂停，且放置到后台：ctrl+z(使前台进程挂起)
+然后使用fg命令使挂起的进程继续运行；
+
+10:32 2017/9/8
+查看文件和目录的大小：
+du -lha filename
+
+10:56 2017/9/7
+vim中查找字符串忽略大小写：
+模式                    匹配    
+\Cword                   word
+\CWord                   Word
+\cword                   word，Word，WORD，WoRd，等。
+\cWord                   word，Word，WORD，WoRd，等。
+
+14:58 2017/9/6
+使用vim编辑文件时，如果想退出vim，运行命令，
+可以使用ctrl+x将vim挂起到后台进程，
+执行完想要执行的命令后，
+运行fg，回到vim编辑的文件中；
+
+14:56 2017/9/6
+在Linux命令后加 & 表示使这个进程在后台运行，
+前后台切换用bg，fg；
+
+
+14:29 2017/9/6
+查看文件属性的相关命令：
+ls -l	查看详细信息
+lsattr	查看文件的扩展属性
+	如果文件被chattr +i 添加了写保护，用lsattr可以看到添加的属性
+file	查看文件的类型
+stat	查看文件的状态
+
+11:10 2017/9/6
+查看Linux内核版本的命令：
+$> uname -a
+Linux bc-OptiPlex-9010 3.16.0-30-generic #40~14.04.1-Ubuntu SMP Thu Jan 15 17:43:14 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+$> cat /proc/version
+Linux version 3.16.0-30-generic (buildd@kissel) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #40~14.04.1-Ubuntu SMP Thu Jan 15 17:43:14 UTC 2015
+
+
+15:08 2017/9/5
+Linux与Windows共享文件夹之samba的安装与使用（Ubuntu为例）
+http://www.cnblogs.com/gzdaijie/p/5194033.html
+
+
+14:45 2017/9/5
+创建用户并指定该用户的主目录，也就是账户一登入，就直接到该目录下来。
+创建miaoch用户，用户的主目录是/home/miaoch,密码是mch0dmin，该用户只具有760权限；
+useradd -d /home/miaoch/ -m miaoch
+passwd miaoch
+chown -R miaoch:miaoch /home/miaoch
+chmod 760 /home/miaoch
+
+10:25 2017/9/5
+tftp -m binary -v 172.17.2.23 -c put u-boot-3516c.bin
+tftp命令用在本机和tftp服务器之间使用TFTP协议传输文件。
+
+-c：指定与tftp服务器连接成功后，立即要执行的命令；
+-m：指定文件传输模式，可以是ASCII或者BINARY；
+-v：显示指令详细执行过程；
+-V：显示指令版本信息；
+
+进入tftp后的操作：
+	connect：连接到远程tftp服务器
+	mode：文件传输模式
+	put：上传文件
+	get：下载文件
+	quit：退出
+	verbose：显示详细的处理信息
+	tarce：显示包路径
+	status：显示当前状态信息
+	binary：二进制传输模式
+	ascii：ASCII传输模式
+	rexmt：设置包传输的超时时间
+	timeout：设置重传的超时时间
+	help/?：帮助信息
+	
+如果老是出现“AVC Denial, click icon to view”的错误，并不能传输文件，需要作如下修改 修改/etc/sysconfig/selinux,将SELINUX设定为disable，使用命令setenforce 0让selinux配置文件生效。
+
+Busybox中tftp命令的用法
+	-g：下载文件(get)
+	-p：上传文件(put)
+	-l：表示本地文件名(local file)
+	-r：表示远程主机的文件名(remote file)
+例如，要从远程主机192.168.1.2上下载 embedexpert，则应输入以下命令
+tftp -g -r embedexpert 192.168.1.2
+
+15:41 2017/8/30
+	vim中查找同时包含多个字符：
+	/.*string01.*string02
+	/string01\|string02
+	
+	
+15:29 2017/8/30
+	vim中查看某字符串存在多少个：
+	:%s/String//gn
+
+15:41 2017/8/29
+	vim中删除包含某个字符串的行：
+	:g/string/d
+	用 :g 。它的工作原理是在全文中搜索字串，然后在匹配的行上执行一个命令。命令的格式是 “g/搜索的正则表达式/要执行的命令”如果是删除的话，用 :d 这个命令。
+	
+	:%!grep -A 1 'china'	//这个命令没试过！
+
+11:28 2017/8/29
+	查找指定目录中包含某字符串的所有文件：
+		grep -nr "String" *
+		-n	显示行号
+		-r	目录递归
+		String	包含的字符串
+		*	表示所有文件，.	表示当前文件夹
+
+10:41 2017/8/29
+	查看Linux系统分区信息：fdisk -l
+	查看分区使用情况：df -lh
+10:54 2017/8/11
+	查看Linux内核版本信息：uname -a	
+10:55 2017/8/11
+	cat /proc/version	
+	说明正在运行的内核版本
+10:55 2017/8/11
+	cat /etc/issue	
+	显示的是发行版本信息
+10:59 2017/8/11
+	查看Linux系统支持的字符编码	 
+	#locale
+	#echo $LANG
+	#env | grep LANG
+19:36 2017/8/21
+	显示日期与时间的命令：date
+	显示日历的命令：cal
+	简单好用的计算器：bc
+	miaoch@bc-OptiPlex-9010:~$ no=256
+	miaoch@bc-OptiPlex-9010:~$ echo "ibase=10;obase=16;$no" | bc
+	100
+
+
+
+
+                       _oo0oo_
+                      o8888888o
+                      88" . "88
+                      (| -_- |)
+                      0\  =  /0
+                    ___/`---'\___
+                  .' \\|     |// '.
+                 / \\|||  :  |||// \
+                / _||||| -:- |||||- \
+               |   | \\\  -  /// |   |
+               | \_|  ''\---/''  |_/ |
+               \  .-\__  '-'  ___/-. /
+             ___'. .'  /--.--\  `. .'___
+          ."" '<  `.___\_<|>_/___.' >' "".
+         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+         \  \ `_.   \_ __\ /__ _/   .-` /  /
+     =====`-.____`.___ \_____/___.-`___.-'=====
+                       `=---='
+
+
+	
