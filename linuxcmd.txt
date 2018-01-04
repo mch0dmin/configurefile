@@ -1,4 +1,87 @@
 
+19:33 2018/1/4
+绿色护眼背景色：80	97	205
+
+10:16 2018/1/4
+Linux下rar命令给压缩包添加注释：
+(1)	压缩：
+	rar a/m test.rar[压缩包的名字] file/dir[要压缩的文件或目录]
+	rar a/m test.rar file1
+	a:把file文件添加到test.rar压缩档案中，且保持原有的file文件保持不变
+	m:移动file文件到test.rar压缩档案中，压缩完成后删除原有的file文件，
+	m命令只针对文件进行操作！
+	如果此时test.rar档案不存在，会自行创建test.rar档案，
+	如果test.rar已经存在，则将file1文件压缩进test.rar中，
+	若test.rar已存在一个file1文件，则会更新file1文件(直接覆盖了！)，
+	并且原有的文件依然存在于当前目录下，
+	若要将file1文件移动到file1.rar中请使用m命令，
+	对于目录同样可以进行此操作！
+	
+	如果只输入[rar a test.rar]命令，而没有接文件名或目录名的话，
+	会将当前目录下所有的文件和文件夹压缩进test.rar文档中。
+	
+(2)	解压：
+	rar e/x test.rar
+	假如test.rar中包含文件file1和目录dir1，
+	目录dir1中还有文件file2，
+	使用e，则file1和file2都解压到当前目录下，
+	若想保持test.rar中的目录结构，则使用x命令；
+
+(3)	为整个压缩文件添加注释：
+	rar c test.rar
+	输入该命令后，屏幕下方会显示：
+$ rar c test.rar
+
+RAR 5.40   Copyright (c) 1993-2016 Alexander Roshal   15 Aug 2016
+Trial version             Type RAR -? for help
+
+
+Processing archive test.rar
+Reading comment from stdin
+	此时，从光标闪烁的位置输入注释信息，输入完成后按ctrl+d结束；
+	
+	
+	
+(4)	为压缩文件中的单个文件添加注释：
+	使用cf命令，
+	
+	
+
+
+
+17:14 2018/1/3
+vim删除当前行至后面所有行:
+命令模式:	[dG]
+末行模式:	[:.,$d]
+
+14:28 2018/1/3
+pkg-config的一些用法：
+	在用第三方库时，少不了要使用到第三方库的头文件和库文件，
+	在编译和链接时必须指定这些头文件和库文件的位置。
+	对于一个比较大的第三方库，其头文件和库文件的数量是比较多的，
+	如果我们一个个手动地写，是相当麻烦的事，
+	所以pkg-config就应运而生了。
+	
+	pkg-config能够把这些头文件和库文件的位置指出来，给编译器使用。
+	
+	使用实例：
+	g++ -o $1 $2 `pkg-config --cflags --libs opencv`
+	$gcc main.c `pkg-config --cflags --libs gtk+-2.0` -o main
+	
+	--cflags指定头文件
+	--libs指定库文件
+	
+
+
+10:52 2018/1/3
+出现错误：
+$> ./FramesDifference
+-sh: ./FramesDifference: cannot execute binary file: 可执行文件格式错误
+
+原因是：
+在pc上运行了arm-编译的程序，
+或是在arm-板卡上运行了pc端的程序；
+
 18:05 2018/1/2
 两个Linux服务器之间通过tftp传输文件；
 首先在一端：tftp ip(另一端的IP地址)，例如：
@@ -58,7 +141,7 @@ sudo apt-get remove +软件的名字
 编译Linux内核分为两种：编译PC端用的Linux内核和交叉编译arm平台的Linux内核；
 如果是交叉编译ARM平台的Linux，
 先拷贝arch/arm/configs/目录下的，
-arm的CPU相关的配置文件，到内核跟目录，重命名为.config，
+arm的CPU相关的配置文件，到内核根目录，重命名为.config，
 (1)	cp arch/armconfig/xxx_defconfig .config
 (2)	make menuconfig	选择需要的配置
 (3)	make
@@ -801,6 +884,10 @@ Linux查找包含有某字符串的所有文件：
 	遇到一堆代码文件，想要修改，先看实现某个功能时用到了哪些文件，比如查看Makefile看用到了哪些文件;
 @-->vim 全选命令
 	ggVG
+	
+	vim格式对齐：
+	ggVG=
+	
 @-->ssh下载文件
 	scp -r root@target_ip:/filepath/filename root@local_ip:/path
 	如果路径名中有空格，用双引号将有空格的名字包起来
