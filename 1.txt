@@ -1,0 +1,45 @@
+bool CRTMPStream::ReadOneNaluFromBuf(NaluUnit &nalu)
+{
+	int i = m_nCurPos;
+	printf("i = %d\n", i);		//	用于测试
+	printf("m_nFileBufSize = %d\n", m_nFileBufSize);
+	while (i<m_nFileBufSize)
+	{
+		if (m_pFileBuf[i++] == 0x00 &&
+				m_pFileBuf[i++] == 0x00 &&
+				m_pFileBuf[i++] == 0x00 &&
+				m_pFileBuf[i++] == 0x01
+		   )
+		{
+			int pos = i;
+			//printf("22222222222222222222222");
+			while (pos<m_nFileBufSize)
+			{
+				//	printf("11111111111111111");
+				if (m_pFileBuf[pos++] == 0x00 &&
+						m_pFileBuf[pos++] == 0x00 &&
+						m_pFileBuf[pos++] == 0x00 &&
+						m_pFileBuf[pos++] == 0x01
+				   )
+				{
+					break;
+				}
+			}
+			if (pos == m_nFileBufSize)
+			{
+				nalu.size = pos - i;
+			}
+			else
+			{
+				nalu.size = (pos - 4) - i;
+			}
+			nalu.type = m_pFileBuf[i] & 0x1f;
+			nalu.data = &m_pFileBuf[i];
+
+			m_nCurPos = pos - 4;
+			return TRUE;
+		}
+	}
+	return FALSE;
+}
+
