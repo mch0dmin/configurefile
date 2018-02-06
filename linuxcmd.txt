@@ -1,4 +1,224 @@
 
+16:34 2018/1/22
+需要总结
+error while loading shared libraries: ../../lib/libopencv_core.so的解决方法
+http://blog.chinaunix.net/uid-22762900-id-4250152.html
+
+学习C语言常用宏定义：
+http://www.cnitblog.com/zouzheng/archive/2007/08/31/32691.aspx
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+抄下面这个链接：
+https://www.2cto.com/net/201311/254835.html
+
+19:40 2018/2/6
+UDP主要丢包原因：
+1、接收端处理时间过长导致丢包：
+	调用recv方法接收端收到数据后，
+	处理数据花了一些时间，
+	处理完后再次调用recv方法，
+	在第二次调用间隔里，
+	发过来的包可能丢失。
+	对于这种情况可以修改接收端，
+	将包接收后存入一个缓冲区，
+	然后迅速返回继续recv。
+2、发送的包巨大导致丢包：
+	虽然send方法会帮你做大包切割成小包发送的事情，
+	但包太大也不行。
+	例如超过50k的一个udp包，
+	不切割直接通过send方法发送也会导致这个包丢失。
+	这种情况需要切割成小包再逐个send()。
+3、发送的包较大，超过接收者缓存导致丢包：
+	包超过mtu size数倍，
+	几个大的UDP包可能超过接收者的缓冲，
+	导致丢包。
+	这种情况可以设置socket接收缓冲。
+	以前遇到过这种问题，
+	把接收缓冲设置成64k就解决了。
+	int nRecvBuf = 32*1024;	//	设置为32k
+	setsocketopt(s, SOL_SOCKET, SO_RCVBUF, (const char *)&nRecvBuf, sizeof(int));
+4、发送的包的频率太快：
+	虽然每个包的大小都小于mtu size，
+	但是频率太快。
+	例如40多个mtu size的包连续发送，
+	中间不sleep，
+	也有可能导致丢包。
+	这种情况有时可以通过设置socket接收缓冲解决，
+	但有时解决不了，
+	所以在发送频率过快的时候还是考虑sleep一下吧。
+5、局域网内不丢包，公网上丢包：
+	这个问题我也是通过切割小包，
+	并sleep发送解决的。
+	如果流量太大
+	这个办法不灵。
+	总之udp丢包总是会有的，
+	如果出现了，
+	除了上述方法外，
+	还有：减少流量或tcp协议传输或做丢包重传的工作。
+	
+具体问题分析：
+1、发送频率过高导致丢包：
+
+10:02 2018/2/6
+使用notepad++查看文件的16进制编码，
+需要先安装插件：HEX-Editor，
+点击菜单栏中的【插件】-->【Plugin Manager】-->【show plugin manager】
+-->【找到HEX-Editor】，点击安装，
+安装完成后，重启notepad++，
+打开二进制文件时，使用notepad++打开，
+然后点击【插件】中的HEX-Editor-->【View in Hex】;
+
+10:07 2018/1/31
+linux .bash_profile和.bashrc的区别：
+/etc/profile	
+	此文件为系统的每个用户设置环境信息，
+	当用户第一次登录时，
+	该文件被执行，
+	并从/etc/profile.d目录的配置文件中搜集shell的设置；
+/etc/bashrc
+	为每一个运行bash shell的用户执行此文件，
+	
+
+9:56 2018/1/31
+查看Linux环境系统、CPU位数
+(1)	uname -a
+	如果有x86_64就是64位的，没有就是32位的！
+(2)	uname -m
+(3)	arch
+(4)	查看二进制文件是什么格式的:
+	file /bin/cat
+(5)	查看CPU是多少位的：
+	more /proc/cpuinfo
+	或者
+	file /sbin/init
+
+10:49 2018/1/30
+C语言常用宏定义：
+linux下C语言编程实现代码跟踪调试，
+__FILE__,	__LINE__,	__FUNCTION__;
+__FILE__:	打印当前文件的名字；
+__LINE__:	打印所在的行号；
+__FUNCTION__:	打印所在函数名；
+
+示例：
+#define DEBUGFMT  "%s(%d)-%s"
+#define DEBUGARGS __FILE__,__LINE__,__FUNCTION__
+int funca(void)
+{
+	printf (DEBUGFMT " this is function\n",DEBUGARGS);
+	return 0;
+}
+
+学习C语言常用宏定义：
+http://www.cnitblog.com/zouzheng/archive/2007/08/31/32691.aspx
+
+17:51 2018/1/19
+谷歌浏览器快捷键：
+光标定位到地址栏：
+	windows：ctrl+d	或	alt+d	或F6
+	linux:	ctrl+l
+
+17:48 2018/1/19
+vim删除当前行后面所有的行：
+:,$d
+vim删除第一行到当前行：
+:1,.d
+=======================================================
+17:17 2018/1/26
+VS快捷键：
+	9:42 2018/2/1
+	设置代码提示:
+	工具-->选项-->环境-->键盘-->然后在搜索框中输入【列出成员】，然后再下方设置快键键！
+	9:39 2018/2/1
+	在头文件和cpp文件互相切换：ctrl-k + ctrl-o
+	ctrl+l	可以剪切一行	
+	14:06 2018/1/18
+	vs中代码对齐：
+	对齐光标所在行或对齐选中代码行：
+	ctrl+k - ctrl+f
+	或
+	ctrl+k - ctrl+d
+
+	全部代码对齐：
+	ctrl+a - ctrl+k - ctrl+f
+
+12:02 2018/1/18
+windows下判断nginx是否启动成功：
+在cmd中输入【tasklist /fi "imagename eq nginx.exe】，
+看到下面信息说明启动成功！
+d:\000azb\001ffmpeg\azb\nginx\nginx-1.7.11.3-gryphon\nginx-1.7.11.3-gryphon> tas
+klist /fi "imagename eq nginx.exe
+
+映像名称                       PID 会话名              会话#       内存使用
+========================= ======== ================ =========== ============
+nginx.exe                     7204 Console                    1      6,052 K
+nginx.exe                     7568 Console                    1      6,900 K
+
+
+15:43 2018/1/17
+windows查看端口占用：
+netstat -aon|findstr "1935"
+
+10:48 2018/1/15
+vim中，shift+k可以打开光标所在函数的man手册！
+
+14:14 2018/1/12
+vs2010配置ffmpeg开发环境：
+1、 ffmpeg库的接口都是C函数，
+	其头文件也没有extern "C"的声明，
+	所以在cpp文件中调用ffmpeg函数要注意：
+	在头文件中应加上，
+	#ifdef __cplusplus
+	extern "C" {
+	#endif
+	//#include <xxxx>
+	#ifdef __cplusplus
+	} // endof extern "C"
+	#endif
+	或者在头文件中使用：
+	#define inline _inline
+	extern "C"
+	{
+		#include <libavutil/avutil.h>
+		#include <libavcodec/avcodec.h>
+		#include <libavformat/avformat.h>
+		//……
+	}
+2、	准备ffmpeg相应开发的dll、include和lib；
+	include_path:D:\000azb\001ffmpeg\ffmpeg_dev_win32\include
+	lib_path:D:\000azb\001ffmpeg\ffmpeg_dev_win32\lib
+	dll_path:D:\000azb\001ffmpeg\code\ffmpeg_dll
+3、	新建工程，将刚才准备好的dll, include, lib拷贝到工程目录下；
+4、	右击工程选择属性，
+	(1) -->	配置属性 --> C/C++ --> 常规 --> 附加包含目录
+			填include的路径；（填相对工程目录的路径就可以了！）
+	(2) --> 配置属性 --> 链接器 --> 常规 --> 附加库目录
+			填lib的路径；
+	(3) --> 配置属性 --> 链接器 --> 输入 --> 附加依赖项
+填
+avcodec.lib
+avformat.lib
+avutil.lib
+swscale.lib
+swresample.lib
+avfilter.lib
+
+5、	编译之后，会提示出现一些错误，缺少dll文件，
+	将dll_path中的dll文件全部拷贝到此工程exe所在的Debug目录中就可以解决问题！
+	
+17:00 2018/1/5
+./casky_slpc: error while loading shared libraries: ../../lib/libopencv_objdetect.so: cannot open shared object file: No such file or directory
+错误原因是动态加载库，
+在相应的目录下没有找到相应的库！
+
+可否把这些需要加载的库，直接编译进可自行文件中？
+	出现这个原因，可能是因为在编译opencv时的配置选项固定了../../lib/....目录结构！
+	
+可以使用静态编译来解决，
+在编译选项中加-static,
+但是同时也需要相应的静态编译库；
+
 19:33 2018/1/4
 绿色护眼背景色：80	97	205
 
@@ -237,6 +457,20 @@ ps -ef | grep "./daemon"
 可以查看到守护进程的进程号，
 然后使用kill -9 pid，
 就可以杀掉这个进程；
+	17:24 2018/2/5
+	查看进程的进程号，启动位置：
+	$ ps -ef | grep "ffplay"
+	miaoch   26892 15980  6 17:09 pts/19   00:00:14 ffplay vlc.sdp
+	26892就是这个进程的进程号！
+	
+	此时运行命令：
+	ls -al /proc/26892
+	cwd符号链接的是进程运行目录；
+	exe符号连接就是执行程序的绝对路径；
+	cmdline就是程序运行时输入的命令行命令；
+	environ记录了进程运行时的环境变量；
+	fd目录下是进程打开或使用的文件的符号连接。
+
 
 15:09 2017/11/16
 tail -f filename
@@ -431,15 +665,15 @@ readelf camera_test -ld
 11:08 2017/10/25
 Linux下svn的使用：
 svn help	查看有哪些命令
+svn stat	查看状态
+svn diff filename	查看文件差异
+svn checkout url_server或svn co	从服务器上拖文件
 
-从服务器上拖文件：
-svn checkout url_server或svn co
 
-更新文件：
-svn update/svn up
+svn update/svn up	更新文件	
 
-添加文件：
-svn add filename
+svn add filename	添加文件
+
 
 提交文件：
 svn commit -m '注释'
