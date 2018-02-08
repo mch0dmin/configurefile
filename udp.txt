@@ -1,0 +1,90 @@
+
+23:36 2018/2/8
+总结如何往GitHub上创建文件夹
+https://segmentfault.com/q/1010000008031288?_ea=1528325
+参考：
+http://blog.csdn.net/u014453898/article/details/54017905
+
+23:03 2018/2/8
+UDP编程基本步骤：
+	UDP服务端编程分5步：
+	
+1、创建UDP socket套接字，用socket()；
+2、设置socket的属性，用setsockopt()；(可选)
+3、往socket绑定包含IP信息，地址信息的struct sockaddr_in(IPv4)结构体；
+4、循环接收信息，用recvfrom()；
+5、关闭socket套接字；
+
+	UDP客户端编程：
+1、创建UDP socket套接字，用socket()；
+2、用sendto()往指定的IP地址发送信息；
+
+sendto()
+向一指定目的地发送数据；
+#include <sys/socket.h>
+int ret = sendto(int sockfd, 
+	const void *msg, 
+	int len, 
+	unsigned int flags, 
+	const struct sockaddr *to,
+	int tolen);
+	@sockfd:	套接字描述符
+	@msg:		指向要发送数据的指针
+	@len:		数据长度
+	@flags:		一般为0
+	@to:		目的机的IP地址和端口号信息
+	@tlen:		地址长度
+	
+	成功：实际发送的字节数；
+	出错：-1
+
+recvfrom()
+接收一个数据报并保存原地址；
+#include <sys/socket.h>
+int ret = recvfrom(int sockfd, 
+	void *buf,
+	int len,
+	unsigned int flags,
+	struct sockaddr *from,
+	int fromlen);
+	
+	@sockfd:	套接字描述符
+	@buf：		存放接收数据的缓冲区
+	@len:		数据长度
+	@flags:		一般为0
+	@from:		源主机的IP地址和端口号信息
+	@fromlen:	地址长度
+	
+	成功：实际接收到的字节数
+	出错：-1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
