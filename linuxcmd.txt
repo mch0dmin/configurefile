@@ -9,6 +9,116 @@ http://www.cnitblog.com/zouzheng/archive/2007/08/31/32691.aspx
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+
+19:54 2018/2/8
+void CRTMPStream::mTest()
+{
+	unsigned char *buf = (unsigned char *)malloc(TEMP_BUF_SIZE);
+	unsigned char *temp = (unsigned char *)malloc(TEMP_BUF_SIZE);
+
+
+	int ret;
+	FILE *fp = fopen("D:\\video\\test.264", "rb");
+	if (!fp) {
+		perror("fopen");
+		exit(1);
+	}
+
+	fseek(fp, 0, SEEK_SET);
+	int pos = 0;
+	while (1) {
+
+		memset(buf, 0, TEMP_BUF_SIZE);
+		memset(temp, 0, TEMP_BUF_SIZE);
+
+		ret = fread(buf, sizeof(unsigned char),1024, fp);
+
+		printf("buf = %s\n", buf);
+
+		memcpy(temp + pos, buf, ret);
+
+		Sleep(1000);
+		
+		printf("temp = %s\n", temp-pos);
+		pos += ret;
+	}
+
+}
+
+13:53 2018/2/8
+ERROR:无法打开输入文件"opencv_calib3d320.lib"
+	因为之前的做opencv时，
+	所以配置了固定环境，
+	即使用vs创建一个项目，
+	就会自动添加opencv的一些依赖库，
+	但是一次运行项目，
+	突然出现上面的错误，
+	在VS2013中又删除不了这些库，
+	所以判定是一些路径设置的不正确，
+	导致找不到这些库，
+	也或者是这些库出现问题了，
+	正好电脑上有两份opencv的库，
+	所以更换一下库的路径，
+	看问题是否能解决！
+		右击项目-->属性-->配置属性-->链接器-->常规-->附加库目录
+		然后点击编辑-->新建新行-->输入库的目录，
+		问题解决！
+	 
+10:41 2018/2/8
+总结一下休眠函数的使用！
+sleep
+usleep等
+
+s（秒）、ms（毫秒）、μs（微秒）、ns（纳秒）
+其中：1s=1000ms，1 ms=1000μs，1μs=1000ns
+
+10:27 2018/2/8
+xshell删除键乱码方向键乱码的最终解决办法
+http://blog.csdn.net/xiezhaoxuan/article/details/73558367
+
+10:27 2018/2/8
+Linux删除用户账号和主目录：
+userdel -r username
+
+9:58 2018/2/8
+对.bashrc的设置：
+(1)	设置PS1='$ '
+	在文件中搜索PS1，
+	找到：
+	if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+	else
+		PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+	fi
+
+##2018年 02月 08日 星期四 12:09:11 CST
+#将PS1改为'$ '
+#if [ "$color_prompt" = yes ]; then
+#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#else
+#    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+#fi
+
+if [ "$color_prompt" = yes ]; then
+    PS1='$ '
+else
+    PS1='$ '
+fi
+
+(2)	设置alias：
+	在文件中搜索alias，
+	找到# some more ls aliases,
+	在下面进行添加：
+	#2018年 02月 08日 星期四 12:13:46 CST
+	#添加some alias
+	alias cp='cp -iv'
+	alias rm='rm -i'
+	alias mv='mv -iv'
+	alias vi='vim'
+	alias man='man -a'
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 9:34 2018/2/7
 在给别人写接口时，
 在函数中尽量不要使用全局变量，
@@ -266,6 +376,14 @@ vim删除第一行到当前行：
 =======================================================
 17:17 2018/1/26
 VS快捷键：
+	19:23 2018/2/8
+	选中一行：
+	看光标的位置：
+	shift+home	或者	shift+end
+	
+	15:52 2018/2/8
+	设置编辑区域最大化：
+	shift + alt + enter
 	9:42 2018/2/1
 	设置代码提示:
 	工具-->选项-->环境-->键盘-->然后在搜索框中输入【列出成员】，然后再下方设置快键键！
@@ -463,6 +581,10 @@ vim删除空行：
 ZZ
 
 14:41 2017/12/22
+编译了ffmpeg然后生成一些二进制命令文件，
+需要在全局中使用，
+则可以使用下面的方法，
+将二进制文件存在的路径添加到系统变量中。
 Linux添加命令到PATH中：
 在/etc/profile或/etc/bashrc或~/.bashrc或~/.bashrc_profile等环境配置文件中添加PATH：
 export PATH=$PATH:/monchickey/ffmpeg/bin
@@ -1493,6 +1615,17 @@ useradd -d /home/miaoch/ -m miaoch
 passwd miaoch
 chown -R miaoch:miaoch /home/miaoch
 chmod 760 /home/miaoch
+	9:59 2018/2/8
+	将用户添加到sudoers中，使用户可以执行sudo：
+	使用有sudo权限的用户打开/etc/sudoers，
+	然后参考# User privilege specification下的已有sudo权限的用户格式，
+	复制，
+	将用户名改为自己的，如下：
+	# User privilege specification
+	root    ALL=(ALL:ALL) ALL
+	miaoch  ALL=(ALL:ALL) ALL
+
+
 
 10:25 2017/9/5
 tftp -m binary -v 172.17.2.23 -c put u-boot-3516c.bin
