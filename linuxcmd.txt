@@ -7,43 +7,39 @@ http://blog.chinaunix.net/uid-22762900-id-4250152.html
 学习C语言常用宏定义：
 http://www.cnitblog.com/zouzheng/archive/2007/08/31/32691.aspx
 
+9:44 2018/2/9
+http://www.linuxidc.com/Linux/2017-01/139072.htm
+LANG="en_US.UTF-8"
+总结vim需要的配置
+set autoindent                                                                                                                                                
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set showmatch
+set cindent
+set completeopt=longest,menu
+set cursorline
+set nobackup
+set mouse=a
+set mouse=v
+set fileencodings=gb2312,utf-8
+set termencoding=utf-8
+set hlsearch
+set nu
+set clipboard+=unnamed
+
+set tags+=/home/miaoch/s5p4418/tags
+set tags+=/home/miaoch/workdir/FFmpeg/tags
+set tags+=/home/miaoch/workdir/src/opencv/tags
+
+
+19:37 2018/2/9
+总结：http://blog.csdn.net/lyankj/article/details/52931515
+以及这个页面下的两个链接！
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
-19:54 2018/2/8
-void CRTMPStream::mTest()
-{
-	unsigned char *buf = (unsigned char *)malloc(TEMP_BUF_SIZE);
-	unsigned char *temp = (unsigned char *)malloc(TEMP_BUF_SIZE);
-
-
-	int ret;
-	FILE *fp = fopen("D:\\video\\test.264", "rb");
-	if (!fp) {
-		perror("fopen");
-		exit(1);
-	}
-
-	fseek(fp, 0, SEEK_SET);
-	int pos = 0;
-	while (1) {
-
-		memset(buf, 0, TEMP_BUF_SIZE);
-		memset(temp, 0, TEMP_BUF_SIZE);
-
-		ret = fread(buf, sizeof(unsigned char),1024, fp);
-
-		printf("buf = %s\n", buf);
-
-		memcpy(temp + pos, buf, ret);
-
-		Sleep(1000);
-		
-		printf("temp = %s\n", temp-pos);
-		pos += ret;
-	}
-
-}
+10:20 2018/2/9
+C语言打印地址：%p
 
 13:53 2018/2/8
 ERROR:无法打开输入文件"opencv_calib3d320.lib"
@@ -127,11 +123,12 @@ fi
 这样变量也是只会初始化(调用)一次，相当于是一个全局变量。
 
 9:23 2018/2/7
-Git基本命令操作：
+Git基本操作：
 (1)	更新远程仓库的代码到本地：
 	Git有好几个区，工作区、暂存区和本地仓库；
 	git fetch是将远程仓库的更新获取到本地仓库，不影响其他区域；
 	git pull则是一次性将远程仓库的代码更新到工作区(同时也会更新本地仓库)。
+
 	
 	
 
@@ -361,6 +358,15 @@ int funca(void)
 
 学习C语言常用宏定义：
 http://www.cnitblog.com/zouzheng/archive/2007/08/31/32691.aspx
+
+16:50 2018/2/9
+xshell快捷键：
+alt+enter	全屏
+shift+alt+enter	多创个全屏
+alt+o	打开会话
+alt+p	设置属性
+还有一个记事本功能，将屏幕中的内容全部复制到记事本中；
+点击菜单栏中的【编辑】-->【记事本】；
 
 17:51 2018/1/19
 谷歌浏览器快捷键：
