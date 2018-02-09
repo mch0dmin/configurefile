@@ -1,0 +1,4537 @@
+本文档中需要记住的内容：搜索[FLAG_]
+2.23服务器密码：miaomiao.
+
+10:28 2018/1/9
+FFMPEG推流工作需要写文档！
+
+搭建流媒体服务器：
+http://doc.okbase.net/23916356/archive/256459.html
+好的学习博客：
+不积跬步，无以至千里
+http://blog.csdn.net/column/details/15915.html?&page=2
+雷神的博客
+
+没事学这些：
+http://blog.csdn.net/stpeace
+
+
+===================
+
+19:46 2018/2/8
+memcpy()出现错误的原因是：
+memcpy(temp + pos, buf, ret);
+然后temp指针偏移，
+指向了后面没有数据的地方！
+
+
+16:47 2018/2/8
+E:\001casky\workdir\slpc\推流总结\推流代码\librtmp\06在02的基础上结合儒煌的代码\librtmpWindows\testLibrtmp
+
+E:\001casky\workdir\slpc\socket_rtmp\05在03的基础上结合儒煌的代码\librtmpWindows\testLibrtmp
+
+14:14 2018/2/8
+在最基础的推流代码的基础上整合儒煌的代码！
+
+14:12 2018/2/8
+opencv库目录:
+E:\001casky\tools\opencv320_compile\build\install_Sst\x86\vc12_test\lib
+
+11:27 2018/2/8
+mFrame->mComplete =1; 	//没有使用到
+	14:12 2018/2/8
+	看了一下代码，也没用到！
+11:07 2018/2/8
+需要设置帧率！
+
+===================
+9:18 2018/2/6
+http://www.cnblogs.com/haibindev/archive/2011/12/29/2305712.html
+
+
+
+===================
+
+16:17 2018/2/5
+librtmp发布h264：
+http://download.csdn.net/download/li_wen01/9834346
+http://blog.csdn.net/li_wen01/article/details/71192209
+
+
+16:16 2018/2/5
+H264文件格式学习：
+http://blog.csdn.net/zhuweigangzwg/article/details/44152239
+http://blog.csdn.net/coloriy/article/details/47146899
+http://blog.csdn.net/mincheat/article/details/48713047
+https://segmentfault.com/a/1190000006698552
+https://www.cnblogs.com/happykoukou/p/5719368.html
+http://blog.csdn.net/season_hangzhou/article/details/51123979
+http://blog.csdn.net/li_wen01/article/details/69248399
+http://blog.csdn.net/nine_locks/article/details/47054969
+http://blog.csdn.net/caoshangpa/article/details/52872146
+http://blog.csdn.net/hbjixieyuan/article/details/55049019
+http://blog.csdn.net/caoshangpa/article/details/52872146
+http://blog.csdn.net/machh/article/details/52165292
+
+
+11:55 2018/2/5
+可以参考雷神的代码，
+更改读取Nalu的函数！
+	http://blog.csdn.net/li_wen01/article/details/71192209
+	
+	代码在：/home/miaoch/workdir/rtmp/src/rtmp_push_h264
+
+
+10:29 2018/2/5
+视频流化：
+	网口来的H.264流切片，整合。
+	在WNC端实现H.264到RTMP的功能。
+
+9:57 2018/2/5
+先总结TCP和UDP编程的区别！
+	从代码的角度！
+	10:25 2018/2/5
+	晚上再写这个文档吧，先写librtmp的总结文档！
+9:35 2018/2/5
+提交员工 月度绩效考核表！
+
+===================
+
+11:09 2018/2/2
+之前实验的代码出现不能播放的问题，
+可能是读取的大小改小了，
+原来的10M改成了别的大小，
+导致不能播放！
+
+===================
+
+15:31 2018/2/1
+之前的传输文件的代码不能用了！
+
+
+15:21 2018/2/1
+https://github.com/search?l=C%2B%2B&q=UDP+%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93&type=Repositories&utf8=%E2%9C%93
+
+12:07 2018/2/1
+udp添加时间控制！
+
+9:32 2018/2/1
+先将librtmp一端改为udp接收端；
+	然后将接收到的数据进行组包；
+		然后测试！
+
+===================
+
+20:04 2018/1/31
+写了一个基于UDP传输的例子！
+
+10:25 2018/1/31
+rtmp的推送程序不能推送JPG图片！
+
+===================
+
+19:55 2018/1/30
+明天看写入SPI的相关代码，
+然后写一个组包的程序！
+
+17:52 2018/1/30
+现在的主要任务就是将网口接收的数据组合起来，
+让儒煌帮忙搭建摄像头环境，
+然后测试，
+从网口接收的数据可能包含SPI头，
+然后根据SPI协议得到数据；
+
+
+15:21 2018/1/30
+王佳阔的代码中，
+发送数据的代码在video_combine.c中的readFromVencSendtoSMS()中，
+
+
++++++++++++++++++++++++
+11:06 2018/1/30
+学习C语言常用宏定义：
+http://www.cnitblog.com/zouzheng/archive/2007/08/31/32691.aspx
+https://mp.weixin.qq.com/s?__biz=MzI0ODU0NDI1Mg==&mid=2247487157&idx=4&sn=025bcbd034b8a8bdeb1fc9b2cf96317e&chksm=e99e6026dee9e930d68834da1ca0c3ca046c99df77e4e831103b4b96950d7f2432575abeb045&scene=0#rd
+===================
+
+20:55 2018/1/26
+学习一下网络编程！
+
+20:35 2018/1/26
+现在存在的问题是接收的数据不完全！
+播放的时候只能播放第一次接收的数据，
+也就是只能接收一次数据！
+	9:46 2018/1/29
+	 发送的时候可能是把全部数据都发送了，
+	 但是接收时，只接收了第一次发送的数据！
+
+19:53 2018/1/26
+现在可以播放网络接收的数据了，
+之前出现问题是因为ReadOneNaluFromBuf()中的m_nFileBufSize变量有问题，
+在第二版中，m_nFileBufSize为文件的大小，
+但是后来自己把这个变量获取文件大小那句代码注释掉了，
+在此版本中此变量的值应该是从网络中接收视频数据的大小；
+
+20:37 2018/1/25
+网络连接通了，
+但是文件传输还得调试！
+视频不能播放！
+
+17:47 2018/1/25
+librtmp源码详解：
+http://www.cnblogs.com/Kingfans/p/7064902.html
+
+11:52 2018/1/25
+下午实现windows网络编程传输文件！
+	16:00 2018/1/25
+	代码完成，暂时还不能正确传输文件！
+	16:51 2018/1/25
+	client.c中的fwrite()执行错误！
+	16:56 2018/1/25
+	可以传输文件，不能传输图片，
+	如果是图片，在服务器端或出现文件不存在的情况！
+	
+	17:01 2018/1/25
+	现在可以传输图片了，
+	出现问题的原因是文件存放的位置不正确，
+	需要传送的文件，需要放在以下路径：
+	E:\casky\workdir\slpc\网络编程-windows\02在01的基础上实现TCP传输文件\tcp_server\tcp_server
+	
+	而不是Debug文件下！
+	
+	
+9:54 2018/1/25
+将图片写入到SPI：
+cmd_parse.cpp	pic_spi()
+
+slpc_main.cpp	int cmd_process(int spi_fd);
+解析命令！
+
+9:52 2018/1/25
+调研SPI需求：
+$ grep -rn "spi"
+cmd_parse.cpp:7:#include <linux/spi/spidev.h>
+cmd_parse.cpp:385:/*spi传输图片*/
+cmd_parse.cpp:386://图片fd，spi设备fd，flag用于判断是否可以读一张新图片
+cmd_parse.cpp:387:int pic_spi(unsigned char *pp,long int size,int spi_fd,int *crc)
+cmd_parse.cpp:392:	w=write(spi_fd,pp,size);
+video_pthread.cpp:11:	media_data_process(VIDEO_MODE, &(viData->recordFlag), &(viData->listFlag), viData->serial_devfd, viData->spi_devfd,CAMERA_VIDEO_MODE);
+cmd_process.cpp:34:int cmd_process(/*struct pthread_data *cmdpriData*/int spi_devfd) {
+cmd_process.cpp:82:	//media_data_process(1,1,2,serial_fd,cmdpriData->spi_devfd);
+cmd_process.cpp:136:						media_data_process(PICTURE_MODE,0,0,serial_fd,spi_devfd,CAMERA_PICTURE_MODE);
+cmd_process.cpp:148:						viData.spi_devfd = spi_devfd;
+cmd_process.cpp:212:						if(pic_spi(pp->b_address,pp->b_size,spi_devfd,&crc16)==-1)
+cmd_process.cpp:218:						printDval("spi_pic", time3, time4);
+slpc_main.cpp:33:	thread_pri.spi_mode = SPI_NONE_MODE;//不启用任何数据传输
+slpc_main.cpp:40:	int spi_devfd = open("/dev/spidev0.0",O_RDWR);
+slpc_main.cpp:41:	if(thread_pri.spi_devfd < 0){
+slpc_main.cpp:42:		perror("Open /dev/spidev0.0:");
+slpc_main.cpp:55:	cmd_process(spi_devfd);
+cam_media.cpp:258:int media_data_process(int view_mode,int *is_record, int *listFlag, int serial_fd, int spi_devfd,int cam_mode)
+cam_media.cpp:476:								   if(write(spi_devfd, encOut.outBuf, UNIT_PACKAGE_SIZE * 1) < 0){
+cam_media.cpp:477:								   perror("spi write():");
+cam_media.cpp:484:							//write(spi_devfd, encOut.outBuf, remainder *1);
+cam_media.cpp:490:							printDval("spi_pic", time3, time4);
+
+
+9:52 2018/1/25
+windows网络编程：
+C++实现：http://blog.csdn.net/xiaoquantouer/article/details/58001960
+
+C语言实现：https://www.cnblogs.com/churi/archive/2013/02/27/2935427.html
+代码已经跑通！
+
+Windows网络编程之winsock实现文件传输示例
+http://www.jb51.net/article/53732.htm
+https://www.cnblogs.com/chuncn/archive/2009/01/24/1380684.html
+
+基础知识：
+http://blog.csdn.net/timmiy/article/details/51946093
+https://www.cnblogs.com/hgwang/p/6074038.html
+
+===================
+20:18 2018/1/24
+将发送数据大小改为512k，
+好像发不完数据！
+	20:18 2018/1/24
+	应该是需要循环读文件！
+
+===================
+10:17 2018/1/24
+opencv从内存中读取图片：
+http://www.voidcn.com/article/p-hqraxree-ht.html
+
+
+===================
+
+15:27 2018/1/24
+[root@S5p4418 slpc]# time ./dec_test -f 11.jpg -d 1.jpg
+Get Seqdata = 0
+real	0m 0.20s
+user	0m 0.06s
+sys		0m 0.02s
+
+
+16:39 2018/1/23
+测试：
+/home/miaoch/workdir/lab/slpc/dynamic_lugang/backup/motion_detection_for_4418/miao/imread_/imread.cpp
+	
+	时间还和imread的读取时间一样！
+	浅拷贝的图片可以正常显示；
+	深拷贝的图片不能正常显示；
+
+11:48 2018/1/23
+1、method01
+/home/miaoch/workdir/lab/slpc/dynamic_lugang/backup/motion_detection_for_4418/miao/method01.cpp
+./method01 1080.jpg
+./method01 720.jpg
+
+2、imread.cpp
+/home/miaoch/workdir/lab/slpc/dynamic_lugang/backup/motion_detection_for_4418/miao/imread_/imread.cpp
+
+===================
+
+18:27 2018/1/22
+重新调研IplImage与Mat转换；
+测试之后，然后合成到项目代码中；
+
+Mat和IplImage相互转换
+
+http://www.opencv.org.cn/forum.php?mod=viewthread&tid=258635
+http://blog.csdn.net/lijiayu2015/article/details/52438160
+https://www.cnblogs.com/Key-Ky/p/4150531.html
+http://blog.csdn.net/CV_Jason/article/details/70037527
+
+
+11:50 2018/1/22
+下午测试：
+1、imread的两种实现；
+/home/miaoch/opencv/imread.cpp
+2、format:
+/home/miaoch/workdir/lab/slpc/dynamic_lugang/backup/motion_detection_for_4418/miao/format
+
+
+===================
+20:33 2018/1/19
+1、librtmp不需要用ffmpeg来读取一帧数据，
+	在摄像头获取数据的代码中，
+	知道什么时候读了一帧，
+	可以将这一帧数据给了SPI；
+
+20:03 2018/1/19
+1、测试ffmpeg解码图片需要多长时间；
+2、测试dec_main.c解码图片需要多长时间；
+3、硬解码之后，直接将数据写入imread()中的data;
+4、需要研究的是，在写入图片之前是什么数据，然后这种数据如何转为Mat；
+5、调研YUV, Ycrbr这些数据是按什么格式存放的！
+	/home/miaoch/s5p4418/userdata/app/vpu_test/dec_main.c
+	测试方法：./dec_main 1.jpg out.yuv
+	fpOut是输出文件的文件描述符，
+	看输出文件的格式直接在代码中搜索fpOut;
+	
+17:27 2018/1/19
+1、测试不同格式图片读取时间；
+	代码已经完成，
+	路径为：/home/miaoch/workdir/lab/slpc/dynamic_lugang/backup/motion_detection_for_4418/miao/format.cpp
+	代码中图片的路径为：imread("./pics/01.bmp");
+	测试图片为：/home/miaoch/workdir/lab/slpc/dynamic_lugang/backup/motion_detection_for_4418/miao/pics
+	测试时需要将两种格式图片文件夹名字依次改为pics
+	
+2、测试imread()所用的时间是在哪里用了；
+3、能不能把读取到的数据数据直接传给Mat;
+	也就是分析imread()的实现原理，将不必要的过程去掉！
+	
+17:21 2018/1/19
+卢刚动态检测：
+1、创建背景只能创建一次；
+pMOG2 = createBackgroundSubtractorMOG2(); 
+2、不要注释resize()；
+cv::resize(frame, frame, cv::Size(), 0.5, 0.5); 
+3、用到的代码为：
+/home/miaoch/workdir/lab/slpc/dynamic_lugang/backup/motion_detection_for_4418/05MOG/MOG_.cpp
+4、脚本为：
+/home/miaoch/workdir/lab/slpc/dynamic_lugang/backup/motion_detection_for_4418/compile.sh
+arm-cortex_a9-linux-gnueabi-g++ $2 -std=c++11 `pkg-config --cflags --libs opencv` -o $1 -lpthread -ldl
+4、编译命令为：
+$ ../compile.sh mog.out MOG_.cpp 
+
+
+10:05 2018/1/19
+看一下王佳阔的librtmp代码，
+找到是怎么发送数据的，能不能参考；
+===================
+
+20:17 2018/1/18
+关于10M大小：
+在RTMPStream.h中line14有定义：#define FILEBUFSIZE (1024 * 1024 * 10)       //  10M
+改为1M后，
+程序运行时报警告：File size is larget than BUFSIZE;
+	需要弄清楚程序是怎么传输数据的，
+	先全部接收到h264视频数据，然后在循环发送！
+	
+
+17:17 2018/1/18
+调试雷神的基于librtmp的代码：
+现在出错的原因是：
+librtmp_send264.cpp中的line627行中RTMP264_Send()中的m_pFileBuf中存放的是一个无效值，
+所以在line628行出现错误；
+现在要跟踪m_pFileBuf的值；
+	值在定义时就出现错误：提示字符串无效；
+
+16:44 2018/1/18
+linux网络传输代码路径：
+2.23服务器	/home/miaoch/workdir/lab/tp/5
+
+16:08 2018/1/18
+使用ffmpeg推流时出现的错误：
+Failed to update header with correct duration.
+Failed to update header with correct filesize.
+
+14:26 2018/1/18
+在代码中试验成功时相关信息记录：
+代码中的rtmp地址：rtmp://172.17.1.23/myapp/test
+potplayer播放地址：rtmp://172.17.1.23/myapp/test
+
+12:12 2018/1/18
+出现错误：
+ERROR: RTMP_ReadPacket, failed to read RTMP packet header
+	错误原因还是代码中的rtmp地址不正确：
+	rtmp://172.17.1.23/myapp/test	
+	IP地址后面的字段要和nginx配置文件中的application指定的字符串一致。
+
+
+9:54 2018/1/18
+写一个librtmp整个过程的步骤，
+整理代码！
+
+9:54 2018/1/18
+写年度绩效评估！
+
+9:49 2018/1/18
+1、评估ffmpeg和librtmp在本地推流的性能比较；
+2、和李岩要数据，
+	自己也可以写个网络传输接收数据，
+	接收的数据保存在fread()读取的buff中；
+3、fread()读取的buff大小为10M，
+	更改这个大小，
+	调成合适的大小!
+
+20:23 2018/1/17
+在浏览器中看不到nginx的欢迎页面！
+
+20:05 2018/1/17
+运行时出现错误：
+错误地址：
+librtmp_send264.cpp中的read_buffer()
+
+19:53 2018/1/17
+需要打开的链接：
+
+H264视频通过RTMP直播
+http://blog.csdn.net/firehood_/article/details/8783589#reply
+
+通过RTMP发送264流(文件或帧)
+http://blog.csdn.net/darkdragonking/article/details/40649273#
+
+最简单的基于librtmp的示例：发布H.264（H.264通过RTMP发布）
+http://blog.csdn.net/leixiaohua1020/article/details/42105049
+
+H264视频通过RTMP直播 
+http://www.360doc.com/content/15/0601/10/597197_474823843.shtml
+
+19:13 2018/1/17
+出错：
+错误	2	error LNK2005: "void __cdecl CleanupSockets(void)" (?CleanupSockets@@YAXXZ) 已经在 librtmp_send264.obj 中定义	D:\推流\ffmpeg\03在01的基础上结合雷神的代码写\librtmpWindows\testLibrtmp\testLibrtmp.obj	testLibrtmp
+
+错误	3	error LNK2005: "int __cdecl InitSockets(void)" (?InitSockets@@YAHXZ) 已经在 librtmp_send264.obj 中定义	D:\推流\ffmpeg\03在01的基础上结合雷神的代码写\librtmpWindows\testLibrtmp\testLibrtmp.obj	testLibrtmp
+
+错误	5	error LNK1169: 找到一个或多个多重定义的符号	D:\推流\ffmpeg\03在01的基础上结合雷神的代码写\librtmpWindows\Release\testLibrtmp.exe	1	1	testLibrtmp
+	
+	后来检查到雷神的代码中：librtmp_send264.cpp中已经写了InitSockets()和CleanupSockets(),
+	在之前main()函数所在的testLibrtmp.cpp中也写了这两个接口，
+	所以导致这些错误！
+	
+	将testLibrtmp.cpp中的注释，
+	然后将librtmp_send264.cpp中的InitSockets()和CleanupSockets()剪切到头文件中，
+	
+
+18:51 2018/1/17
+	//发送
+	RTMP264_Send(read_buffer1);
+
+	//断开连接并释放相关资源
+	RTMP264_Close();
+
+	return 0;
+
+17:33 2018/1/17
+编译出现的错误：
+	错误	8	error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.	D:\推流\ffmpeg\02在01的基础上参考写\librtmpWindows\testLibrtmp\RTMPStream.cpp	294	1	testLibrtmp
+	
+	解决方案，项目 =》属性 =》c/c++  =》预处理器=》点击预处理器定义，编辑，加入_CRT_SECURE_NO_WARNINGS，即可。
+
+15:51 2018/1/17
+在网上找的windows下编译的librtmp可以直接使用！
+IP地址改为nginx服务器的IP地址，
+如果IP地址不正确则出现错误：
+ERROR: RTMP_ReadPacket, failed to read RTMP packet header
+
+
+15:48 2018/1/17
+在网上找了一份用于rtmp的nginx配置文件，名字为my.conf, 路径为nginx的路径；
+20:13 2018/1/16
+混合高斯原理资料：
+https://wenku.baidu.com/view/9ec8885f240c844768eaee3f.html
+
+19:53 2018/1/16
+明天可以让儒煌按照下面的过程重新测一下时间！
+
+10:51 2018/1/17
+动态检测整个过程：
+	读取最新图片，将数据存在frame中，
+	
+	
+
+
+19:47 2018/1/16
+混合高斯整个过程：
+1、创建背景建模类：
+createBackgroundSubtractorMOG2()
+
+2、读取图片文件：
+imread()
+
+3、图像尺寸缩小(此过程删除)
+resize()
+
+4、运动前景检测，并更新背景
+apply()
+
+5、检测是否有异常
+do_alarm()
+
+6、腐蚀	(此过程可以删除)
+erode()
+
+7、膨胀	(此过程可以删除)
+dilate()
+
+8、返回当前背景图像	 (此过程可以删除)
+getBackgroundImage(background);
+变量background在其他地方没有用到！
+
+
+15:43 2018/1/16
+调研：windows环境下，
+1、ffmpeg
+	使用ffmpeg实现RTMP的直播推流功能
+	http://blog.csdn.net/tong5956/article/details/56843012
+	有伪码！
+
+	Windows下使用NGINX+FFmpeg实现RTMP推流
+	http://blog.fengyh.cn/2016/10/windows%E4%B8%8B%E4%BD%BF%E7%94%A8nginx-ffmpeg%E5%AE%9E%E7%8E%B0rtmp%E6%8E%A8%E6%B5%81/
+	有项目代码和过程！
+	使用这个代码出现：
+		无法定位程序输入点sws_freeContext于动态链接库avcodec-58上！
+	
+2、rtmp
+	
+	windows下编译librtmp
+	http://blog.csdn.net/caoshangpa/article/details/52872756
+	直接可以用的：http://download.csdn.net/download/caoshangpa/9659763
+	保存地址：D:\推流\ffmpeg\编译librtmp\librtmpWindows
+	
+	根据下面的教程进行整合：
+	H264视频通过RTMP直播
+	http://blog.csdn.net/firehood_/article/details/8783589
+	
+	代码同时参考：
+	通过RTMP发送264流(文件或帧)
+	http://www.360doc.com/content/18/0117/17/52124894_722738525.shtml
+	
+	找到雷神的例子程序：
+	http://blog.csdn.net/leixiaohua1020/article/details/42105049
+
+3、live555
+	
+	Windows 下编译live555
+	http://blog.csdn.net/qq_29350001/article/details/77962082
+	
+	Windows下利用live555实现H264实时流RTSP发送
+	http://blog.csdn.net/weixinhum/article/details/38067743#comments	有源码，但不一定能跑起来
+
+	通过live555实现H264 RTSP直播（Windows版）	
+	http://blog.csdn.net/caoshangpa/article/details/53200527
+	有代码，没测试！
+	
+	H264视频通过RTMP直播
+	http://blog.csdn.net/firehood_/article/details/8783589
+	有代码！
+	
+13:59 2018/1/16
+gcc lrtmp.c -g -o ltrmp.out -I /usr/local/include -L /usr/local/lib -lavformat -lavcodec -lavutil  
+
+19:25 2018/1/15
+明日计划：
+向ffmpeg中添加librtmp库支持
+http://blog.csdn.net/wfqxx/article/details/5507811
+
+16:55 2018/1/15
+Linux下编译librtmp：
+下载librtmp：https://git.ffmpeg.org/rtmpdump.git
+在2.23服务器上的位置：/home/miaoch/workdir/rtmp/rtmpdump
+
+根据《librtmp免openssl和zlib单独编译》http://blog.csdn.net/fteworld/article/details/51171731
+进行修改，
+然后make，make install。
+make[1]: 正在进入目录 `/home/miaoch/workdir/rtmp/rtmpdump/librtmp'
+make[1]: 没有什么可以做的为 `all'。
+make[1]:正在离开目录 `/home/miaoch/workdir/rtmp/rtmpdump/librtmp'
+mkdir -p /usr/local/bin /usr/local/sbin /usr/local/man/man1 /usr/local/man/man8
+cp rtmpdump /usr/local/bin
+cp rtmpgw rtmpsrv rtmpsuck /usr/local/sbin
+cp rtmpdump.1 /usr/local/man/man1
+cp rtmpgw.8 /usr/local/man/man8
+make[1]: 正在进入目录 `/home/miaoch/workdir/rtmp/rtmpdump/librtmp'
+sed -e "s;@prefix@;/usr/local;" -e "s;@libdir@;/usr/local/lib;" \
+		-e "s;@VERSION@;v2.4;" \
+		-e "s;@CRYPTO_REQ@;libssl,libcrypto;" \
+		-e "s;@PUBLIC_LIBS@;;" \
+		-e "s;@PRIVATE_LIBS@;;" librtmp.pc.in > librtmp.pc
+mkdir -p /usr/local/include/librtmp /usr/local/lib/pkgconfig /usr/local/man/man3 /usr/local/lib
+cp amf.h http.h log.h rtmp.h /usr/local/include/librtmp
+cp librtmp.a /usr/local/lib
+cp librtmp.pc /usr/local/lib/pkgconfig
+cp librtmp.3 /usr/local/man/man3
+cp librtmp.so.1 /usr/local/lib
+cd /usr/local/lib; ln -sf librtmp.so.1 librtmp.so
+make[1]:正在离开目录 `/home/miaoch/workdir/rtmp/rtmpdump/librtmp'
+
+
+16:52 2018/1/15
+请教了王佳阔之后，
+确定不必纠结video_combine.c中的一些内容，
+一帧一帧读取到数据之后，
+直接写到发送函数那里就可以了！
+先，RTMPH264_Connect
+然后，RTMPH264_Send_sps_init
+。。。。。。
+
+17:13 2018/1/12
+参考http://blog.csdn.net/u013699869/article/details/49616041
+将H264文件读入内存再输出封装格式文件！
+
+14:39 2018/1/12
+测试了一个SDL的例子:sdltest，
+但是存在一些错误，没有调试通！
+
+10:38 2018/1/12
+avpicture_fill()被声明已否决！
+
+直接根据下面的参考链接全部解决！
+参考链接：https://www.isvee.com/archives/2018
+10:34 2018/1/12
+av_image_get_buffer_size()不接受三个参数！
+解决方法：
+加第四个参数，传值为1。
+
+10:19 2018/1/12
+错误:'avpicture_get_size': 被声明为已否
+解决方法：
+使用av_image_get_buffer_size()替代！
+
+10:16 2018/1/12
+调试时出现错误：
+'AVStream::codec': 被声明为已否决
+原因是新版本用法代替旧版本的问题！
+
+将原来的：
+if (pFormatCtx->streams[i]/*视音频流*/->codec->codec_type ==AVMEDIA_TYPE_VIDEO)//查找音频  
+写为：
+if (pFormatCtx->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_VIDEO)
+
+将原来的：
+// 得到video编码格式
+// 下面这样使用有错误
+//pCodecCtx = pFormatCtx->streams[videoStream]->codec;
+写为：
+pCodecCtx = avcodec_alloc_context3(NULL);
+if (pCodecCtx == NULL)
+{
+	printf("Could not allocate AVCodecContext\n");
+	return -1;
+}
+avcodec_parameters_to_context(pCodecCtx, pFormatCtx->streams[videoStream]->codecpar);
+
+参考链接：http://blog.csdn.net/x_iya/article/details/52395990
+
+10:07 2018/1/12
+在网上找到一个基于ffmpeg+opencv的读取视频并播放的例子，
+看能否走通！
+参考链接：http://blog.csdn.net/caimagic/article/details/52036839
+
+10:25 2018/1/12
+vs搭建ffmpeg+opencv开发环境：
+http://blog.csdn.net/spaceyqy/article/details/43115391
+
+可能是自己的vs刚开始就配置好了永久的opencv开发环境，
+只参考上面的链接配置了ffmpeg项目环境！
+
+$(ProjectDir)\include
+
+
+
+===================
+
+19:33 2018/1/11
+现在要做的就是用ffmpeg一帧一帧地读取h264文件；
+
+FFMPEG实现H264的解码(从源代码角度)：
+http://blog.csdn.net/rootusers/article/details/43560913
+
+19:06 2018/1/11
+nginx服务应该搭建成功了，
+但是不能使用vlc播放！
+
+可以使用ffmpeg拉流播放地址，
+保存成文件！
+
+16:37 2018/1/11
+ffmpeg -i rtmp://172.17.1.23:1935/myapp0/test1 -c copy dump.flv
+
+ffmpeg -i rtmp://172.17.1.23/live/test -c copy dump.flv
+
+将直播媒体保存至本地文件命令：
+ffmpeg -i rtmp://server/live/streamName -c copy dump.flv  
+
+播放地址：
+rtmp://172.17.1.23:1935/myapp0/test1
+
+ffmpeg推流命令：
+ffmpeg -re -i test.h264 -vcodec copy -acodec copy -f flv "rtmp://172.17.1.23:1935/myapp0/test1"
+	11:44 2018/1/18
+	出现Input/Output error!
+	可能是命令错误：
+	ffmpeg -re -i test.h264 -c copy -f flv "rtmp://172.17.1.23:1935/myapp0/test1" 
+	ffmpeg -re -i test.h264 -c copy -f flv "rtmp://172.17.1.23/live/test"
+
+15:55 2018/1/11
+在网上找到一个配置好的环境：
+路径为：d:\000azb\001ffmpeg\azb\nginx\nginx-1.7.11.3-gryphon\nginx-1.7.11.3-gryphon\nginx.bat
+> cd nginx-1.7.11.3-Gryphon
+> nginx.exe -c conf\nginx-win-rtmp.conf  //使用该配置文件！！
+nginx.exe -c conf\miao.conf
+
+关闭：nginx.exe -s stop | quit	或者nginx.exe -c conf\nginx-win-rtmp.conf -s stop
+
+
+14:58 2018/1/11
+搭建nginx服务器：Linux环境下
+参考教程：http://blog.csdn.net/jingqiang521/article/details/54948982
+1、下载最新版nginx, 链接：http://nginx.org/en/download.html
+2、为了增加对rtmp的支持，下载nginx-rtmp-module，
+下载地址：https://github.com/arut/nginx-rtmp-module#example-nginxconf
+3、创建存储目录为
+$ pwd
+/home/miaoch/workdir/rtmp
+$ ls
+nginx-1.13.8  nginx-1.13.8.tar.gz  nginx-rtmp-module
+4、进入nginx-1.13.9目录下，执行下面命令：
+./configure --prefix=/usr/local/nginx  --add-module=/home/miaoch/workdir/rtmp/nginx-rtmp-module  --with-http_ssl_module  
+5、上述命令执行完后，执行make和make install
+	15:55 2018/1/11
+	最后搭建好之后没有验证，因为2.23服务器没有显示器！
+
+===================
+17:04 2018/1/10
+RTMPH264_Connect
+	RTMP264_Connect
+RTMPH264_Send
+	RTMP264_Send
+RTMPH264_Close
+	RTMP264_Close
+RTMPH264_Send_sps_init
+	RTMP264_Send_sps_init
+RTMPH264_Send_pps_init
+	RTMP264_Send_pps_init
+
+typedef struct hiVENC_STREAM_S                                                                                                                        
+{
+    HI_U8                   *pu8Addr ;       /**<Stream virtual address*/ /**<CNcomment: ÂëÁ÷ÐéÄâµØÖ·*/    
+    HI_U32                  u32SlcLen;      /**<Stream length*/ /**<CNcomment: ÂëÁ÷³¤¶È*/    
+    HI_U32                  u32PtsMs;        /**<Presentation time stamp (PTS), in ms*/ /**<CNcomment: Ê±¼ä´Á£¬µ¥Î»ÊÇºÁÃë*/
+    HI_BOOL                 bFrameEnd;       /**<Frame end or not*/ /**<CNcomment: ±êÊ¶ÊÇ·ñÎªÖ¡½áÊø*/
+    HI_UNF_VENC_DATA_TYPE_U enDataType;      /**Encoding data type*/ /**<CNcomment: ±àÂëÊý¾ÝÀàÐÍ*/
+}HI_UNF_VENC_STREAM_S;
+
+	
+14:49 2018/1/10
+王佳阔给的资料：
+http://172.17.1.99/redmine/issues/1097
+密码：wangjiakuo	或 wjk
+/home/wangjiakuo/VideoGateway/HiSTBLinuxV100R005C00SPC041/sample/esplay_librtm
+p
+librtmp_send264.cpp 
+video_combine.c
+172.17.51.88	wangjiakuo	wjk
+
+===================
+
+15:00 2018/1/9
+gcc test.cpp -g -o simplest_ffmpeg_mem_player.out -lstdc++ -I /usr/local/include -L /usr/local/lib -lSDLmain -lSDL -lavformat -lavcodec -lavutil -lswscale -lm -lpthread -ldl -lz
+
+10:28 2018/1/9
+利用ffmpeg一步一步编程实现摄像头采集编码推流直播系统
+http://blog.csdn.net/ce6581281/article/details/62898445
+
+===================
+
+15:34 2018/1/8
+linux gdb调试！
+
+9:55 2018/1/8
+看一会ffmpeg，然后了解一下ffmpeg；
+
+===================
+
+19:14 2018/1/5
+没事的时候看一下看门狗的程序！
+
+===================
+
+14:14 2018/1/5
+现在编译也过去了，
+也可以在板子上运行了，
+但是在运行时，需要动态加载一些库，
+进而需要额外的目录来存放这些库，
+能否将这些库编译进可执行文件中；
+需要找到../../lib/.....是在哪个配置文件中定义的！
+
+	出现这个原因，可能是因为在编译opencv时的配置固定了../../lib/....目录结构！
+
+10:27 2018/1/5
+最后用的动态检测算法是GMM-----MOG.cpp
+
+9:39 2018/1/5
+昨天最后可以将动态检测程序编译过了，
+编译脚本为：
+arm-cortex_a9-linux-gnueabi-g++ $2 -std=c++11 `pkg-config --cflags --libs opencv` -o $1 -lpthread -ldl
+
+加了后面的-lpthread -ldl
+===================
+/usr/local/opencv_lib/opencv320/lib/pkgconfig
+
+g++  `pkg-config --cflags --libs opencv` -o WTF BGDiff_main.cpp BGDifference.h BGDifference.cpp
+
+g++  -I/usr/local/opencv_lib/opencv320/include/opencv/ -L/usr/local/opencv_lib/opencv320/lib/  -lopencv_highgui -lopencv_imgproc -lopencv_core -o WTF BGDiff_main.cpp BGDifference.h BGDifference.cpp
+
+/home/miaoch/workdir/lab/slpc/dynamic_lugang/backup/motion_detection_for_4418/06FramesDifference
+
+arm-cortex_a9-linux-gnueabi-gcc -o  wtf FramesDifference.cpp -I/usr/local/opencv_lib/opencv_arm/include -I/usr/local/opencv_lib/opencv_arm/include/opencv -I/usr/local/opencv_lib/opencv_arm/include/opencv2 -L /usr/local/opencv_lib/opencv_arm/lib -lopencv_core -lopencv_highgui 
+ 
+
+g++  -I/usr/local/opencv_lib/opencv320/include/opencv/ -L/usr/local/opencv_lib/opencv320/lib/ -lcv -lcxcore -lhighgui -lpthread -lrt
+
+-I/usr/local/opencv_lib/opencv320//include/opencv -I/usr/local/opencv_lib/opencv320//include  -L/usr/local/opencv_lib/opencv320//lib -lopencv_shape
+
+9:51 2018/1/4
+今天晚上没事就总结一下rar命令的使用，
+和vim标签/书签的使用！
+===================
+
+19:09 2018/1/3
+将BGDifference.cpp和BGDiff_main.cpp合并为一个文件，
+使用compile.sh脚本进行编译时，出现错误，
+可能是库调用不正确！
+
+16:35 2018/1/3
+使用的代码是07BGDifference；
+
+每次传输一张图，第一张图作为背景，
+第二张图和第一张比较，
+计算一个阈值，<=20,视为无变化，>20视为有变化；
+
+releaseFrame()	可以更换背景！
+
+每次传输当前最新图片，
+然后隔一段时间，调用releaseFrame()更新一下背景！
+
+
+10:59 2018/1/3
+07BGDifference
+BGDiff_main.cpp
+main()中：
+    otsu("../pics/img_576/1.png");
+    otsu("../pics/img_576/2.png");
+    otsu("../pics/img_576/3.png");
+    releaseFrame();
+
+MOG.cpp
+    cout << "img_1080 : " << endl;
+    cout << "GMM_pic time : " << endl;
+    GMM_pic("../pics/img_1080/1.jpeg");
+    GMM_pic("../pics/img_1080/2.jpeg");
+    GMM_pic("../pics/img_1080/3.jpeg");
+    cout << "process_pic time : " << endl;
+    processVideo_pic("../pics/img_1080/1.jpeg");
+    processVideo_pic("../pics/img_1080/2.jpeg");
+    processVideo_pic("../pics/img_1080/3.jpeg");
+    cout << endl;
+
+
+
+
+===================
+
+19:49 2018/1/2
+明日任务：
+1、先看卢刚的代码
+	将其改装成接口，
+	添加到slpc工程中；
+
+17:19 2018/1/2
+卢刚代码地址：
+/home/miaoch/workdir/lab/slpc/dynamic_lugang/backup/motion_detection/
+
+16:34 2018/1/2
+可以使用管道！
+live55
+
+15:32 2018/1/2
+现在面临两个问题：
+1、需要使用ffmpeg写一个播放视频的例子，
+	然后通过这个例子，
+	测试播放内存中的内容，
+	看是否可行！
+	
+	-->	可以参考雷神的最简单的ffmpeg+sdl2的例子；
+	http://blog.csdn.net/leixiaohua1020/article/details/38868499
+	gcc sim_player.c -g -o simplest_ffmpeg_player.out -I /usr/local/include -L /usr/local/lib -lSDL2main -lSDL2 -lavformat -lavcodec -lavutil -lswscale  
+2、做完上面的事情之后，
+	还需要使用ffmpeg推送rtsp流；
+	
+	-->	一种解决办法是，提取ffmpeg的源码，解析命令行！
+		第二种办法是，参考雷神的例子，
+		最简单的基于FFmpeg的推流器（以推送RTMP为例），
+		http://blog.csdn.net/leixiaohua1020/article/details/39803457
+		
+
+===================
+FLAG_
+svn://172.17.50.51/sdg/2017/01新型便携
+http://172.17.1.67:8080/svn/Camera/SW/ProjectCode
+11:46 2017/11/1
+拍照程序参考：/home/miaoch/s5p4418/linux_v2/userdata/app/vpu_test/jpg_main.c
+视频程序参考：/home/miaoch/s5p4418/linux_v2/userdata/app/vpu_test/enc_main.c
+
+便携二期项目代码：/home/yhy/mpc/PortableController2th/PortableController2th
+
+如果要继续看rtsp相关内容，则在本文中搜索【rtsp教程地址】；
+
+/************************************************************************
+ 10:23 2017/12/6
+	在cam_media.cpp中，
+	录制视频的实现功能应该有问题，
+	最起码视频保存的名字就不存在；
+	10:33 2017/12/6
+		在util.cpp中也注释了存视频的名字；
+
+ 
+
+**************************************************************************/
+
+===================
+
+18:52 2017/12/28
+将ffmpeg播放器的例子敲一遍，弄明白！
+
+===================
+
+14:54 2017/12/28
+-f参数：
+#define OFFSET(x) offsetof(OptionsContext, x)  
+    { "f",              HAS_ARG | OPT_STRING | OPT_OFFSET |
+                        OPT_INPUT | OPT_OUTPUT,                      { .off       = OFFSET(format) },
+        "force format", "fmt" },
+		
+
+
+19:51 2017/12/27
+现在的问题是搞懂ffmpeg从内存中读取数据的代码！
+以及怎么转发出去！
+gcc player.c -g -o simplest_ffmpeg_player.out -I /usr/local/include -L /usr/local/lib -lSDLmain -lSDL -lavformat -lavcodec -lavutil -lswscale
+
+
+gcc test.c -g -o simplest_ffmpeg_player.out -I /usr/local/include -L /usr/local/lib -lSDL2main -lSDL2 -lavformat -lavcodec -lavutil -lswscale
+15:08 2017/12/27
+ffmpeg从内存中读取数据：http://blog.csdn.net/leixiaohua1020/article/details/12980423
+
+10:46 2017/12/27
+追踪代码：
+	@	$> grep -rn "force video codec"
+	
+	@	fftools/ffmpeg_opt.c:3594:        "force video codec ('copy' to copy stream)", "codec" },
+	
+    @	{ "vcodec",       OPT_VIDEO | HAS_ARG  | OPT_PERFILE | OPT_INPUT |
+                      OPT_OUTPUT,                                                { .func_arg = opt_video_codec },
+        "force video codec ('copy' to copy stream)", "codec" },   
+		
+	@	找到opt_video_codec;
+	
+	@	else if (!strcmp(key, "vcodec")) opt_video_codec   (o, key, value);
+	
+	@	static int opt_video_codec(void *optctx, const char *opt, const char *arg)                                                            
+		{
+			OptionsContext *o = optctx;
+			return parse_option(o, "codec:v", arg, options);
+		}
+	
+
+===================
+
+19:38 2017/12/25
+明天的任务：
+1、配置vs2013+ffmpeg开发环境；
+2、运行一个保存网络流到本地文件的例子；
+
+
+16:29 2017/12/25
+卢老师：
+0、最终的应用环境是windows；
+1、根据命令调用的参数找出相关API，组合成程序；
+2、分析一下使用ffmpeg获取一帧摄像头数据程序：
+http://www.voidcn.com/article/p-onpgwgrm-bcy.html
+
+19:44 2017/12/25
+第一个例子编译选项：
+gcc -o test ./shortest.c -lavformat -lavcodec -lavutil -lz -lm -lpthread -lbz2
+
+10:40 2017/12/25
+./configure --enable-shared --disable-static --enable-nonfree --enable-libmp3lame --enable-gpl --enable-libx264 --enable-libxvid --enable-version3 --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libvo-amrwbenc --extra-cflags='-Ld:/ffmpeg/ffmpeg-0.10.1/include' --extra-ldflags='-ld:/ffmpeg/ffmpeg-0.10.1/lib'
+
+
+--enable-memalign-hack	现在帮助文档中没有这个选项了；
+--enable-libfaac	不存在
+--enable-libvo-aacenc	不存在
+	11:17 2017/12/25
+	没有编译成功，一直出错：gcc的错误和编译选项的错误！
+10:58 2017/12/25
+今日任务：
+	1、继续在windows下编译ffmpeg;
+	2、运行一个简单的ffmpeg例子；
+	3、在windows上搭建ffmpeg环境；
+	4、将h264文件转换成流，然后再传给ffmpeg;
+	5、如何将h264BUF传给FFMPEG命令行！
+	
+
+
+===================
+16:19 2017/12/22
+如何将h264BUF传给FFMPEG命令行！
+
+
+20:39 2017/12/8
+从CPU Power Management 开始进行！
+之前的配置已经保存了，
+但是最好重新配置一下！
+
+参考的教程：
+https://wenku.baidu.com/view/2a078fe119e8b8f67c1cb98e.html
+http://blog.csdn.net/beckdon/article/details/50424557
+
+使系统休眠的命令：echo mem > /sys/power/state
+内核裁剪的要求：
+	启动速度快，
+	可以休眠唤醒，
+	可以运行摄像头程序；
+
+./codec_tests -m 2 -o 1.jpg -c 3 -q 100
+
+
+===================
+
+17:37 2017/12/22
+下载到ffmpeg的源码之后，
+ffmpegwindows源码路径：D:\000azb\001ffmpeg\azb\ffmpeg_windows_code
+./configure提示没有gcc，
+但是在C:\MinGW\bin有gcc，
+所以将这个路径添加到环境变量PATH中；
+
+11:52 2017/12/22
+windows下编译ffmpeg：
+1、安装mingw-msys-0.6-x86.exe，
+	安装路径好像不能改变，使用默认安装路径！C:\MinGW	C:\msys\1.0
+
+10:59 2017/12/22
+在windows上搭建ffmpeg环境：
+
+使用的安装包是：ffmpeg-20171221-5a6e753-win32-static.zip
+
+参考教程：http://blog.csdn.net/zhuiqiuk/article/details/72834385
+
+安装过程：
+将压缩包解压，然后配置环境变量(和配置Java环境变量类似)；
+在系统变量PATH末尾，添加：[;D:\000azb\001ffmpeg\ffmpeg\bin]
+
+发送和显示的命令和Linux一样：ffmpeg -re -i test.h264 -vcodec copy -f rtp rtp://172.17.1.23:6666
+
+===================
+
+16:43 2017/12/21
+看ffmpeg的源代码：
+根据帮助信息的输出字符串，进行搜索：
+./ffmpeg -help
+-f fmt              force format
+grep -rn "force format"
+找到：fftools/ffmpeg_opt.c:3391:        "force format", "fmt" },
+
+根据命令【./ffmpeg -re -i test.h264 -vcodec copy -f rtp rtp://172.17.1.23:6666】，
+-f后面接的是rtp，
+所以在文件：ffmpeg_opt.c中搜索【rtp】;
+
+
+
+
+11:12 2017/12/21
+1、在windows上搭建ffmpeg环境；
+2、将h264文件转换成流，然后再传给ffmpeg;
+3、
+
+
+9:49 2017/12/21
+利用ffmpeg发送h264文件，采用rtsp协议：
+
+显示端：
+使用vlc打开sdp文件，
+sdp文件中指明网络通信的端口号和显示端的IP地址；
+
+发送端：
+./ffmpeg -re -i 1.h264 -vcodec copy -f rtp rtp://172.17.1.23:6666
+指明：显示端的IP地址和端口号！
+
+ffmpeg -re -i 1.h264 -vcodec copy -f flv  rtmp://localhost/oflaDemo/livestream  
+ffmpeg -re -i 1.h264  -vcodec copy -f flv rtmp://localhost/oflaDemo/livestream 
+ffmpeg -re -stream_loop -3 -i 1.h264 -vcodec copy  -acodec aac -f flv rtmp://172.17.2.23:50015/live/
+
+
+-re				必须写，表示按照帧率发送，否则ffmpeg会一股脑地按最高效率发送数据；
+-vcodec copy	要加，否则ffmpeg会重新编码数据的H264裸流；
+
+-i	设定输入流
+-f	设定输出格式
+-r	设定帧速率，默认为25
+-re	以本地帧频读数据，主要用于模拟捕获设备；
+
+
+20:20 2017/12/20
+在2.23服务器上安装ffmpeg，
+目录为：/monchickey/ffmpeg/bin;
+
+例子代码存在问题，播放视频会发生卡顿；
+
+使用ffmpeg播放则不会卡顿！
+
+但是每次都需要重新使用vlc打开sdp文件，
+如果播放完一个视频，不关闭，则vlc就卡了！
+
+
+在发送端和显示端，都和之前差不多！
+
+
+===================
+
+17:32 2017/12/19
+明天的任务：
+调研rtsp：
+rtsp是一种服务！
+1、h264怎么转成rtsp；
+2、rtsp如何播放；
+
+===================
+
+18:25 2017/12/15
+只裁剪大项：
+USB		ok
+网卡
+HDMI
+DISPLAY		
+输入设备	ok
+	19:10 2017/12/15
+	只裁剪几个大块：
+	/home/miaoch/workdir/linux_v2/kernel
+	先裁剪USB：
+	Device Drivers -->	USB support
+		USB announce new devices	usb宣布新设备
+		USB device class-devices (DEPRECATED) 	usb设备类设备(不推荐使用)
+		Dynamic USB minor allocation 	动态usb小分配
+		EHCI HCD (USB 2.0) support 
+		Synopsis DWC host support  简介DWC的主机支持
+		USB Mass Storage support 	usb存储支持
+		USB Serial Converter support	usb串行转换器支持
+		USB Gadget Support	usb小装置支持
+		Hold a wakelock when USB connected	持有wakelock当USB连接
+	19:43 2017/12/15
+	开机：
+	[    3.266000] eth0:device MAC address 30:34:30:00:54:0e
+	有nx_vpu驱动！
+	19:48 2017/12/15
+	可以拍照！
+	19:50 2017/12/15
+	第14次出现唤醒异常(不是休眠)；
+	19:52 2017/12/15
+	重启之后，第三次，休眠异常！
+	19:54 2017/12/15
+	再次重启，第22次休眠异常！
+	
+	19:57 2017/12/15
+	裁剪输入设备：
+	Device Drivers	-->	Input device support  
+		Mouse interface	对于鼠标创建了两个不同的设备文件
+		Event interface	允许输入设备通过dev/input/eventX访问
+		Keyboards	
+		Joysticks/Gamepads
+		Tablets	平板
+		Touchscreens 
+		Miscellaneous devices
+			Key chord input driver support 
+			User level driver support    
+			GPIO driver support 	没有去
+		Hardware I/O ports
+			Serial port line discipline
+			PS/2 driver library    
+		20:14 2017/12/15
+		裁剪完成：
+		配置文件：config_inputDevice_02
+		镜像：boot_inputDeivce_03.img
+		20:24 2017/12/15
+		开机时间：
+		[    3.307000] eth0:device MAC address 30:34:30:00:54:0e
+		有nx_vpu驱动！
+		可以正常拍照！
+		20:32 2017/12/15
+		休眠唤醒43次没有出现异常！
+		20:34 2017/12/15
+		重启之后，第4次休眠出现异常！ 
+		
+	20:42 2017/12/15
+	裁剪HDMI：
+		11:12 2017/12/18
+		在make menuconfig中搜索HDMI，然后裁剪相关项！
+		搜索结果中，
+		1-4，默认没有；
+		5与NXP有关不裁剪！
+		6找不到！
+		7裁剪：ALSA for SoC audio support，关于音频的部分；
+		8，打开了HDMI,选择了Resolution (1920 * 1080p)；
+		9，顺带裁剪了Bootup logo和Backlight & LCD device support；
+		10，没有裁剪!
+		11,没有裁剪！
+		12，找不到！
+		13，14，不裁剪，和nxp有关！
+		15，找不到，
+		16不裁剪！
+		17,18，不动；
+		19找不到，
+		20不动，
+		21以后的都不动！
+		
+		11:49 2017/12/18
+		出现错误：
+arch/arm/mach-s5p4418/soc/display_hdmi.c:129:23: 错误：‘CFG_DISP_PRI_HDMI_I2C_CHANNEL’未声明(不在函数内)
+  CC      ipc/msg.o
+make[2]: *** [arch/arm/mach-s5p4418/soc/display_hdmi.o] 错误 1
+		
+		14:38 2017/12/18
+		恢复上一个版本，不对HDMI进行裁剪！
+	14:38 2017/12/18
+	裁剪DISPLAY：
+		1、裁剪：DeviceDrivers-->Graphics support->NexellGraphics->LCD
+		2、Support Display SoC
+			Primary   display output (MLC0/DPC0)
+			Secondary display output (MLC1/DPC1)
+			Resolution Converter
+			15:32 2017/12/18
+			关闭上面的会出发现错误：
+arch/arm/mach-s5p4418/devices.c: 在函数‘nxp_cpu_devices_register’中:
+arch/arm/mach-s5p4418/devices.c:1402:28: 错误：‘lcd_device’未声明(在此函数内第一次使用)
+arch/arm/mach-s5p4418/devices.c:1402:28: 附注：每个未声明的标识符在其出现的函数内只报告一次
+
+			
+		生成配置文件：config_display_03
+	15:03 2017/12/18
+	出现错误：
+arch/arm/mach-s5p4418/devices.c:1417:28: 错误：‘hdmi_device’未声明(在此函数内第一次使用)
+arch/arm/mach-s5p4418/devices.c:1417:28: 附注：每个未声明的标识符在其出现的函数内只报告一次
+  CC      mm/fadvise.o
+make[1]: *** [arch/arm/mach-s5p4418/devices.o] 错误 1
+make: *** [arch/arm/mach-s5p4418] 错误 2
+	
+	15:40 2017/12/18
+	恢复第二个版本：
+	裁剪网络：
+	Networking support 中除了Networking options(里面默认的不去除)，其余全部关掉;
+	15:51 2017/12/18
+	make没出错！
+	16:05 2017/12/18
+	休眠唤醒在第41次出现休眠错误！
+	16:12 2017/12/18
+	可以正常拍照！
+	
+	16:13 2017/12/18
+	继续裁剪一些无关项(DeviceDrivers)：
+	1、SCSI device support
+	2、HID Devices
+	3、
+	16:47 2017/12/18
+	可以拍照，
+	但是休眠唤醒出现异常的频率增大；
+	18次出现休眠异常！
+	
+	16:51 2017/12/18
+	裁剪：Support for Host-side USB 
+	第19次出现休眠异常！
+	17:19 2017/12/18
+	可以正常拍照的！
+	
+	17:33 2017/12/18
+	裁剪：
+	
+	
+		
+
+		
+
+16:34 2017/12/15
+重新编译一个完整版内核:
+遇到老错误：
+将Device Drivers  ---> Power supply class support --> AXP259 Power drivers -->	AXP initial charging environment set 去掉！
+	16:49 2017/12/15
+	要想解决这个错误，必须将AXP259 Power drivers全部去掉！
+	
+	17:18 2017/12/15
+	测试完整版的，暂时没问题，没有出现休眠唤醒的错误(测了差不多30-50次，可以拍照)；
+	配置文件：config_compleet_00
+	
+	17:18 2017/12/15
+	此时测试的摄像头是ov2718,
+	但是并没有在内核配置中选择ov2718,而是默认的ov5640，
+	但是可以正常拍照！
+	
+	17:27 2017/12/15
+	将Cryptographic API(加密)选中的全部去掉！
+	将Security options选中的全部去掉！
+	配置文件：config_01
+	boot.img:boot_01.img
+	
+	17:43 2017/12/15
+	可以正常拍照，
+	休眠唤醒出现异常！
+		17:37 2017/12/15
+		出现休眠唤醒的错误：
+[   68.996000] PM: suspend entry 2000-01-01 00:37:41.841787100 UTC
+[   69.002000] PM: Syncing filesystems ... done.
+[   69.008000] Freezing user space processes ... (elapsed 0.001 seconds) done.
+[   69.017000] Freezing remaining freezable tasks ... 
+[   69.351000] PHY: stmmac-0:04 - Link is Up - 100/Full
+[   89.025000] 
+[   89.026000] Freezing of tasks failed after 20.003 seconds (1 tasks refusing to freeze, wq_busy=0):
+[   89.035000] khubd           D c0602d1c     0    27      2 0x00000000
+[   89.041000] [<c0602d1c>] (__schedule+0x384/0x7d4) from [<c0601328>] (schedule_timeout+0x174/0x2f8)
+[   89.050000] [<c0601328>] (schedule_timeout+0x174/0x2f8) from [<c0050f28>] (msleep+0x14/0x20)
+[   89.059000] [<c0050f28>] (msleep+0x14/0x20) from [<c02f5d88>] (hub_power_on+0x88/0xd8)
+[   89.067000] [<c02f5d88>] (hub_power_on+0x88/0xd8) from [<c02f6aa0>] (hub_activate+0x60/0x45c)
+[   89.075000] [<c02f6aa0>] (hub_activate+0x60/0x45c) from [<c02f6eb0>] (hub_post_reset+0x14/0x1c)
+[   89.084000] [<c02f6eb0>] (hub_post_reset+0x14/0x1c) from [<c02f806c>] (usb_reset_device+0xec/0x190)
+[   89.093000] [<c02f806c>] (usb_reset_device+0xec/0x190) from [<c02f95a0>] (hub_thread+0x44/0x143c)
+[   89.102000] [<c02f95a0>] (hub_thread+0x44/0x143c) from [<c0060fe8>] (kthread+0x88/0x94)
+[   89.110000] [<c0060fe8>] (kthread+0x88/0x94) from [<c000f824>] (kernel_thread_exit+0x0/0x8)
+[   89.118000] 
+[   89.120000] Restarting kernel threads ... done.
+[   89.125000] Restarting tasks ... done.
+[   89.130000] PM: suspend exit 2000-01-01 00:38:01.975655000 UTC
+sh: write error: Device or resource busy
+[root@S5p4418 ~]# [   89.141000] mmc_host mmc1: Bus speed (slot 0) = 50000000Hz (slot req 400000Hz, actual 396825HZ div = 63)
+[   89.184000] mmc_host mmc1: Bus speed (slot 0) = 50000000Hz (slot req 300000Hz, actual 297619HZ div = 84)
+[   89.228000] mmc_host mmc1: Bus speed (slot 0) = 50000000Hz (slot req 200000Hz, actual 200000HZ div = 125)
+[   89.274000] mmc_host mmc1: Bus speed (slot 0) = 50000000Hz (slot req 100000Hz, actual 100000HZ div = 250)
+		17:39 2017/12/15
+		正确休眠唤醒的打印信息：
+[   32.754000] PM: suspend entry 2000-01-01 00:39:52.962302199 UTC
+[   32.760000] PM: Syncing filesystems ... done.
+[   32.767000] Freezing user space processes ... (elapsed 0.000 seconds) done.
+[   32.775000] Freezing remaining freezable tasks ... (elapsed 0.001 seconds) done.
+[   32.784000] Suspending console(s) (use no_console_suspend to debug)
+suspend_enter enter
+suspend machine...
+	
+	17:44 2017/12/15
+	将Cryptographic API(加密)选中的全部去掉！
+	配置文件：config_01
+	bootimg：
+	18:00 2017/12/15
+	在第33次，出现唤醒异常！板子启动了，控制台没进入文件系统！
+	
+	
+	
+	
+	
+15:19 2017/12/15
+根据s5p4418_realv1c_linux_defconfig制作一个完整版的config文件：
+删除过程中只调试错误！
+
+错误1：
+drivers/power/axp259_power/axp259-mfd.c:206:26: 错误：‘CFG_GPIO_AXP259_PMIC_INTR’未声明(在此函数内第一次使用)
+drivers/power/axp259_power/axp259-mfd.c:206:26: 附注：每个未声明的标识符在其出现的函数内只报告一次
+make[3]: *** [drivers/power/axp259_power/axp259-mfd.o] 错误 1
+make[2]: *** [drivers/power/axp259_power] 错误 2
+	解决:
+	将Device Drivers  ---> Power supply class support --> AXP259 Power drivers去掉！
+
+	生成的配置文件：config_default_00
+	
+	15:37 2017/12/15
+	完整版开机时间：
+	[    3.275000] eth0:device MAC address 30:34:30:00:54:0e
+	有nx_vpu驱动！
+	可以正常拍摄照片（此时并没有选择ov2710）；
+	休眠唤醒存在异常！
+
+	
+12:04 2017/12/15
+裁剪计划：
+把一些无关的裁掉！
+	
+	14:58 2017/12/15
+	裁剪Cryptographic API和Library routines全部去掉！
+	config_CryptographicAPI_Libraryroutines_01
+	14:58 2017/12/15
+	裁剪Security options，
+	全部去掉！
+	裁剪kernelhacking，
+	除了打印时间戳，全部去掉！
+	config_securityOptions_kernelHacking_02
+	[    3.314000] eth0:device MAC address 30:34:30:00:54:0e
+	有nx_vpu驱动！
+	
+
+
+11:11 2017/12/15
+现在使用新的板子：
+测试程序为：
+./codec_tests -m 2 -o 1.jpg -c 3 -q 100
+
+11:04 2017/12/15
+用的摄像头是OV2718；
+需要在make menuconfig中打开：
+Device Drivers
+	Multimedia support
+		Video capture adapters
+			Encoders, decoders, sensors and other helper chips
+				ov2718 601 camera support 
+
+9:58 2017/12/15
+看一下板子进入休眠和唤醒时，哪些信息可以在make menuconfig中找到！
+休眠：
+1、+nxp_v4l2_suspend
+	找不到
+2、+suspend_nxp_capture
+NXP_CAPTURE_DECIMATOR [=y]
+Device Drivers
+	Multimedia support (MEDIA_SUPPORT [=y]) 
+		Nexell V4L2 Devices (V4L2_NXP [=y])
+			Nexell Video capture interface (VIDEO_NXP_CAPTURE [=y]) 
+NXP_CAPTURE_MIPI_CSI [=n] 
+Device Drivers 
+	Multimedia support (MEDIA_SUPPORT [=y]) 
+		Nexell V4L2 Devices (V4L2_NXP [=y]) 
+			Nexell Video capture interface (VIDEO_NXP_CAPTURE [=y]) 
+VIDEO_NXP_CAPTURE [=y] 
+Device Drivers
+	Multimedia support (MEDIA_SUPPORT [=y])
+		Nexell V4L2 Devices (V4L2_NXP [=y]) 
+		
+3、nxp_decimator_suspend
+NXP_CAPTURE_DECIMATOR [=y] 
+Device Drivers   
+	Multimedia support (MEDIA_SUPPORT [=y])
+		Nexell V4L2 Devices (V4L2_NXP [=y])  
+			Nexell Video capture interface (VIDEO_NXP_CAPTURE [=y]) 
+4、+nxp_vin_clipper_suspend
+	找不到
+5、suspend_nxp_scaler+
+Symbol: NXP_M2M_SCALER [=y] 
+Device Drivers
+	Multimedia support (MEDIA_SUPPORT [=y])
+		Nexell V4L2 Devices (V4L2_NXP [=y])
+			Nexell M2M interface (VIDEO_NXP_M2M [=y]) 
+USE_SCALER_COMMAND_BUFFER [=y] 
+Device Drivers 
+	Multimedia support (MEDIA_SUPPORT [=y]) 
+		Nexell V4L2 Devices (V4L2_NXP [=y])
+			Nexell M2M interface (VIDEO_NXP_M2M [=y]) 
+				Enable scaler (NXP_M2M_SCALER [=y])   
+ENABLE_SCALER_MISC_DEVICE [=y]  
+Device Drivers  
+	Multimedia support (MEDIA_SUPPORT [=y])
+		Nexell V4L2 Devices (V4L2_NXP [=y]) 
+			Nexell M2M interface (VIDEO_NXP_M2M [=y]) 
+				Enable scaler (NXP_M2M_SCALER [=y])
+6、+suspend_nxp_out
+NXP_OUT_HDMI [=y]
+Device Drivers 
+	Multimedia support (MEDIA_SUPPORT [=y])
+		Nexell V4L2 Devices (V4L2_NXP [=y]) 
+			Nexell OUT interface (VIDEO_NXP_OUT [=y])
+NXP_OUT_TVOUT [=n]
+Device Drivers  
+	Multimedia support (MEDIA_SUPPORT [=y])
+		Nexell V4L2 Devices (V4L2_NXP [=y])
+			Nexell OUT interface (VIDEO_NXP_OUT [=y])
+VIDEO_NXP_OUT [=y] 
+Device Drivers
+	Multimedia support (MEDIA_SUPPORT [=y])
+		Nexell V4L2 Devices (V4L2_NXP [=y])
+NXP_OUT_RESOLUTION_CONVERTER [=y]
+Device Drivers  
+	Multimedia support (MEDIA_SUPPORT [=y]) 
+		Nexell V4L2 Devices (V4L2_NXP [=y])
+			Nexell OUT interface (VIDEO_NXP_OUT [=y]) 
+7、+hdmi_suspend
+VIDEO_SAMSUNG_S5P_HDMI_DEBUG [=n] 
+VIDEO_EXYNOS_HDMIPHY [=n]    
+DRM_EXYNOS_HDMI [=n]    
+VIDEO_EXYNOS_HDMI_CEC [=n]
+NXP_OUT_HDMI [=y]      
+SND_FSI_HDMI [=n]   
+SND_OMAP_SOC_OMAP4_HDMI [=n]   
+NXP_DISPLAY_HDMI_1280_720P [=n] 
+NXP_DISPLAY_HDMI_1920_1080P [=n]
+NXP_HDMI_CEC [=y]   
+NXP_DISPLAY_HDMI_USE_HDCP [=n]  
+OMAP4_DSS_HDMI [=n] 
+PATCH_HDMI_COMPLIANCE_TEST [=n]  
+VIDEO_SAMSUNG_S5P_HDMIPHY [=n] 
+NXP_DISPLAY_HDMI [=n]
+
+8、suspend_nxp_resc
+NXP_DISPLAY_RESCONV [=y]   
+System Type  
+	Support Display SoC (NXP_DISPLAY [=y])
+System Type 
+	Support Display SoC (NXP_DISPLAY [=y])  
+		Selected by: NXP_OUT_RESOLUTION_CONVERTER [=y] && MEDIA_SUPPORT [=y] && V4L2_NXP [=y] && VIDEO_NXP_OUT [=y]
+9、suspend_nxp_mlc
+	找不到
+10、-suspend_nxp_out
+NXP_OUT_HDMI [=y]  
+NXP_OUT_TVOUT [=n]   
+VIDEO_NXP_OUT [=y]   
+NXP_OUT_RESOLUTION_CONVERTER [=y]       
+11、-nxp_v4l2_suspend
+	找不到
+12、nxp_spdif_dai_suspend
+
+
+明日计划:
+1、确定板子是否有问题；
+2、从头开始裁剪内核;
+	先别裁剪DeviceDriver；
+	裁剪一部分，测试一部分；
+	测试包括：
+		能否正常休眠唤醒；
+		能否正常运行程序！
+
+
+===================
+
+
+19:56 2017/12/14
+重新找完成版的从头开始：
+	20:01 2017/12/14
+	出现错误
+  CC      drivers/media/video/videobuf2-ion-nxp.o
+drivers/power/axp259_power/axp259-board.c:184:10: 错误：‘CFG_GPIO_AXP259_PMIC_INTR’未声明(不在函数内)
+make[3]: *** [drivers/power/axp259_power/axp259-board.o] 错误 1
+make[2]: *** [drivers/power/axp259_power] 错误 2
+make[1]: *** [drivers/power] 错误 2
+	19:58 2017/12/14
+	解决：
+	将Device Drivers  ---> Power supply class support --> AXP259 Power drivers去掉！
+
+	20:01 2017/12/14
+	烧写后，有nx_vpu驱动，
+	运行jpg_test出错：
+[root@S5p4418 ~]# ./jpg_test -o 1.jpg
+[  371.164000] nxp_mlc_set_crop: pad(2), crop(0,0,1024,768)
+[  371.170000] nxp_mlc_set_crop: pad(1), crop(0,0,1024,768)
+[  371.176000] camera_common_vin_setup_io: module -> 1, force -> 0
+[  371.182000] ov5640_s_power: on 1
+[  371.185000] ov5640_s_fmt: 1024x768
+[  371.188000] ov5640_set_params........parma code:8200 support code:8200...........
+[  371.196000] ov5640_select_win......width:1024 height:768......
+[  371.202000] ov5640_s_mbus_fmt.............6257...........
+[  371.213000] back_camera_power_enable: is_back_camera_enabled 0, on 1
+[  371.220000] front_camera_power_enable: is_front_camera_enabled 0, on 0
+[  371.232000] camera_common_set_clock: 24000000
+[  371.243000] ov5640_s_power: on 1
+[  371.246000] camera_common_set_clock: 24000000
+[  371.253000] ov5640_s_stream: enable 1, initialized 0
+[  371.257000] ...................................ov5640_video_probe 6327
+[  371.264000] OV5640 0-003c: reg_read: i2c read error, reg: 4730
+[  371.270000] OV5640 0-003c: reg_write: i2c write error, reg: 4730
+[  371.276000] OV5640 0-003c: reg_read: i2c read error, reg: 300a
+[  371.282000] OV5640 read error!!!!!!!!!!!!!!!
+[  371.287000] OV5640 0-003c: reg_write: i2c write error, reg: 3103
+[  371.293000] ov5640_s_stream: failed to ov5640_write_array init regs
+[  374.301000] ov5640_s_stream: enable 0, initialized 0
+[  374.305000] ...................................ov5640_video_probe 6327
+[  374.312000] OV5640 0-003c: reg_read: i2c read error, reg: 4730
+[  374.318000] OV5640 0-003c: reg_write: i2c write error, reg: 4730
+[  374.324000] OV5640 0-003c: reg_read: i2c read error, reg: 300a
+[  374.330000] OV5640 read error!!!!!!!!!!!!!!!
+[  374.335000] ov5640_s_power: on 0
+[  374.338000] ov5640_s_stream: enable 0, initialized 0
+[  374.343000] ...................................ov5640_video_probe 6327
+[  374.349000] OV5640 0-003c: reg_read: i2c read error, reg: 4730
+[  374.355000] OV5640 0-003c: reg_write: i2c write error, reg: 4730
+[  374.362000] OV5640 0-003c: reg_read: i2c read error, reg: 300a
+[  374.367000] OV5640 read error!!!!!!!!!!!!!!!
+Segmentation fault
+[root@S5p4418 ~]# [  375.350000] back_camera_power_enable: is_back_camera_enabled 1, on 0
+[  375.356000] camera_common_set_clock: 0
+[  375.363000] ov5640_s_power: on 0
+
+	运行enc_test出错：
+[root@S5p4418 ~]# ./enc_test 1.h264
+[  474.907000] nxp_mlc_set_crop: pad(2), crop(0,0,1024,768)
+[  474.913000] nxp_mlc_set_crop: pad(1), crop(0,0,1024,768)
+[  474.919000] camera_common_vin_setup_io: module -> 1, force -> 0
+[  474.925000] nvp6114a_s_power: 1
+[  474.928000] nvp6114a_s_fmt
+[  474.931000] nvp6114a_s_fmt : mode 0, 1024x768
+Dump Data : sps pps00000001 6742401f a680[  474.954000] front_camera_power_enable: is_front_camera_enabled 0, on 1
+4006 19000000 
+	0168ce38 80
+Encoder Out Size = 21
+[  474.969000] nvp6114a_s_power: 1
+[  479.059000] nvp6114a_s_power: 0
+Segmentation fault
+[root@S5p4418 ~]# [  480.060000] front_camera_power_enable: is_front_camera_enabled 1, on 0
+[  480.066000] nvp6114a_s_power: 0
+
+	20:33 2017/12/14
+	重新使用之前可以的，也运行出错！
+	可能是硬件的问题！
+
+18:23 2017/12/14
+对比完整版的和裁剪后的DeviceDrivers;
+
+	19:28 2017/12/14
+	对比裁掉之后，
+	去除可疑的有：
+	Enable out HDMI(在本文章中搜索，可以找到具体位置)；
+	
+
+
+17:59 2017/12/14
+拍照程序jpg_test可以运行，但是获取到的图片是空的！
+
+	18:04 2017/12/14
+	拍照程序出现过的错误;
+[  512.637000] OV2718 0-001b: reg_write_sensor: i2c w error, reg: 76f5
+[  512.644000] i2c i2c-0: sendbytes: NAK bailout.
+[  512.648000] OV2718 0-001b: reg_write_sensor: i2c w error, reg: 76f6
+[  512.656000] i2c i2c-0: sendbytes: NAK bailout.
+[  512.661000] OV2718 0-001b: reg_write_sensor: i2c w error, reg: 7701
+[  512.667000] i2c i2c-0: sendbytes: NAK bailout.
+
+
+
+17:19 2017/12/14
+vpu.ko的程序位置：
+/home/miaoch/s5p4418/linux_v2/linux/platform/s5p4418/modules/coda960
+	17:20 2017/12/14
+	重新编译一下：
+	
+	17:32 2017/12/14
+	加载驱动出错：
+[root@S5p4418 sdfuse]# insmod nx_vpu.ko 
+[   46.655000] nx_vpu: version magic '3.4.39 preempt mod_unload modversions ARMv7 p2v8 ' should be '3.4.39 SMP preempt mod_unload ARMv7 p2v8 '
+insmod: can't insert 'nx_vpu.ko': invalid module format
+
+
+17:14 2017/12/14
+没有vpu.ko驱动的：
+[root@S5p4418 ~]# ./enc_test 
+[  201.173000] nxp_mlc_set_crop: pad(2), crop(0,0,1024,768)
+[  201.175000] nxp_mlc_set_crop: pad(1), crop(0,0,1024,768)
+[  201.180000] camera_common_vin_setup_io: module -> 1, force -> 0
+[  201.182000] nvp6114a_s_power: 1
+[  201.183000] nvp6114a_s_fmt
+[  201.184000] nvp6114a_s_fmt : mode 0, 1024x768
+[VPU|API] nx_video_api.c(120) : Cannot open device(/dev/nx_vpu)!!!
+[VPU|API] nx_video_api.c(233) : Invalid encoder handle or driver handle!!!
+[  201.206000] front_camera_power_enable: is_front_camera_enabled 0, on 1
+[  201.218000] nvp6114a_s_power: 1
+[  205.915000] nvp6114a_s_power: 0
+Segmentation fault
+[root@S5p4418 ~]# [  206.916000] front_camera_power_enable: is_front_camera_enabled 1, on 0
+[  206.917000] nvp6114a_s_power: 0
+
+有驱动的报错：
+[root@S5p4418 ~]# ./enc_test 1.h264
+[   42.659000] nxp_mlc_set_crop: pad(2), crop(0,0,1024,768)
+[   42.664000] nxp_mlc_set_crop: pad(1), crop(0,0,1024,768)
+[   42.670000] camera_common_vin_setup_io: module -> 1, force -> 0
+[   42.676000] camera_common_vin_setup_io
+[   42.680000] nvp6114a_s_power: 1
+[   42.683000] nvp6114a_s_fmt
+[   42.686000] nvp6114a_s_fmt : mode 0, 1024x768
+Dump Data : sps pps00000001 6742401f a680[   42.705000] front_camera_power_enable: is_front_camera_enabled 0, on 1
+4006 19000000 
+	0168ce38 80
+Encoder Out Size = 21
+[   42.720000] nvp6114a_s_power: 1
+[   46.827000] nvp6114a_s_power: 0
+Segmentation fault
+[root@S5p4418 ~]# [   47.828000] front_camera_power_enable: is_front_camera_enabled 1, on 0
+[   47.834000] nvp6114a_s_power: 0
+
+[root@S5p4418 ~]# 
+
+
+
+
+15:38 2017/12/14
+更换板子后，不在出现休眠唤醒的异常！
+但是运行程序，
+还是出现：Illegal instruction
+	15:48 2017/12/14
+	可能是因为编译内核时，浮点仿真的问题，
+	把浮点仿真打开！
+	
+	15:57 2017/12/14
+	打开浮点仿真之后，
+	可以启动程序了，
+	但是不能正常运行，
+	也不能加载外部的模块；
+	
+	insmod /lib/modules/3.10.30/nx_vpu.ko
+	
+	16:11 2017/12/14
+	使用完整版的内核，也是不行的！
+	
+	16:36 2017/12/14
+	打开可以加载模块的选项！
+	
+
+
+10:25 2017/12/14
+使用kernel_feature之前的config文件：config_system_type_04 
+没有出现偶尔不能休眠唤醒！
+	10:57 2017/12/14
+	也会出现错误，不能休眠和唤醒！
+
+
+===================
+
+19:57 2017/12/13
+$> grep -rn "suspend_console"
+.tmp_System.map:1981:c00443d0 T suspend_console
+匹配到二进制文件 vmlinux
+匹配到二进制文件 .tmp_vmlinux1
+System.map:1981:c00443d0 T suspend_console
+匹配到二进制文件 .tmp_vmlinux2
+kernel/printk.c:1190: * suspend_console - suspend the console subsystem
+kernel/printk.c:1194:void suspend_console(void)
+kernel/kexec.c:1549:		suspend_console();
+匹配到二进制文件 kernel/built-in.o
+kernel/power/suspend.c:216:	//suspend_console();	//	miaoch
+kernel/power/hibernate.c:356:	suspend_console();
+kernel/power/hibernate.c:485:	suspend_console();
+kernel/power/hibernate.c:520:	suspend_console();
+匹配到二进制文件 kernel/printk.o
+include/linux/console.h:160:extern void suspend_console(void);
+匹配到二进制文件 vmlinux.o
+
+
+
+17:48 2017/12/13
+[    1.045000] rtc-pcf85063 1-0051: pcf85063_get_datetime: read error
+
+
+16:48 2017/12/13
+ 将block裁剪掉一些！
+ [    1.027000] rtc-pcf85063 1-0051: pcf85063_get_datetime: read error
+
+ 可以正常休眠和唤醒！
+ 
+ reboot等一些命令有问题：input/output error!
+
+	17:20 2017/12/13
+	又恢复回来，出错了！
+[    1.033000] rtc-pcf85063 1-0051: pcf85063_get_datetime: read error
+
+ 
+15:59 2017/12/13
+裁剪：Gernel setup，大概去掉一些：
+干掉：loadable module support
+	16:02 2017/12/13
+	错误：
+/home/miaoch/s5p4418/linux_v2/linux/platform/s5p4418/modules/bcmdhd/bcmdhd.mod.c:14:2: 错误：初始值设定项里有未知的字段‘arch’
+/home/miaoch/s5p4418/linux_v2/linux/platform/s5p4418/modules/bcmdhd/bcmdhd.mod.c:14:10: 错误：‘MODULE_ARCH_INIT’未声明(不在函数内)
+	16:07 2017/12/13
+	将loadable module support中的Module unloading打开！错误解决！
+	
+	16:13 2017/12/13
+	[    1.050000] rtc-pcf85063 1-0051: pcf85063_get_datetime: read error
+
+
+15:46 2017/12/13
+裁剪kernel hacking
+	只剩下打印信息！
+	15:48 2017/12/13
+	把下面的几项：能关闭的全部关闭！
+	15:55 2017/12/13
+	可以正常休眠唤醒：
+	[    1.041000] rtc-pcf85063 1-0051: pcf85063_get_datetime: read error
+
+
+15:30 2017/12/13
+裁剪：Userspace binary formats
+只剩下第一个：elf
+	15:33 2017/12/13
+	裁剪：cpu power managerment
+	基本上没咋去掉，只是改了其中有一个powersave；
+	15:36 2017/12/13
+	裁剪：Floating point
+	全部去掉！
+	
+	15:41 2017/12/13
+	可以正常休眠和唤醒！
+	[    1.104000] rtc-pcf85063 1-0051: pcf85063_get_datetime: read error
+
+15:19 2017/12/13
+裁剪kernel features
+[    1.105000] rtc-pcf85063 1-0051: pcf85063_get_datetime: read error
+休眠唤醒不正常！
+	15:29 2017/12/13
+	一会正常，一会不正常！
+		15:30 2017/12/13
+		暂时放下问题，继续裁剪！
+
+14:50 2017/12/13
+裁剪System type
+	15:07 2017/12/13
+	出现错误：
+drivers/built-in.o：在函数‘_set_resc_clkgen_post’中：
+/home/miaoch/s5p4418/linux_v2/kernel/drivers/media/video/nexell/out/nxp-resc.c:669：对‘NX_DISPTOP_CLKGEN_SetClockDivisorEnable’未定义的引用
+/home/miaoch/s5p4418/linux_v2/kernel/drivers/media/video/nexell/out/nxp-resc.c:670：对‘NX_DISPTOP_CLKGEN_SetClockSource’未定义的引用
+/home/miaoch/s5p4418/linux_v2/kernel/drivers/media/video/nexell/out/nxp-resc.c:671：对‘NX_DISPTOP_CLKGEN_SetClockDivisor’未定义的引用
+/home/miaoch/s5p4418/linux_v2/kernel/drivers/media/video/nexell/out/nxp-resc.c:672：对‘NX_DISPTOP_CLKGEN_SetClockDivisorEnable’未定义的引用
+make: *** [.tmp_vmlinux1] 错误 1
+
+	15:13 2017/12/13
+	解决错误：
+	在make menuconfig中打开Support Display SoC  (System type)，问题解决！
+	
+	[    1.740000] rtc-pcf85063 1-0051: pcf85063_get_datetime: read error
+
+14:31 2017/12/13
+裁剪Networking support
+剩下的:
+	Networking options
+		Packet socket 
+		Unix domain sockets
+		PF_KEY sockets
+		TCP/IP networking 
+	14:45 2017/12/13
+	可以正常休眠唤醒;
+	[    1.709000] rtc-pcf85063 1-0051: pcf85063_get_datetime: read error
+
+
+13:53 2017/12/13
+继续从Device Drivers开始裁剪，
+	从Network device support开始：
+	Network device support只剩下：Network core driver support 
+	Multiple devices driver support (RAID and LVM	全部去掉
+	SCSI device support 	全部去掉
+	Misc devices	全部去掉
+	Block devices	不动
+	Generic Driver Options	不动
+	
+	14:27 2017/12/13
+	裁剪之后，可以正常休眠唤醒：
+	[    3.079000] rtc-pcf85063 1-0051: pcf85063_get_datetime: read error
+	
+11:38 2017/12/13
+现在配置好了默认版本，可以休眠和唤醒！
+	11:39 2017/12/13
+	裁剪：Device Drivers：
+	被裁掉的:
+		Staging drivers
+		Switch class support 
+		USB support
+		HID Devices
+		Sound card support
+		Graphics support
+			Backlight & LCD device support  --->
+			Bootup logo  --->
+			
+	11:47 2017/12/13
+	裁剪到NetworkDeviceSupport!
+	
+	[    3.596000] stmmac_open: Hw setup failed
+
+		出现错误：
+		/home/miaoch/s5p4418/linux_v2/kernel/drivers/hwmon/nxp_adc_temp.c:219：对‘iio_st_read_channel_raw’未定义的引用
+		drivers/built-in.o：在函数‘nxp_adc_tmp_probe’中：
+		/home/miaoch/s5p4418/linux_v2/kernel/drivers/hwmon/nxp_adc_temp.c:606：对‘iio_st_channel_get’未定义的引用
+		make: *** [.tmp_vmlinux1] 错误 1
+		
+		解决：
+		注释：# CONFIG_SENSORS_NXP_ADC_TEMP=y 
+		
+	11:55 2017/12/13
+	出现错误：
+	rch/arm/mach-s5p4418/built-in.o：在函数‘_hdmi_hpd_changed’中：
+	/home/miaoch/s5p4418/linux_v2/kernel/arch/arm/mach-s5p4418/soc/hdmi/nxp-hdmi-context.c:844：对‘switch_set_state’未定义的引用
+	arch/arm/mach-s5p4418/built-in.o：在函数‘hdmi_init_context’中：
+	/home/miaoch/s5p4418/linux_v2/kernel/arch/arm/mach-s5p4418/soc/hdmi/nxp-hdmi-context.c:928：对‘switch_dev_register’未定义的引用
+	/home/miaoch/s5p4418/linux_v2/kernel/arch/arm/mach-s5p4418/soc/hdmi/nxp-hdmi-context.c:977：对‘switch_dev_unregister’未定义的引用
+	arch/arm/mach-s5p4418/built-in.o：在函数‘hdmi_deinit_context’中：
+	/home/miaoch/s5p4418/linux_v2/kernel/arch/arm/mach-s5p4418/soc/hdmi/nxp-hdmi-context.c:995：对‘switch_dev_unregister’未定义的引用
+	make: *** [.tmp_vmlinux1] 错误 1
+		11:57 2017/12/13
+		解决：在.config文件中，将NXP_HDMI的相关部分注释掉！
+		
+		注释之后还是出现错误！
+		
+		12:05 2017/12/13
+		在make menuconfig中干掉：Enable out HDMI
+ -> Device Drivers                                                                                                                         x  
+  x       -> Multimedia support (MEDIA_SUPPORT [=y])                                                                                              x  
+  x         -> Nexell V4L2 Devices (V4L2_NXP [=y])                                                                                                x  
+  x           -> Nexell OUT interface (VIDEO_NXP_OUT [=y])                                                                                        x  
+  x             -> Enable out HDMI (NXP_OUT_HDMI [=y])     
+		
+
+11:05 2017/12/13
+重新配置，使用的文件是v1c。
+出现错误：
+drivers/power/axp259_power/axp259-board.c:184:10: 错误：‘CFG_GPIO_AXP259_PMIC_INTR’未声明(不在函数内)
+make[3]: *** [drivers/power/axp259_power/axp259-board.o] 错误 1
+	11:09 2017/12/13
+	注释： # CONFIG_KP_AXP259=y
+	
+
+	-> Device Drivers                                                                                                                         x  
+  x       -> Power supply class support (POWER_SUPPLY [=y])                                                                                       x  
+  x         -> AXP Power drivers (KP_AXP [=n]) 
+	
+	11:38 2017/12/13
+	最后的解决办法是：把Power supply class support (POWER_SUPPLY 全部干掉！
+	
+10:28 2017/12/13
+昨天裁剪的内核有问题，
+不能进行休眠和唤醒！
+	10:30 2017/12/13
+	通过昨天保存的config文件，一步一步排除错误，
+	目前确定的可能是Device Drivers出现错误，导致不能休眠和唤醒！
+	
+	10:31 2017/12/13
+	烧写default_config，
+	出现错误：eta3558 failed writing！
+	在make menuconfig中搜索：eta3558，
+	找到：-> Device Drivers -> Voltage and Current Regulator Support (REGULATOR [=y])
+		->ETA3558 for VDDARM
+	将这一项关闭！
+
+===================
+
+20:36 2017/12/12
+明日计划：
+继续裁剪，尤其是设备驱动，和文件系统！
+
+
+20:24 2017/12/12
+将最后的
+Security options
+Cryptographic API
+Library routines
+全部去掉：
+[    0.861000] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: (
+或
+[    0.854000] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data 
+20:02 2017/12/12
+裁剪kernel_hacking中的，全部去除：
+	只剩下打印时间戳的；
+	[    0.865000] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: (null)
+
+
+19:43 2017/12/12
+裁剪userspace binary formats：
+	只剩下elf格式；
+19:46 2017/12/12
+裁剪CPU Power Managerment
+	[    0.900000] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: (null)
+
+
+19:29 2017/12/12
+裁剪Floating point emulation：
+	[    0.903000] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: (null)
+
+
+19:12 2017/12/12
+裁剪kernel features：
+	按照之前裁剪的完整版进行裁剪；
+	[    0.990000] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: (null)
+
+16:51 2017/12/12
+裁剪System Type:
+	按照之前的裁剪：
+	18:17 2017/12/12
+		裁剪之后的结果：
+		[    1.692000] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: (null)
+		或
+		[    1.808000] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: (null)
+	16:54 2017/12/12
+	出现错误：
+arch/arm/mach-s5p4418/devices.c: 在函数‘nxp_cpu_devices_register’中:
+arch/arm/mach-s5p4418/devices.c:1412:28: 错误：‘mipi_device’未声明(在此函数内第一次使用)
+arch/arm/mach-s5p4418/devices.c:1412:28: 附注：每个未声明的标识符在其出现的函数内只报告一次
+  CC      ipc/msgutil.o
+make[1]: *** [arch/arm/mach-s5p4418/devices.o] 错误 1
+make: *** [arch/arm/mach-s5p4418] 错误 2	
+		17:01 2017/12/12
+		在.config中注释掉MIPI的部分；
+	17:02 2017/12/12
+	出现错误：
+	/home/miaoch/s5p4418/linux_v2/kernel/drivers/media/video/nexell/out/nxp-resc.c:528：对‘nxp_soc_disp_device_get_sync_param’未定义的引用
+		18:21 2017/12/12
+		解决错误：
+		在make menuconfig中搜索到与SOC有关系，就把去掉的关于SOC的模块，打开！问题解决！
+	
+
+
+16:32 2017/12/12
+现在裁剪第一部分：General setup
+	这部分就没咋裁剪，保留原来的就好！
+	
+
+
+16:19 2017/12/12
+现在裁剪Networking support；
+按照之前的整体版本进行裁剪！
+	16:31 2017/12/12
+	可以运行的！
+	可以休眠和唤醒！
+	[    1.467000] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: (null)
+16:17 2017/12/12
+Device Drivers大概裁剪一下，没有问题！
+USB模块，GPIO模块等一些可以不用的模块还没有裁掉！
+
+16:00 2017/12/12
+错误：
+arch/arm/plat-s5p4418/realv1q/device.c:719:2: 错误：隐式声明函数‘mdelay’ [-Werror=implicit-function-declaration]
+#include <linux/delay.h>
+
+15:34 2017/12/12
+错误：
+arch/arm/mach-s5p4418/built-in.o：在函数‘_hdmi_hpd_changed’中：
+/home/miaoch/s5p4418/linux_v2/kernel/arch/arm/mach-s5p4418/soc/hdmi/nxp-hdmi-context.c:844：对‘switch_set_state’未定义的引用
+arch/arm/mach-s5p4418/built-in.o：在函数‘hdmi_init_context’中：
+/home/miaoch/s5p4418/linux_v2/kernel/arch/arm/mach-s5p4418/soc/hdmi/nxp-hdmi-context.c:928：对‘switch_dev_register’未定义的引用
+/home/miaoch/s5p4418/linux_v2/kernel/arch/arm/mach-s5p4418/soc/hdmi/nxp-hdmi-context.c:977：对‘switch_dev_unregister’未定义的引用
+arch/arm/mach-s5p4418/built-in.o：在函数‘hdmi_deinit_context’中：
+/home/miaoch/s5p4418/linux_v2/kernel/arch/arm/mach-s5p4418/soc/hdmi/nxp-hdmi-context.c:995：对‘switch_dev_unregister’未定义的引用
+drivers/built-in.o：在函数‘free_wrapper’中：
+/home/miaoch/s5p4418/linux_v2/kernel/drivers/usb/host/dwc_otg/dwc_otg_pcd_linux.c:1432：对‘usb_gadget_unregister_driver’未定义的引用
+drivers/built-in.o：在函数‘pcd_init’中：
+/home/miaoch/s5p4418/linux_v2/kernel/drivers/usb/host/dwc_otg/dwc_otg_pcd_linux.c:1495：对‘usb_add_gadget_udc’未定义的引用
+drivers/built-in.o：在函数‘nxp_sort_adc’中：
+/home/miaoch/s5p4418/linux_v2/kernel/drivers/hwmon/nxp_adc_temp.c:219：对‘iio_st_read_channel_raw’未定义的引用
+drivers/built-in.o：在函数‘nxp_adc_tmp_probe’中：
+/home/miaoch/s5p4418/linux_v2/kernel/drivers/hwmon/nxp_adc_temp.c:606：对‘iio_st_channel_get’未定义的引用
+make: *** [.tmp_vmlinux1] 错误 1
+
+
+
+
+15:12 2017/12/12
+在Device Drivers中从下往上裁剪到：Sound card support
+	15:26 2017/12/12
+	出错，usb/gadget/
+		在.config中关于此项的注释！
+		
+
+14:25 2017/12/12
+以s5p4418_realv1q_linux_defconfig为基础：
+
+完整版：
+[    3.333000] rtc-pcf85063 1-0051: pcf85063_get_datetime: read error
+
+裁剪网络之后版：
+eta3558 failed writing
+	在make menuconfig中搜索eta3558出现：
+Symbol: REGULATOR_ETA3558 [=y]
+Type  : tristate
+Prompt: ETA3558 for VDDARM
+	Defined at drivers/regulator/Kconfig:392
+	Depends on: REGULATOR [=y] && I2C [=y]
+	Location:   
+		-> Device Drivers
+			-> Voltage and Current Regulator Support (REGULATOR [=y]) 
+				ETA3558 for VDDARM	有这一项，把这项去除
+	
+	14:37 2017/12/12
+	在make menunconfig中找不到该项;
+	然后在.config中进行注释：
+	# CONFIG_REGULATOR_ETA3558=y  
+	14:49 2017/12/12
+	启动后，异常！
+	
+10:28 2017/12/12
+linux/kernel/kernel-3.4.39/include/linux/cpu.h:183:int cpu_down(unsigned int cpu);
+
+drivers/hwmon/nxp_adc_temp.c: 在函数‘cpu_down_force_byResource’中:
+drivers/hwmon/nxp_adc_temp.c:140:9: 错误：隐式声明函数‘cpu_down’ [-Werror=implicit-function-declaration]
+	19:07 2017/12/14
+	解决方法：
+	在.config中将NXP_ADC_TEMP注释掉！
+
+drivers/usb/gadget/storage_common.c: 在函数‘fsg_lun_open’中:
+drivers/usb/gadget/storage_common.c:687:3: 错误：隐式声明函数‘bdev_logical_block_size’ [-Werror=implicit-function-declaration]
+drivers/usb/gadget/storage_common.c:688:3: 错误：隐式声明函数‘blksize_bits’ [-Werror=implicit-function-declaration]
+
+linux/blkdev.h
+
+
+===================
+15:53 2017/12/8
+重新配置一下内核:
+General setup
+	Prompt for development and/or incomplete code/drivers
+	System V IPC
+	POSIX Message Queues	消息队列
+	open by fhandle syscalls	使用文件句柄系统调用来打开文件
+	Kernel .config support
+	Automatic process group scheduling	自动进程组调度
+	Kernel->user space relay support (formerly relayfs)	内核-->用户空间的中继支持
+	Initial RAM filesystem and RAM disk (initramfs/initrd) support	初始化内存文件系统和内存盘(initramfs/initrd)
+	Optimize for size	优化大小，让编译器在编译时优化代码
+	暂时加上 Configure standard kernel features (expert users) 这里面的默认配置，专家级设置，用于调试
+	Enable full-sized data structures for core	会增加内核的大小，但是性能也增加
+	Enable futex support
+	Enable eventpoll support
+	Enable signalfd() system call
+	Enable timerfd() system call
+	-*- Enable eventfd() system call
+	Use full shmem filesystem	共享内存文件系统
+	Enable AIO support	这个特性启用了线程化程序使用的POSIX异步I/O
+	Embedded system
+	Kernel Performance Events And Counters
+		-->	 Kernel performance events and counters
+	Choose SLAB allocator (SLUB (Unqueued Allocator))  --->
+		SLUB (Unqueued Allocator) 
+	Profiling support	支持扩展特性，但是没选
+	Optimize very unlikely/likely branches	优化非常近似或不近似的分支，使分支预判更加简单并可以减少开销
+
+Enable loadable module support	允许内核加载模块
+	Module unloading	启用这个特性后，Linux内核可以卸载模块
+//Enable the block layer	启用块级支持，禁用这个将会使块设备无法使用并且无法启动某些文件系统
+//	IO Schedulers
+//		-->	Deadline I/O scheduler
+	
+System Type	
+	MMU-based Paged Memory Management Support
+	ARM system type (SLsiAP S5P4418D/Q)
+		-->	SLsiAP S5P4418D/Q
+	Timer frequency (1000 HZ)
+		-->	1000 HZ
+	Prototype build mode (Release)
+		-->	Release
+	Memory max order (4Mbyte)
+		-->	4Mbyte
+	CPU Suspend (Goto Power Off when Suspend) 
+		Goto Power Off when Suspend	
+		Goto idle when Suspend
+	//Support multiple interrupt service routine	支持多个中断服务程序
+	//Assign Exclusive Bus for IO	为IO指定专用总线
+	PWM driver
+		/sys/devices/platform/pwm.N (sysfs interface)
+		pwm 0
+		pwm 1
+
+Kernel Features
+	//Symmetric Multi-Processing 	对于有多个CPU的系统，最好启用，对于只有单个处理器的设备，内核会在禁用这个特性后执行得更快
+	Memory split (3G/1G user/kernel split)
+		-->	3G/1G user/kernel split
+	Preemption Model (Preemptible Kernel (Low-Latency Desktop))	内核抢占
+		-->	Preemptible Kernel (Low-Latency Desktop)	这个应该无所谓
+	Use the ARM EABI to compile the kernel
+		-->	Allow old ABI binaries to run with this kernel (EXPERIMENTAL)	对于嵌入式系统，着两个要选上，否则很可能启动的的时候报错
+	Allow for memory compaction
+	Enable KSM for page merging
+	(4096) Low address space to protect from user allocation
+	Force flush the console on restart
+	
+Boot options
+	一般不需要配置，u-boot会把启动参数传递给内核，
+	如果bootloader没有传参数，可以在这里配置启动参数！
+CPU Power Management
+	CPU Frequency scaling	CPU调频
+		想要改变处理器的时钟速度和运行时，就启用这个特性，cpu调频意味着改变处理器的时钟速度，这个驱动可以用于降低时钟频率以节能；
+		CPU frequency translation statistics	CPU频率统计功能
+			CPU frequency translation statistics details	CPU频率统计功能详细
+		Default CPUFreq governor	默认主频调节，圆括号内是选择的结果；
+			performance 	性能	
+			powersave		省电
+			userspace		用户空间
+			ondemand		按需
+			conservative	保守的
+			interactive		互动
+	ARM CPU frequency scaling drivers	
+		SLsiAP CPU Frequency scaling support
+			Dynamic Frequency scaling debug message
+			Dynamic Voltage scaling debug message
+			Select CPU PLL device (PLL 0)
+
+Floating point emulation	浮点仿真
+	全部没选
+Userspace binary formats
+	Kernel support for ELF binaries 
+	Write ELF core dumps with partial segments
+	Kernel support for a.out and ECOFF binaries 
+	Kernel support for MISC binaries 
+Power management options
+	Suspend to RAM and standby	系统是否可以挂起到内存
+	Opportunistic sleep		内核在没有活跃的唤醒调用被调用时进入挂起或者睡眠状态
+	User space wakeup sources interface	启用这个特性将会允许唤醒源对象被激活、停用、并通过基于sysfs接口由用户空间创建，唤醒源对象会追踪唤醒事件源；
+	Maximum number of user space wakeup sources	如果启用了上面的选项，可以设置此项，最好选择默认，那么就可以启用垃圾收集器；
+	Garbage collector for user space wakeup sources	垃圾收集器是 一种内存管理方式；
+	Run-time PM core functionality	这个电源选项关于IO设备，这个选项允许IO硬件在运行时进入低功耗状态，硬件必须支持这个才行，不是所有的硬件都支持；
+	Power Management Debug Support
+		Extra PM attributes in sysfs for low-level debugging/testing
+		Test suspend/resume and wakealarm during bootup 
+	Advanced Power Management Emulation
+	Log time spent in suspend
+
+ 
+	Networking options	网络选项
+		Packet socket	socket包	允许没有中间物的情况下，进程与网络设备间进行通信，增强性能；
+		Unix domain sockets	Unix域套接字
+			UNIX: socket monitoring interface	套接字监视接口
+		TCP/IP networking	TCP/IP网络
+		Large Receive Offload (ipv4/tcp)
+Device Drivers
+	Generic Driver Options	
+		Maintain a devtmpfs filesystem to mount at /dev 
+			Automount devtmpfs at /dev, after the kernel mounted the rootfs 
+		Select only drivers that don't need compile-time external firmware	只选择不需要编译时外部固件的驱动程序
+		Synchronization framework 	同步框架
+			Software synchronization objects
+				Userspace API for SW_SYNC 
+	Connector - unified userspace <-> kernelspace linker	通过netlink套接字生成一条用户空间和内核空间的连接
+		这个套接字使用netlink协议，是另外一个Linux系统即使在没有物理网络的情况下仍需要网络特性的例子；
+		Report process events to userspace
+	Network device support
+		Network core driver support 
+	Input device support
+		Input Power Event -> APM Bridge 
+		Reset key
+		Hardware I/O ports
+			Serial I/O support
+				Serial port line discipline
+	Character devices
+		Non-standard serial port support
+		Memory device driver		
+		Serial drivers
+			(8250/16550 and compatible serial support)	用于标准串口支持
+				Console on 8250/16550 and compatible serial port
+			(4) Maximum number of 8250/16550 serial ports
+			(4) Number of 8250/16550 serial ports to register at runtime (NEW)
+			ARM AMBA PL010 serial port support
+				Support for console on AMBA serial port
+			ARM AMBA PL011 serial port support
+				Support for console on AMBA serial port
+			Serial port 0 
+				Use DMA
+			Serial port 1
+				Use DMA
+			Serial port 2
+				Use DMA
+			Set this to reduce resume time (PL011)	设置此项以减少恢复时间
+		TTY driver to output user messages via printk
+		Hardware Random Number Generator Core support	@@@
+			Timer IOMEM HW Random Number Generator support	@@@
+		LED Support for RealARM S5P4418
+	I2C support
+		Enable compatibility bits for old user-space	一些旧的软件将I2C适配器作为类设备，但是如今的软件不会这样做，所以这个驱动会提供对旧软件的向后支持；
+		I2C device interface	可以生成I2C设备文件
+		I2C bus multiplexing support	可以通过这个驱动提供复用支持
+			GPIO-based I2C multiplexer
+		Autoselect pertinent helper modules	自动选择相关辅助模块
+		I2C Hardware Bus support
+			GPIO-based bitbanging I2C
+			Nxp I2C
+			Port 0
+				Gpio Mode
+			Port 1
+				Gpio Mode
+			Port 2
+				Gpio Mode
+	SPI support
+		Debug support for SPI drivers
+		Altera SPI Controller
+		Utilities for Bitbanging SPI masters
+		GPIO-based bitbanging SPI Master
+		OpenCores tiny SPI
+		ARM AMBA PL022 SSP controller
+			port 0 
+			use dma mode port 0 
+			port 1
+			use dma mode port 2
+			port 2
+			use dma mode port 2
+		User mode SPI device driver support
+	GPIO Support
+		Debug GPIO calls
+		/sys/class/gpio/... (sysfs interface)
+		I2C GPIO expanders:
+			Maxim MAX7300 GPIO expander
+			MAX7319, MAX7320-7327 I2C Port Expanders
+				Interrupt controller support for MAX732x
+			PCA953x, PCA955x, TCA64xx, and MAX7310 I/O ports
+				Interrupt controller support for PCA953x 
+			PCF857x, PCA{85,96}7x, and MAX732[89] I2C GPIO expanders  
+			Semtech SX150x I2C GPIO expander
+			ADP5588 I2C GPIO expander
+				Interrupt controller support for ADP5588
+		SPI GPIO expanders:
+			Maxim MAX7301 GPIO expander
+			Microchip MCP23xxx I/O expander
+			Freescale MC33880 high-side/low-side switch
+			74x164 serial-in/parallel-out 8-bits shift register
+		Generic Thermal sysfs driver
+		Watchdog Timer Support
+		Multimedia support		里面有v4l2的一些东西
+		MMC/SD/SDIO card support	
+			Assume MMC/SD cards are non-removable (DANGEROUS) 
+			SDIO UART/GPS class support
+			ARM AMBA Multimedia Card Interface support
+			MMC/SD/SDIO over SPI
+			Synopsys DesignWare Memory Card Interface 
+				Internal DMAC interface
+				Synopsys Designware MCI Support as platform device
+			Support SD/MMC CH 0 
+				Use SD/MMC CH 0 DMA MODE
+			Support SD/MMC CH 1
+				Use SD/MMC CH 1 DMA MODE
+			Support SD/MMC CH 2
+				Use SD/MMC CH 2 DMA MODE
+		Switch class support
+			GPIO Swith support 
+		Real Time Clock
+			Set system time from RTC on startup and resume
+			RTC debug support
+			RTC interfaces
+				/sys/class/rtc/rtcN (sysfs)
+				/proc/driver/rtc (procfs for rtc0)
+				/dev/rtcN (character devices)
+			nxp PCF85063  
+			ARM AMBA PL030 RTC
+			ARM AMBA PL031 RTC
+		DMA Engine support
+			ARM PrimeCell PL080 or PL081 support 
+		Userspace I/O drivers
+			Userspace I/O platform driver
+			Userspace I/O platform driver with generic IRQ handling
+		IOMMU Hardware Support
+		
+	Enable POSIX file locking API
+	Dnotify support
+	Inotify support for userspace 
+	Filesystem wide access notification
+	Kernel automounter version 4 support (also supports v3)
+	FUSE (Filesystem in Userspace) support
+		Character device in Userspace support
+	
+	Second extended fs support
+	The Extended 4 (ext4) filesystem
+		Use ext4 for ext2/ext3 file systems
+		Ext4 extended attributes
+			Ext4 POSIX Access Control Lists
+			Ext4 Security Labels
+	Enable POSIX file locking API
+	Inotify support for userspace
+	Kernel automounter version 4 support (also supports v3)
+	FUSE (Filesystem in Userspace) support
+	Miscellaneous filesystems
+	
+				
+			
+				
+arch/arm/mm/alignment.c:327:15: 警告：此函数中的‘offset.un’在使用前可能未初始化 [-Wmaybe-uninitialized]
+arch/arm/mm/alignment.c:749:21: 附注：‘offset.un’在此声明
+
+arch/arm/mach-s5p4418/devices.c:1402:28: 错误：‘lcd_device’未声明(在此函数内第一次使用)
+arch/arm/mach-s5p4418/devices.c:1402:28: 附注：每个未声明的标识符在其出现的函数内只报告一次
+
+			
+		
+			
+			
+		
+	
+		
+	
+
+
+	
+		
+	
+10:53 2017/12/8
+使用儒煌给板卡时带的boot.img，
+看启动时需要多长时间：
+Starting network...
+[    0.966000] mmc_host mmc2: Bus speed (slot 0
+Starting mdev...
+[    1.222000] rtc-pcf85063 1-0051: pcf85063_get_datetime: read error
+
+
+9:38 2017/12/8
+先看menuconfig中networking部分；
+	10:53 2017/12/8
+	裁剪完成！
+
+===================
+
+
+20:58 2017/12/7
+plan1207：
+1、继续调研内核配置，
+	网络部分不能全部干掉；
+2、调研Linux系统调频；
+
+
+20:55 2017/12/7
+裁剪内核参考：
+http://www.cnblogs.com/xiaocen/p/3717993.html
+http://blog.csdn.net/beckdon/article/details/50424557
+
+
+1482673045
+
+#ifndef	MODULE_ARCH_INIT
+#define MODULE_ARCH_INIT {}
+#define MODULE_ARCH_INIT {}
+#endif
+
+19:33 2017/12/7
+儒煌给拷贝了mymake.sh，
+可以直接使用这个脚本；
+	20:16 2017/12/7
+	使用的配置文件：s5p4418_realv1c_linux_defconfig
+	
+	也就是说make menuconfig后，
+	将生成的.config文件改名字为s5p4418_realv1c_linux_defconfig，且放到arch/arm/configs/目录下，
+	然后再执行./mymake.sh
+
+19:33 2017/12/7
+板卡对应的是：s5p4418_realv1c
+
+16:05 2017/12/7
+错误：
+drivers/usb/gadget/storage_common.c:686:3: 错误：隐式声明函数‘bdev_logical_block_size’ [-Werror=implicit-function-declaration]
+drivers/usb/gadget/storage_common.c:687:3: 错误：隐式声明函数‘blksize_bits’ [-Werror=implicit-function-declaration]
+$> grep -rn "bdev_logical_block_size"
+#include <linux/blkdev.h>
+	17:04 2017/12/7
+	引入相应的头文件之后，还是报错误，
+	且做了make clean;
+	最后发现是usb模块，
+	然后make menuconfig，直接干掉USB模块，
+	再次make，通过。
+
+15:58 2017/12/7
+drivers/power/axp259_power/axp259-board.c:184:10: 错误：‘CFG_GPIO_AXP259_PMIC_INTR’未声明(不在函数内)
+
+15:51 2017/12/7
+错误:
+drivers/power/axp259_power/axp259-mfd.c:204:26: 错误：‘CFG_GPIO_AXP259_PMIC_INTR’未声明(在此函数内第一次使用)
+
+
+15:43 2017/12/7
+在编译过程中遇到错误：
+CFG_GPIO_AXP259_PMIC_INTR’未声明
+打开.config，发现关于AXP259的CONFIG未设置，
+然后将其设置为=y;
+	15:47 2017/12/7
+	重新编译，还是出现错误，
+	然后
+	$> grep -rn "CFG_GPIO_AXP259_PMIC_INTR"
+	drivers/power/axp259_power/axp259-cfg.h:17:#define AXP_IRQNO			CFG_GPIO_AXP259_PMIC_INTR
+	将这句宏定义的代码复制到出错的文件中！
+	重新编译；
+	
+	19:17 2017/12/14
+	解决：
+	
+
+
+15:04 2017/12/7
+以s5p4418_real5038_linux_defconfig为基础，
+增加去去除一些选项：
+File systems以下的全部不选；
+
+Kernel hacking：
+	Show timing information on printks
+Device Drivers
+	Generic Driver Options
+		
+
+14:45 2017/12/7
+到arch/arm/configs/目录下找配置文件，
+筛选过后(将带有android的过滤 && 只要s5p4418开头的)，
+s5p4418_real5038_linux_defconfig	-->	最后选择这个
+s5p4418_realv1c_linux_defconfig
+s5p4418_realv1q_linux_defconfig
+
+10:41 2017/12/7
+没有添加但感觉需要的：
+Power supply class support
+LED Support
+
+
+10:10 2017/12/7
+编译进内核的内容：
+1、文件系统下面的全部不考虑；
+2、文件系统估计选择ext3/4;
+3、设备驱动中：
+	Generic Driver Options中选择：
+		Maintain a devtmpfs filesystem to mount at /dev
+		Automount devtmpfs at /dev, after the kernel mounted the rootfs
+		关于固件的部分没有选择；
+	Memory Technology Device (MTD) support
+		里面的内容都没选择，其实这项感觉可以不选；
+	//Input device support-->Hardware I/O ports-->Serial I/O support-->Serial port line discipline (NEW)
+	Character devices
+		 Support for binding and unbinding console drivers	虚拟终端
+		 Non-standard serial port support
+		 Serial drivers
+			 ARM AMBA PL011 serial port support
+			 Support for console on AMBA serial port
+			 Serial port 0 (NEW)
+				Use DMA
+		LED Support for RealARM S5P4418
+	I2C support
+		I2C device interface
+		Autoselect pertinent helper modules	自动选择相关辅助模块
+		I2C system bus drivers (mostly embedded / system-on-chip)	-->	ARM Versatile/Realview I2C bus support (NEW)
+	SPI support
+		*** SPI Master Controller Drivers ***
+			Altera SPI Controller
+			ARM AMBA PL022 SSP controller
+				port 0 
+				use dma mode port 0
+	Device Drivers
+		I2C support
+			I2C device interface
+			Autoselect pertinent helper modules
+		SPI support
+			Altera SPI Controller
+			ARM AMBA PL022 SSP controller
+				port 0 
+				use dma mode port 0
+		GPIO Support 
+			要不要全选
+		MMC/SD/SDIO card support
+			全选？
+		Real Time Clock
+		
+		
+		 
+
+10:07 2017/12/7
+内核编译需要确定的内容：
+	1、文件系统类型；
+	2、I2C的厂商：在选用GPIO时需要；
+	
+
+
+===================
+
+20:20 2017/12/6
+明日计划：
+	1、继续完成内核选项的调研；
+	2、调研Linux系统休眠唤醒的过程；
+
+19:36 2017/12/6
+1、什么是内核固件
+2、
+
+14:49 2017/12/6
+编译Linux内核：
+	1、将生成的镜像放置sd卡中的sd_refuse中，重启，自动烧录；
+	2、编译好的内核位置是linux_v2/result;
+	3、编译一个完整版内核，看启动需要多长时间；
+	4、可以根据启动时的打印信息进行裁剪；
+	5、可以根据板卡实际的外围设备进行裁剪；
+	6、不能裁剪IIC、SPI；
+	7、注意休眠、唤醒执行的步骤，控制台打印信息，suspend_debug;
+
+10:44 2017/12/6
+cam_media.cpp中冗余部分:
+	可能在调用拍照时，传入了参数is_record，(cam_media.cpp中media_data_process()),
+	is_record参数是控制视频录制的；
+
+9:54 2017/12/6
+今日任务：
+	1、看代码：cam_media.cpp，是否冗余，能否将拍照和视频部分拆开；
+	2、继续熟悉代码；
+
+===================
+10:49 2017/12/5
+	SPI图片输出的优化（15s更新图片）
+	10:51 2017/12/5
+	测试方法：在整个流程中的各个步骤之前和之后打印时间戳，
+		看到底是哪一部比较浪费时间；
+	
+	发起拍照命令时(拍照之前)，
+	拍照完成之后，
+	动态检测前，
+	动态检测后，
+	SPI传输前，
+	SPI传输后，
+	SPI传输每一帧的时间，
+	
+	17:09 2017/12/5
+	完成在相应地方添加时间：
+	代码目录为：
+	/home/miaoch/workdir/lab/slpc/20171205
+	还未测试！	
+===================
+
+20:30 2017/12/4
+	代码修改完成，未上传，看能不能进行测试，
+	最好测试之后上传！
+
+11:14 2017/12/4
+在淘宝上搜索4G模块，
+需要插卡和天线，
+且成本较高，200-600R；
+
+===================
+
+20:55 2017/12/1
+下周任务：
+1、将上周做的修改先上传到svn中；
+2、camera_pthread.cpp拆分成照片和视频单独处理；
+
+20:39 2017/12/1
+
+rtsp协议和4G：
+
+需要哪些模块，每个模块需要做什么，需要多长时间！
+
+流程图和交互图
+
+17:04 2017/12/1
+孙加入的代码是为了：
+将图片的数据全部读出来，
+然后存到一个链表节点中；
+主要是在cmd_pthread.cpp中调用了linked_read(&list,fd_img,num_rem.number,num_rem.remainder);
+和clear(&list);
+在linked_read()的参数中，
+list是建立的一个链表表头，
+fd_img是打开的最新文件的文件描述符，
+num_rem.number是计算出来的图片有多少个1k，
+num_rem.remainder是计算出来的除了整块1k，剩下的还有多少；
+
+9:44 2017/12/1
+如何启动拍照还是个问题：
+	slpc_main.cpp中的while循环的作用是启动线程，
+	调用camera_process()实现拍照的功能，
+	在camera_process()中还要根据标志位，判断是启动拍照，还是录制视频！
+	
+	10:54 2017/12/1
+	现在改的是，在cmd_(){cmd_pthread.cpp}中，根据串口传输的指令，
+	在启动拍照时，根据pic_cnt(设置的照片张数)判断是启动拍照，还是获取视频流；
+		现在是在判断为获取视频流下面，调用线程去获取视频流了，
+		但是如果是拍照，则还没有调取相应的函数，
+		所以如何拍照，还需要进行更改！
+===================
+
+16:21 2017/11/30
+完成：代码路径：/home/miaoch/workdir/lab/slpc/SLPCamera
+
+15:28 2017/11/30
+现在调用camera_pthread.cpp中的media_data_process()时需要传输一个serial_fd，
+但是这个线程数据结构体中没有这个数据，
+而且调用camera_process时，因为是个线程函数，所以只能传输线程数据，
+所以现在将serial_fd添加到线程数据中；
+
+14:33 2017/11/30
+现在调用camera_process()，创建的线程在slpc_main.cpp中；
+现在要改成判断串口的命令，
+在启动拍照时，根据判断，如果是255的话，就获取视频流！
+(但是这里有个问题，拍照也是使用线程吗？应该不是吧！一会分析一下！)
+
+
+9:49 2017/11/30
+1、视频流获取方式，使用临时线程去获取；
+2、将cmd_pthread中的内容封装函数；
+
+	
+
+===================
+
+15:41 2017/11/29
+代码中传输数据时，判定的大小为1400字节，if(n->len<=1400)
+小于1400字节时，采用单RTP包发送，
+大于1400字节时，计算该nalu需要用多少啊长度为1400字节的RTP包来发送；
+	16:36 2017/11/29
+	传输的字节大小是可以改变的，
+	在头文件中有定义：#define MAX_RTP_PKT_LENGTH     1400  
+	然后在.c文件中将1400全部改为1024就可了，
+	但是实际发送的大小可能会大于1024，
+	所以还需要确定打包之后的数据到底是多大！
+
+15:21 2017/11/29
+运行陈旭输出的信息：
+ts_current=90000			保存时间戳	timestamp
+nalu->max_size=8000000		Nal Unit Buffer size
+nalu->len2=5758
+ len: 5758  nal_unit_type: 1
+ts_current=93600
+nalu->max_size=8000000
+nalu->len2=9660
+ len: 9660  nal_unit_type: 1
+ts_current=97200
+nalu->max_size=8000000
+nalu->len2=8063
+ len: 8063  nal_unit_type: 1
+ts_current=100800
+nalu->max_size=8000000
+nalu->len2=23
+ len: 23  nal_unit_type: 7
+
+
+
+9:39 2017/11/29
+rtsp教程地址：
+看rtsp，给出一个结果！
+参考文档：http://www.voidcn.com/article/p-tjlmphrc-bhk.html
+参考代码：rtp_push_h264
+
+讲解DSP文件的：
+	http://blog.csdn.net/lostyears/article/details/51422971
+	http://blog.csdn.net/zhangjikuan/article/details/27367437
+	http://blog.csdn.net/Lostyears/article/details/51423898
+===================
+
+9:56 2017/11/28
+看网络编程相关内容！
+
+18:55 2017/11/27
+协助测试CRC校验程序！
+
+18:53 2017/11/27
+看串口编程！
+
+9:45 2017/11/27
+11月4th周工作总结：
+	1、了解RTSP协议，测试相关例子程序；
+	2、裁剪“视频在屏幕上显示的代码”；
+	3、协助完成部分串口命令的解析与实现；
+11月5th周工作计划：
+	1、继续了解RTSP协议；
+	2、+
+===================
+18:48 2017/11/24
+可能是根本没有这个串口；
+没有可用的端口；
+
+===================
+10:22 2017/11/24
+sz命令传输
+
+21:07 2017/11/23
+先写了IBM Notes
+然后看syw的代码，完成读取照片数据块！
+
+===================
+
+11:05 2017/11/23
+实现设置摄像头参数！
+	写的文件是：cmd_pthread.cpp;
+10:07 2017/11/23
+写清空文件夹的程序！
+	11:04 2017/11/23
+	完成！
+
+===================
+
+19:13 2017/11/21
+明日计划：
+1、首先看摄像头模块串口协议，	
+	然后问是否需要看相关代码；
+2、	获取图片的大小；
+	可以用encOut.bugSize获取图片的大小，
+	但是这个大小应该是10帧数据的大小；
+	
+3、	获取最新的图片；
+
+4、	看能不能改一下拍照程序，
+	获取一帧数据，就进行一次编码，
+	直到够了10帧数据就写入到文件(这个可能有点难度)；
+	或者获取一帧数据，就进行一次编码，然后就直接将编码后的数据写入到文件！
+
+
+16:21 2017/11/21
+在GitHub上找rtp-h264的例子：
+测试过的：
+h264_to_rtp		编译可以通过；
+rtp_push_h264	编译可以通过，应该有戏！
+rtp_h264_aac	编译不通过，缺少文件；
+h264_rtp		缺少Makefile，不能编译！
+rtp_stream		缺少文件，编译不通过！
+
+10:02 2017/11/21
+先分析一下拍照程序：
+	终端打印出[Close File Done.]时，
+	说明已经将视频帧数据写入到了文件中，
+	也就是说生成了图片；
+	
+	在jpg_main.c中，同样是将10帧的数据写入到图片(只是强调帧数)；
+	整个拍照过程是先获取帧数据，等够了10帧之后，
+	再进行编码，最后再将编码之后的数据写入到文件中；
+	
+	enc_out存放的是编码之后的数据；
+	
+	hEnc	Encoder apis	辅助编码；
+	
+	pCurCapturedBuf或pPrevDsp存放的应该是编码之前的数据；
+	
+	10:24 2017/11/21
+	是不是可以不要判断if(pPrevDsp)，
+	因为刚开始这个结构体指针刚开始是NULL，
+	以后通过pPrevDsp = pCurCapturedBuf;这句赋值，
+	就每次都会进行判断，然后进行NX_DspDequeueBuffer( hDsp );，
+	但是这个判断应该是有用的，因为后面应该是进行了dqbuf和qbuf操作；
+	
+	11:36 2017/11/21
+	拍照时间：
+	11:36 2017/11/21
+		real	0m 2.43s
+		user	0m 0.01s
+		sys	    0m 0.77s
+===================
+16:28 2017/11/20
+裁剪视频显示在屏幕上的代码：
+	16:29 2017/11/20
+	将程序中关于hDsp的代码注释，
+	视频就不会显示在屏幕上了！
+	在linux_v2/vpu_test/enc_test测试过了！
+	16:36 2017/11/20
+	现在实现到主程序中；
+	在cam_media.cpp中，
+	将有关hDsp和dspInfo的内容全部注释！
+	
+	16:45 2017/11/20
+	在主程序中不能测试，
+	因为主程序中的视频数据是写入SPI的。
+	16:47 2017/11/20
+	找之前备份的程序进行测试：
+	测试之后是可以的！
+	
+	17:06 2017/11/20
+	在主程序中删除hDsp和dspInfo的相关内容，
+	编译通过！
+	还存在一个pPrevDsp，这个应该不删除！
+	
+
+16:19 2017/11/20
+看了rtsp，没有啥成果；
+
+
+11月3th周工作总结：
+1、将动态检测程序整合到主程序中，且调试完成；
+2、实现视频数据1kb分解，且将视频数据写入SPI；
+3、实现建立保存图片的文件夹，删除视频保存成文件的相关代码；
+
+9:36 2017/11/20
+本周任务：
+1、裁剪“视频在屏幕上显示的代码”；
+2、缩短拍照时间；
+2、了解 RTSP协议，将视频数据进行封装；
+
+===================
+19:27 2017/11/17
+拍照程序如果只用一帧数据做成图片是不可以的，
+看不清内容，失帧现象；
+
+===================
+17:17 2017/11/17
+(1)	将输出到显示器的代码删除；
+	18:51 2017/11/17
+	可以先看enc_main.c的代码，
+	看能不能把显示器显示的代码去掉，
+	然后在往低功耗的项目中实验；
+(2)	 缩短拍照时间；
+	19:15 2017/11/17
+	先确定在哪个步骤用的时间长，
+	然后再做优化！
+[   33.324000] _hw_configure_video 0: fw(1024), fh(768), crop(0:0:0:0), priority(0), format(0x3053564d)
+[   33.337000] nxp_soc_disp_video_set_crop: vid.0.2, L=0, T=0, W=1024, H=768, dstw=1024, dsth=768, wait=1
+[   33.367000] _hw_video_enable: module 0, enable 1
+frameCnt = 1
+NX_VidEncJpegRunFrame ++
+NX_VidEncJpegRunFrame --
+en[   33.616000] _hw_video_enable: module 0, enable 0
+cOut.bufSize = 116696
+Close File Done
+[   33.727000] clipper_irq_handler: real stop...
+[   33.731000] ov5640_s_stream: enable 0, initialized 1
+[   33.736000] ...................................ov5640_video_probe 6340
+[   33.744000] OV5640 Chip ID 0x5640 detected
+[   33.748000] ov5640_s_power.............6089...........
+[   34.750000] back_camera_power_enable: is_back_camera_enabled 1, on 0
+[   34.756000] camera_common_set_clock: 0	----->	用的时间比较长！
+[   34.762000] ov5640_s_power.............6089...........
+----------------------------------------------------------------->	在这里用的时间长
+The system start to suspend ...!
+[   42.472000] PM: suspend entry 1999-12-31 16:00:46.610902399 UTC
+[   42.478000] PM: Syncing filesystems ... done.
+[   42.488000] Freezing user space processes ... (elapsed 0.000 seconds) done.
+[   42.496000] Freezing remaining freezable tasks ... (elapsed 0.001 seconds) done.
+[   42.505000] Suspending console(s) (use no_console_suspend to debug)
+suspend_enter enter
+suspend machine...
+
+
+
+
+===================
+
+16:57 2017/11/16
+现在不需要写视频了，
+所以将视频部分的文件删除！
+
+9:40 2017/11/16
+今日任务：
+	1、总结Linux C access()；
+	2、总结创建目录和文件的过程！
+
+===================
+
+11:28 2017/11/15
+分解小于1kb程序那里，
+没有使用实际读写的长度(没有接收write的返回值)；
+
+19:21 2017/11/14
+明日计划：
+先把板卡的显示屏去掉，
+
+可以拍摄一组图片，确定一下动态检测程序异常的取值范围！
+
+总结一下获取时间戳的程序，
+和fwrite写入文件的程序！
+===================
+
+18:40 2017/11/14
+相似度的取值范围还需确定，
+将摄像头固定起来，
+拍一列照片，
+然后找取值范围！
+
+10:26 2017/11/14
+获取一帧视频数据，
+知道这一帧视频数据的大小；
+	10:34 2017/11/14
+	先找到哪里输出了编码之后的数据；
+	10:41 2017/11/14
+	运行起来之后，出现了一些错误，截图在：E:\dzt\dztlog\slpc\错误截图\微信截图_20171114104022.png
+	10:51 2017/11/14
+	打印encOut.bufSize的大小：
+	15:31 2017/11/14
+	一次性写完一帧数据是可以正常播放的；
+	fwrite_len = fwrite( encOut.outBuf, 1, encOut.bufSize, fdOut );
+	
+	15:31 2017/11/14
+	之前写的两种方法不对，有可能是设置的文件的打开模式不正确，
+	应该是以追加的方式写文件！
+	
+	18:03 2017/11/14
+	现在使用方法二可以读取小于1k的视频数据了，
+	吃完饭回来将fopen改为open形式！
+		19:12 2017/11/14
+		改完！
+
+
+10:07 2017/11/14
+$LD_LIBRARY_PATH	只能在板卡上看！
+echo $PATH
+
+===================
+19:29 2017/11/13
+libopencv_highgui.so: internal error
+没有找到这个错误的原因：
+将Makefile中的-l连接的库文件删除一个，
+下一个就会报这个错误！
+
+将在服务器上用到的opecv的库也改为冉冉目录下的opencv库，
+也就是和板卡上的库相同，
+编译之后能编译过，
+但是在板卡上运行时，也报【内部错误】；
+
+15:59 2017/11/13
+如何在板子上搭建opencv环境！
+
+15:59 2017/11/13
+完成动态检测程序到主程序的添加，
+编译成功，
+但是还没有在板子上进行测试；
+
+10:16 2017/11/13
+11月2th工作总结：
+	1、使用jpg_main替换原来的拍照程序；
+	2、将视频录制功能整合到主程序中，调试完成；
+	3、确定动态检测程序的取值范围，并且将动态检测程序整合到主程序中(未调试)；
+	
+11月3th工作计划：
+	1、调试动态检测程序；
+	2、调研图片压缩算法；
+===================
+
+16:44 2017/11/10
+[ 3849.875000] [VPU|DRV]/home/zhuorh/system_4418/new-linux-1013/linux_v2/linux/platform/s5p4418/modules/coda960/linux/linux_vpu_drv.c(180) : Maximum encoder limit error. Current(3) vs. MAX(3)!!![VPU|API] nx_video_api.c(157) : N
+X_VidEncOpen() : IOCTL_V[ 3849.896000] ov5640_s_stream: enable 0, initialized 0
+PU_OPEN_INSTANCE ioctl f[ 3849.903000] ...................................ov5640_video_probe 6340
+ailed!!!
+[VPU|API] nx_v[ 3849.911000] OV5640 0-003c: reg_read: i2c read error, reg: 4730
+ideo_api.c(233) : Invali[ 3849.919000] OV5640 0-003c: reg_write: i2c write error, reg: 4730
+d encoder handle or driv[ 3849.927000] OV5640 0-003c: reg_read: i2c read error, reg: 300a
+er handle!!!
+NX_VidEncI[ 3849.935000] OV5640 read error!!!!!!!!!!!!!!!
+nit(failed)!!!
+	调用NX_VidEncClose()解决上面的bug；
+
+15:04 2017/11/10
+释放内存：
+void NX_FreeMemory( NX_MEMORY_HANDLE handle )
+
+	15:11 2017/11/10
+	出现的错误：
+	NX_DspDequeueBuffer(): v4l2_dqbuf() failed.
+		16:29 2017/11/10
+		出错位置：
+		cam_media.cpp中的NX_DspQueueBuffer( hDsp, pCurCapturedBuf );
+		
+	15:15 2017/11/10
+	第四次完全出错：
+	NX_VidEncInit(failed)!!!
+	
+	15:39 2017/11/10
+[   50.564000] [VPU|DRV]/home/zhuorh/system_4418/new-linux-1013/linux_v2/linux/platform/s5p4418/modules/coda960/linux/linux_vpu_drv.c(180) : Maximum encoder limit error. Current(3) vs. MAX(3)!!![VPU|API] nx_video_api.c(157) : NX_VidEncOpen() : IOCTL_VPU_OPEN_INSTANCE ioctl failed!!!
+[VPU|API] nx_video_api.c(233) : Invalid encoder handle or driver handle!!!
+NX_
+VidEncInit(failed)!!!
+
+
+14:28 2017/11/10
+已经将视频程序添加到主框架中！
+
+19:41 2017/11/9
+将视频添加完成，明天来了解决bug！
+
+19:23 2017/11/9
+区分视频和捕获屏幕：
+添加变量：corv
+
+
+17:20 2017/11/9
+最后错误的原因是
+删除这个库：
+-lv4l2-nexell
+
+15:42 2017/11/9
+分析一下底层代码试试！
+	
+14:31 2017/11/9
+直接将jpg_main.cpp复制过来，
+稍微改一下，然后调用，
+看会不会出错！
+	15:40 2017/11/9
+	还是会出错，
+	使用readelf查看需要的库也找不到原因！
+14:30 2017/11/9
+编译过了，
+但是在板卡上运行出错：
+[root@casky miao]# ./casky_slpc 
+NX_DspInit(): v4l2_init() failed.
+NX_VipInit(): v4l2_init() failed!
+Segmentation fault
+
+
+9:50 2017/11/9
+解bug:
+camera_pthread.o：在函数‘.LANCHOR0’中：
+camera_pthread.cpp:(.bss+0x8): `vipTime'被多次定义
+cam_media.o:cam_media.cpp:(.bss+0x388)：第一次在此定义
+	遇到这种错误肯定是头文件包含多了！
+
+
+9:48 2017/11/9
+今日计划：
+	上午：继续调试拍照的bug；
+	下午：着手将视频部分添加到主程序中；
+	晚上：看书，总结cut命令；
+
+
+===================
+19:51 2017/11/8
+将拍照程序添加到了主程序框架中，
+但是还有一部分错误！
+继续调试！
+直接在SVN目录下进行调试！
+
+16:03 2017/11/8
+开始写代码:
+	
+创建cam_media.cpp和cam_media.h，
+将拍照和视频放到一个文件中！
+先整合拍照的代码！
+	
+	16:16 2017/11/8
+	最后记得根据头文件，将所包含的文件移动到svn目录下；
+	16:20 2017/11/8
+	其中一些在宏定义在程序中没有使用到的，就没有写到media.h中！
+	16:23 2017/11/8
+	将jpg_main中的MAX_JPEG_HEADER_SIZE改名为MAX_SEQ_BUF_SIZE，两个的值都一样！
+	16:43 2017/11/8
+	初始化参数的时候，没有定义要写文件的名字！
+	16:45 2017/11/8
+	区分视频和拍照，直接在函数的参数中添加一个变量，
+	当这个变量为某个值是录屏，
+	当这个变量是另一个值是拍照；
+	
+
+
+15:42 2017/11/8
+通过控制与frameCnt比较的那个值，
+就可以控制录制视频的时间(帧数);
+
+15:32 2017/11/8
+在jpg_main.c中有一些#ifndef DISPLAY_ONLY，
+在最开始处#define DISPLAY_ONLY，
+看是什么效果！
+	15:35 2017/11/8
+	屏幕依旧会显示，
+	frameCnt一直自增，
+	生成的图片没有数据，大小为0；
+	15:36 2017/11/8
+	如果不去除这部分代码，也就是没有定义DISPALY_ONLY，
+	屏幕依旧会显示，
+	也会生成10帧的图像！大小为64K；
+	
+
+11:45 2017/11/8
+在enc_main.c中有
+if(frameCnt > 1000) {
+	break;
+}
+这段代码被注释了，
+去掉注释，
+运行，看是啥反应；
+是不是可以控制录制视频多少帧！
+	15:17 2017/11/8
+	将1000改成100：
+	生成的h264为100帧大小，
+	frameCnt控制的就是接收多少帧的图像！
+	
+11:16 2017/11/8
+先看一下enc_main.c的代码和jpg_main.c的代码；
+	11:17 2017/11/8
+	看能否将在屏幕显示的代码去除！
+
+10:16 2017/11/8
+录制视频，保存成.h264格式的，
+代码路径：/home/miaoch/s5p4418/linux_v2/userdata/app/vpu_test/enc_main.c
+找到vipInfo.port = VIP_PORT_0;
+原来不是VIP_PORT_0，
+后来儒煌改成了这个，
+然后运行之后，可以生成视频了！
+
+video input processor's port number	视频输入处理器的端口号
+
+原来是：VIP_PORT_MIPI；
+这个并不能生成图片或视频，
+也许是通道选择错误错误！
+	
+	10:42 2017/11/8
+	使用VIP_PORT_0不能生成.jpg，
+	生成的内容还是h264格式的，
+	将生成的内容改成后缀为.h264就可以用h264播放器进行播放！
+	
+	10:56 2017/11/8
+	在此目录下又发现jpg_main.c可能是保存图片的程序；
+	用法：
+	printf( "\nusage: %s [options]\n", appName );
+    printf( "    -o [out file] : output file name\n" );
+    printf( "    -a [angle]    : 0 / 90 / 180 / 270\n" );
+    printf( "    -q [value]    : 10 ~ 100 (Low(60), Middle(90), High(100))\n" );
+
+9:38 2017/11/8
+今日计划：
+上午：
+	0、看一遍vpu_test代码；
+	1、总结shell脚本比较数字和字符串；
+下午：
+	着重实现视频录制！
+晚上：
+	0、先总结完cut命令；
+	1、看书，指针部分！
+	
+===================
+14:30 2017/11/7
+测试colormap的相似度值
+
+10:16 2017/11/7
+	看代码：vpu_test
+	11:25 2017/11/7
+	现在比较重要的是找到在哪里获取了帧数据，而且不让这个数据断，一直保持！
+	按理说，找到图片的就行，但是图片和H264的编码格式不一样，所以还是不行！
+9:27 2017/11/7
+今日计划：
+上午：
+	0、总结一下今天早上在车上看的shell教程：
+		批量创建文件和删除文件及find命令的一些用法；
+	1、看一下slpc相关文档，主要是开发计划；
+	2、过一遍vpu_test代码；
+	3、调研图片压缩相关内容；
+下午：
+	1、着重看vpu_test代码，写视频录制程序；2小时；
+	2、着重看图像压缩算法，1个小时半！
+晚上：
+	1、写了薪资转正申请表；
+	2、看书！
+===================
+
+16:50 2017/11/6
+使用cam中的代码拍摄的图片和使用codec_tests编码出的图片的大小是不一样的；
+
+16:10 2017/11/6
+将vpu_test2备份一下，
+以后做的修改在~/workdir/lab目录下；
+	16:10 2017/11/6
+	之前VpuEncTest.cpp中的VpuCamEncMain是注释掉的，
+	现在打开，重新运行下程序，看啥反应！
+	
+	测试例子3，
+	出现错误：
+[root@casky demo20000101]# ./codec_tests -m 2 -i zgy.yuv -o zgy.h264 -r 1280,720
+ -f 30,1 -b 10000 -g 30
+[  211.208000] nxp_mlc_set_crop: pad(2), crop(0,0,0,0)
+[  211.213000] nxp_mlc_set_crop: pad(1), crop(0,0,1024,600)
+[  211.224000] ------------[ cut here ]------------
+[  211.228000] WARNING: at drivers/gpu/ion/ion.c:470 ion_alloc+0x454/0x4f8()
+[  211.235000] Modules linked in: vr(O) nx_vpu(O) bcmdhd(O)
+[  211.240000] [<c0015108>] (unwind_backtrace+0x0/0x138) from [<c0042df8>] (warn_slowpath_common+0x4c/0x64)
+[  211.250000] [<c0042df8>] (warn_slowpath_common+0x4c/0x64) from [<c0042e2c>] (warn_slowpath_null+0x1c/0x24)
+[  211.260000] [<c0042e2c>] (warn_slowpath_null+0x1c/0x24) from [<c029d17c>] (ion_alloc+0x454/0x4f8)
+[  211.269000] [<c029d17c>] (ion_alloc+0x454/0x4f8) from [<c029d364>] (ion_ioctl+0x144/0x430)
+[  211.277000] [<c029d364>] (ion_ioctl+0x144/0x430) from [<c0122c28>] (do_vfs_ioctl+0x84/0x59c)
+[  211.285000] [<c0122c28>] (do_vfs_ioctl+0x84/0x59c) from [<c01231ac>] (sys_ioctl+0x6c/0x7c)
+[  211.294000] [<c01231ac>] (sys_ioctl+0x6c/0x7c) from [<c000ed00>] (ret_fast_syscall+0x0/0x30)
+[  211.302000] ---[ end trace 3dcbd7efb0feea5d ]---
+ioctl c0144900 failed with code -1: Invalid argument
+[ERROR|ALLOC] nx_alloc_mem_ion.c (line73)
+ion_alloc_fd failed.(ret=-22)
+Segmentation fault
+
+14:57 2017/11/6
+	图片压缩是可行的，
+	比如一些在线压缩图片的网站，
+	http://compressjpeg.com/zh/
+	即使是jpg格式的图片，
+	还是可以再进行压缩的，
+	就是不知道这个是如何实现的！
+11:39 2017/11/6
+	又看了一遍 vpu_test2的代码！	
+9:56 2017/11/6
+	10月5th周工作总结：
+	1、将检测图片相似度相关程序整合到主程序框架中；
+	2、分析vpu_test程序；
+	3、调研图片压缩算法；
+	
+	11月2th周工作计划：
+	1、继续实现视频录制功能；
+	2、调研图片压缩算法；
+	
+19:24 2017/11/3
+测试一下vpu_test下的应用程序：
+
+16:46 2017/11/2
+拍照程序的代码：/home/miaoch/s5p4418/userdata/app/cam
+19:08 2017/11/2
+之前一直看的代码是：/home/miaoch/s5p4418/linux_v2/userdata/app/vpu_test2
+19:08 2017/11/2
+也可以看/home/miaoch/s5p4418/linux_v2/userdata/app/vpu_test
+
+14:39 2017/11/3
+上午看了VpuJpgTest.cpp代码，
+现在看VpuEncTest.cpp代码；
+	看完代码之后，模仿生成图片的程序，
+	将数据全部用fwrite写到一个文件中，
+	暂时可以先不管文件中的内容到底是什么格式，
+	假设是YUV，
+	然后用编码程序将这个文件编码成H264，
+	看能不能播放！
+	
+19:46 2017/11/2
+明天测试以下vpu_test的执行程序！
+
+19:18 2017/11/2
+	在vpu_test中make，
+	出现错误：
+	make: *** 没有规则可以创建“dec_main.o”需要的目标“/home/real/work/Real_4418/linux/linux/platform/s5p4418/library/include/theoraparser/include/theora_parser.h”。 停止。
+	
+	查看是因为错误原因中提到的路径确实不存在，
+	然后：$> find / -name "*theoraparser*"
+	找到：/home/miaoch/s5p4418/linux_v2/linux/platform/s5p6818/library/include/theoraparser
+	并且有：
+	$> pwd
+	/home/miaoch/s5p4418/linux_v2/linux/platform/s5p6818/library/include/theoraparser
+	$> ls theora_parser.h
+	theora_parser.h
+	
+
+
+/home/miaoch/s5p4418/linux_v2/linux/platform/s5p6818/library/include/theoraparser
+
+19:43 2017/11/1
+	明天来了继续看代码！
+	先搞清楚视频硬解码是什么东西，怎样的过程，然后看代码！
+
+19:33 2017/11/1
+视频硬解码：
+https://maxwellqi.github.io/ios-h264-summ/
+https://oopsr.github.io/2016/07/26/VideoToolbox/
+
+
+
+18:51 2017/11/1
+vpu_test2程序运行结果：搜索@-->
+
+[root@casky miao]# ./codec_tests -i 1.jpg 
+Input #0, image2, from '1.jpg':
+  288.098000] nxp_mlc_set_crop: pad(2), crop(0,0,1280,720)
+39m  Duration:   288.105000] nxp_mlc_set_crop: pad(1), crop(0,0,1024,600)
+9m00:00:00.04, start: 0.000000, bitrate: N/A
+    Stream #0.0: Video: mjpeg, yuvj420p, 1280x720, 25 tbr, 25 tbn, 25 tbc
+Cannot support codecid(8)
+
+@-->
+[root@casky miao]# ./codec_tests -m 2 -o miao.jpg -c 3 -q 100
+[  360.773000] nxp_mlc_set_crop: pad(2), crop(0,0,1600,1200)
+[  360.779000] nxp_mlc_set_crop: pad(1), crop(0,0,1600,1200)
+[  360.785000] ov5640_link_setup
+[  360.788000] camera_common_vin_setup_io: module -> 1, force -> 0
+[  360.794000] camera_common_vin_setup_io
+[  360.798000] ov5640_s_power.............6089...........
+[  360.803000] ov5640_s_fmt: 1600x1200
+[  360.807000] ov5640_set_params........parma code:8200 support code:8200...........
+[  360.814000] ov5640_select_win......width:1600 height:1200......
+[  360.820000] ov5640_s_mbus_fmt.............6270...........
+[  360.829000] back_camera_power_enable: is_back_camera_enabled 0, on 1
+[  360.835000] front_camera_power_enable: is_front_camera_enabled 0, on 0
+[  360.847000] camera_common_set_clock: 24000000
+[  360.859000] ov5640_s_power.............6089...........
+[  360.864000] camera_common_set_clock: 24000000
+[  360.871000] ov5640_s_stream: enable 1, initialized 0
+[  360.875000] ...................................ov5640_video_probe 6340
+[  360.883000] OV5640 Chip ID 0x5640 detected
+[  361.457000] ov5640_s_stream ov5640_write_array init regs
+[  361.470000] ov5640_s_stream: ov5640_write_array win regs
+[  361.475000] ov5640_set_mbusformat.............5553...........
+[  361.608000] nxp_mlc_s_stream: enable 1, client VIDEO MLC VID0, is_video 1
+[  361.615000] _hw_configure_video 0: fw(1600), fh(1200), crop(0:0:1600:1200), priority(0), format(0x3053564d)
+[  361.625000] nxp_soc_disp_video_set_crop: vid.0.2, L=0, T=0, W=1600, H=1200, dstw=1600, dsth=1200, wait=1
+[  361.647000] _hw_video_enable: module 0, enable 1
+frameCnt = 1
+frameCnt = 2
+frameCnt = 3
+frameCnt = 4
+frameCnt = 5
+frameCnt = 6
+frameCnt = 7
+frameCnt = 8
+frameCnt = 9
+frameCnt = 10
+NX_VidEncJpegRunFrame ++
+NX_VidEncJpegRunFrame --
+encOut.bufSize = 1329632
+Close File Done
+[  363.074000] _hw_video_enable: module 0, enable 0
+[  363.162000] clipper_irq_handler: real stop...
+[  363.167000] ov5640_s_stream: enable 0, initialized 1
+[  363.172000] ...................................ov5640_video_probe 6340
+[  363.179000] OV5640 Chip ID 0x5640 detected
+[  363.183000] ov5640_s_power.............6089...........
+[root@casky miao]# [  364.184000] back_camera_power_enable: is_back_camera_enabled 1, on 0
+[  364.190000] camera_common_set_clock: 0
+[  364.196000] ov5640_s_power.............6089...........
+
+[root@casky miao]# ls
+1.jpg        casky_slpc   codec_tests  jpg          jpg.tar      miao.jpg
+
+
+@-->
+[root@casky miao]# ./codec_tests -m 2 -o miao.mp4 -c 3 -q 100
+[  454.709000] nxp_mlc_set_crop: pad(2), crop(0,0,1600,1200)
+[  454.714000] nxp_mlc_set_crop: pad(1), crop(0,0,1600,1200)
+[  454.721000] camera_common_vin_setup_io: module -> 1, force -> 0
+[  454.727000] ov5640_s_power.............6089...........
+[  454.732000] ov5640_s_fmt: 1600x1200
+[  454.735000] ov5640_set_params........parma code:8200 support code:8200...........
+[  454.743000] ov5640_select_win......width:1600 height:1200......
+[  454.749000] ov5640_s_mbus_fmt.............6270...........
+[  454.762000] back_camera_power_enable: is_back_camera_enabled 0, on 1
+[  454.768000] front_camera_power_enable: is_front_camera_enabled 0, on 0
+[  454.781000] camera_common_set_clock: 24000000
+[  454.793000] ov5640_s_power.............6089...........
+[  454.798000] camera_common_set_clock: 24000000
+[  454.805000] ov5640_s_stream: enable 1, initialized 0
+[  454.809000] ...................................ov5640_video_probe 6340
+[  454.817000] OV5640 Chip ID 0x5640 detected
+[  455.391000] ov5640_s_stream ov5640_write_array init regs
+[  455.403000] ov5640_s_stream: ov5640_write_array win regs
+[  455.409000] ov5640_set_mbusformat.............5553...........
+[  455.541000] nxp_mlc_s_stream: enable 1, client VIDEO MLC VID0, is_video 1
+[  455.548000] _hw_configure_video 0: fw(1600), fh(1200), crop(0:0:1600:1200), priority(0), format(0x3053564d)
+[  455.558000] nxp_soc_disp_video_set_crop: vid.0.2, L=0, T=0, W=1600, H=1200, dstw=1600, dsth=1200, wait=1
+[  455.573000] _hw_video_enable: module 0, enable 1
+frameCnt = 1
+frameCnt = 2
+frameCnt = 3
+frameCnt = 4
+frameCnt = 5
+frameCnt = 6
+frameCnt = 7
+frameCnt = 8
+frameCnt = 9
+frameCnt = 10
+NX_VidEncJpegRunFrame ++
+NX_VidEncJpegRunFrame --
+encOut.bufSize = 1328112
+Close File Done
+[  456.876000] _hw_video_enable: module 0, enable 0
+[  456.968000] clipper_irq_handler: real stop...
+[  456.973000] ov5640_s_stream: enable 0, initialized 1
+[  456.978000] ...................................ov5640_video_probe 6340
+[  456.987000] OV5640 Chip ID 0x5640 detected
+[  456.991000] ov5640_s_power.............6089...........
+[root@casky miao]# [  457.992000] back_camera_power_enable: is_back_camera_enabled 1, on 0
+[  457.998000] camera_common_set_clock: 0
+[  458.004000] ov5640_s_power.............6089...........
+
+[root@casky miao]# ls
+1.jpg        codec_tests  jpg.tar      miao.mp4
+casky_slpc   jpg          miao.jpg
+
+@-->
+
+17:16 2017/11/1
+看代码：
+	vpu_test2代码！
+
+
+	
+9:33 2017/11/1	今日计划
+	9:33 2017/11/1
+	将【对比图片相似度的代码整合到主程序框架中】；
+		15:58 2017/11/1
+		首先弄清楚，是先比较图片还是先保存图片，
+		先保存的话，
+		比较容易，
+		使用两个变量存放图片的名称，
+		然后直接读取图片就可以了。
+		
+	11:52 2017/11/1
+	使用主程序拍的照片做素材，进行比较，求出相似度的范围！
+		15:56 2017/11/1
+		用拍摄的图片做素材，比较的出入比较大，比较结果不可靠！
+		文档《基于色彩直方图求相似度的值》；
+	15:00 2017/11/1
+	最后测试一下svn更新后的程序能不能实现目前的功能，每次拍一次，和连拍！
+		15:47 2017/11/1
+		目前svn版本是r132，可以实现连拍和抓拍的功能！
+	15:32 2017/11/1
+	向李岩提交一个三种方法比较三种图片大小的表格！
+
+	
+19:51 2017/10/31
+增加了延时之后，
+实现了连拍的功能，
+但是sleep()用的不是很好，
+看有没有别的函数！
+
+16:23 2017/10/31
+存在bug，
+每次唤醒拍摄多张图片，
+儒煌说的原因是：
+	之前每次唤醒其实也是拍摄多张图片，
+	只不过是，
+	之前的图片名字是固定的，
+	将多张图的结果写入到了一张图(一个名字)里，
+	所以表面上是一张图；
+	
+	现在的名字为当前时间戳，
+	根据现在的现象就知道，
+	while循环了许多次；
+	
+	16:26 2017/10/31
+	现在需要弄清楚的是，
+	两个while循环是什么关系，
+	哪部分的代码才是真正拍照的代码！
+	
+	17:22 2017/10/31
+	将cam_common.cpp中的while改为if，
+	不能实现只拍一张；
+	
+	19:31 2017/10/31
+	现在可以每唤醒一次，
+	只拍一张了！
+	
+	
+	19:32 2017/10/31
+	现在要设置连拍，
+	
+	连拍的话，
+	设置一个变量等于连拍数，
+	然后每拍一次让这个变量进行一个减减操作，
+	然后让这个变量与0进行比较；
+	
+	但是其中有个问题是，
+	由于程序运行太快，
+	虽然减了4次，
+	但是这4次都是在一秒钟之内运行的，
+	所以产生的图片的名称是同一个名称，
+	到最后，
+	就会产生错觉，
+	只拍了一张图片，
+	其实是fwrite了4次，
+	后一次是擦除掉前一次fwrite的，
+	然后才写的！
+	
+	所以每次进行减减时，
+	最好做一个休眠，
+	看能不能用一个sleep();
+	
+16:22 2017/10/31
+写代码：
+将保存图片的名字改为时间戳；
+
+
+15:03 2017/10/31
+不把util.h和util.cpp同时包含进cam_common.cpp中就会出现
+"getCurTime()是未定义的引用"的错误！
+
+
+19:01 2017/10/30
+如果需要将【比较图片相似度】的代码整合到主程序框架中，
+也需要儒煌来发出命令，
+通过判断这个命令，
+来进行图片比较！
+
+16:48 2017/10/30
+看会肠鸣音：
+
+15:48 2017/10/30
+看拍照程序代码新发现:
+	15:48 2017/10/30
+	hEnc = NX_VidEncOpen( NX_JPEG_ENC, &instanceIdx );
+	第一个参数传入的是：video codec type 视频编解码器类型，
+	在这个枚举中(nx_video_api.h)，有H.264(AVC)，JPEG等；
+	
+	15:58 2017/10/30
+	在NX_VidEncOpen()中，
+	打开了/dev/vpu设备，
+	hEnc这个东西是在这个NX_VidEncOpen()函数中填充的，
+	变量instanceIdx貌似没什么卵用；
+	
+	16:01 2017/10/30
+	中间一直出现的openArg，定义为：VPU_OPEN_ARG openArg; 
+	
+	16:44 2017/10/30
+	其中用到的api应该都包含在nx_video_api.c中；
+	
+	fwrite( jpgHeader, 1, jpgHeaderSize, fdOut );
+	fwrite( encOut.outBuf, 1, encOut.bufSize, fdOut );
+	
+	写图片的时候这么写，可能是先写标志，再写内容！
+	
+15:05 2017/10/30
+看会matlab或拍照程序的代码！
+
+10:16 2017/10/30
+1、测试目前的几个【计算图片相似度方法】，
+	做出比较和总结，
+	且发送邮件，让评估！
+	12:22 2017/10/30
+	下午继续测试dynamicTest能不能检测出微小的差别；
+	
+	15:04 2017/10/30
+	完成了测试报告，
+	并发送了邮件，
+	等待邮件反馈；
+
+10月4th周工作总结：
+	1、完成“将拍照程序整合到项目主程序框架中”；
+	2、测试“基于彩色图像直方图计算图片相似度”的方法；
+	
+下一步计划：
+	1、将【检测图片相似度】相关程序整合到主程序框架中；
+	2、着手【视频录制功能】的实现；
+
+18:59 2017/10/27
+ffmpeg 
+H.264
+
+15:13 2017/10/27
+在nx_vpu_config.h中修改NX_MAX_VPU_ENC_INST的值为5；
+
+15:03 2017/10/27
+现在已经知道在哪里出现的问题，
+在nx_vpu_config.h中将NX_MAX_VPU_ENC_INST的值宏定义为3；
+
+修改这个值，重新编译需要的库！
+
+15:03 2017/10/27
+Dynamic section at offset 0x27e0 contains 37 entries:
+  标记        类型                         名称/值
+ 0x00000001 (NEEDED)                     共享库：[libv4l2-nexell.so]
+ 0x00000001 (NEEDED)                     共享库：[libnxvpu.so]
+ 0x00000001 (NEEDED)                     共享库：[libnxdsp.so]
+ 0x00000001 (NEEDED)                     共享库：[libnxvip.so]
+ 0x00000001 (NEEDED)                     共享库：[libnxv4l2.so]
+ 0x00000001 (NEEDED)                     共享库：[libnxvmem.so]
+ 0x00000001 (NEEDED)                     共享库：[libnxvidrc.so]
+ 0x00000001 (NEEDED)                     共享库：[libavcodec.so.53]
+ 0x00000001 (NEEDED)                     共享库：[libavformat.so.53]
+ 0x00000001 (NEEDED)                     共享库：[libm.so.6]
+ 0x00000001 (NEEDED)                     共享库：[libstdc++.so.6]
+ 0x00000001 (NEEDED)                     共享库：[libgcc_s.so.1]
+ 0x00000001 (NEEDED)                     共享库：[libpthread.so.0]
+ 0x00000001 (NEEDED)                     共享库：[libc.so.6]
+ 0x0000000c (INIT)                       0x8de8
+
+
+10:30 2017/10/27
+$> grep -rin "Maximum encoder limit error"
+grep: workdir/releaseEnv/rootfs/build/rootfs.yaffs2: 权限不够
+匹配到二进制文件 s5p4418/system/lib/modules/3.10.30/nx_vpu.ko
+匹配到二进制文件 s5p4418/linux/platform/s5p4418/modules/coda960/nx_vpu.o
+s5p4418/linux/platform/s5p4418/modules/coda960/linux/linux_vpu_drv.c:180NX_ErrMsg( ("Maximum encoder limit error. Current(%d) vs. MAX(%d)!!!", gstCruEncInstance, NX_MAX_VPU_ENC_INST) );
+匹配到二进制文件 s5p4418/linux/platform/s5p4418/modules/coda960/linux/linux_vpu_drv.o
+匹配到二进制文件 s5p4418/linux/platform/s5p4418/modules/coda960/nx_vpu.ko
+s5p4418/linux/platform/s5p6818/modules/coda960/linux/linux_vpu_drv.c:180NX_ErrMsg( ("Maximum encoder limit error. Current(%d) vs. MAX(%d)!!!", gstCruEncInstance, NX_MAX_VPU_ENC_INST) );
+s5p4418/linux/platform/s5p6818/modules/coda960_64/linux/linux_vpu_drv.c:189:					NX_ErrMsg( ("Maximum encoder limit error. Current(%d) vs. MAX(%d)!!!", gstCruEncInstance, NX_MAX_VPU_ENC_INST) );
+匹配到二进制文件 s5p4418/linux_v2/system/lib/modules/3.10.30/nx_vpu.ko
+匹配到二进制文件 s5p4418/linux_v2/linux/platform/s5p4418/modules/coda960/nx_vpu.o
+s5p4418/linux_v2/linux/platform/s5p4418/modules/coda960/linux/linux_vpu_drv.c:180:					NX_ErrMsg( ("Maximum encoder limit error. Current(%d) vs. MAX(%d)!!!", gstCruEncInstance, NX_MAX_VPU_ENC_INST) );
+匹配到二进制文件 s5p4418/linux_v2/linux/platform/s5p4418/modules/coda960/linux/linux_vpu_drv.o
+匹配到二进制文件 s5p4418/linux_v2/linux/platform/s5p4418/modules/coda960/nx_vpu.ko
+匹配到二进制文件 s5p4418/linux_v2/linux/platform/s5p6818/modules/coda960/nx_vpu.o
+s5p4418/linux_v2/linux/platform/s5p6818/modules/coda960/linux/linux_vpu_drv.c:180:					NX_ErrMsg( ("Maximum encoder limit error. Current(%d) vs. MAX(%d)!!!", gstCruEncInstance, NX_MAX_VPU_ENC_INST) );
+匹配到二进制文件 s5p4418/linux_v2/linux/platform/s5p6818/modules/coda960/linux/linux_vpu_drv.o
+匹配到二进制文件 s5p4418/linux_v2/linux/platform/s5p6818/modules/coda960/nx_vpu.ko
+s5p4418/linux_v2/linux/platform/s5p6818/modules/coda960_64/linux/linux_vpu_drv.c:189:					NX_ErrMsg( ("Maximum encoder limit error. Current(%d) vs. MAX(%d)!!!", gstCruEncInstance, NX_MAX_VPU_ENC_INST) );
+s5p4418/linux_v2/linux/kernel/kernel-3.4.39/drivers/misc/coda960/linux/linux_vpu_drv.c:180:					NX_ErrMsg( ("Maximum encoder limit error. Current(%d) vs. MAX(%d)!!!", gstCruEncInstance, NX_MAX_VPU_ENC_INST) );
+$> 
+
+
+19:49 2017/10/26
+调试下面的错误：
+suspend machine...
+
+--------------------------------------------------------------------------------
+ Second Boot by Nexell Co. : Ver0.6.1 - Built on Oct 16 2015 13:42:17
+--------------------------------------------------------------------------------
+EMA VALUE : 001
+123
+Lock value  = 167
+GATE CYC    = 0x00008421
+GATE CODE   = 0x5B615B61
+Read  DQ    = 0x0D0E0D0B
+Write DQ    = 0x05050505
+ DDR3 SelfRefresh exit Done!
+0x00000001
+CRC: 0x012D5041 FN: 0x408A2558 phy: 0x40008200 len: 0x00020000 ret: 0x012D5041
+It's WARM BOOT
+Jump to Kernel!
+resume machine
+[  734.064000] back_camera_power_enable: is_back_camera_enabled 0, on 0
+[  734.180000] usb usb2: root hub lost power or was reset
+[  734.185000] HDMI HPD State 0x0
+[  734.235000] ######### ov5640_ioctl #############
+the current m_from_driver data is [  734.240000] [VPU|DRV]/home/zhuorh/system_4418/new-linux-1013/linux_v2/linux/platform/s5p4418/modules/coda960/linux/linux_vpu_drv.c(180) : 2
+width 1280, height 72Maximum encoder limit error. Current(3) vs. MAX(3)!!!0 
+[VPU|API] nx_video_api.c(157) : NX
+_VidEncOpen() : IOCTL_VPU_OPEN_INSTANCE ioctl failed!!!
+[VPU|API] nx_video_api.c(233) : Invalid encoder handle or driver handle!!!
+NX_VidEncInit(failed)!!![root@casky ~]# [  734.530000] usb 2-1: reset high-speed USB device number 2 using nxp-ehci
+[  734.770000] PHY: stmmac-0:04 - Link is Up - 100/Full
+[  734.926000] usb 2-1.3: reset high-speed USB device number 7 using nxp-ehci
+=====================================================================================================
+
+14:24 2017/10/26
+cam_common.o：在函数‘sensor_start(int, int, int, int, int, int, NX_VIDEO_ENC_INFO*, tNX_VID_ENC_INIT_PARAM, int, int, unsigned char*)’中：
+cam_common.cpp:(.text+0x2c8)：对‘NX_VidEncOpen’未定义的引用
+cam_common.cpp:(.text+0x2f8)：对‘NX_VidEncInit’未定义的引用
+cam_common.cpp:(.text+0x310)：对‘NX_VidEncJpegGetHeader’未定义的引用
+cam_common.o：在函数‘camera_data_process(int*, int, int, nxp_vid_buffer*, NX_VIDEO_ENC_INFO*, tNX_VID_ENC_OUT, NX_VID_MEMORY_INFO, int, unsigned char*)’中：
+cam_common.cpp:(.text+0x7f8)：对‘NX_VidEncJpegRunFrame’未定义的引用
+collect2: 错误：ld 返回 1
+make: *** [casky_slpc] 错误 1
+
+
+14:21 2017/10/26
+在camera_data_process()中添加参数NX_VID_ENC_OUT encOut;
+且修改关联的地方！
+
+11:55 2017/10/26
+下午继续改错！
+
+11:52 2017/10/26
+NX_VID_ENC_HANDLE hEnc;
+NX_VID_ENC_OUT encOut;
+NX_VID_ENC_INIT_PARAM encInitParam;
+NX_VID_MEMORY_INFO frameMem = { 0 };
+int instanceIdx;
+
+int jpgHeaderSize = 0;
+unsigned char *jpgHeader = (unsigned char *)malloc( MAX_JPEG_HEADER_SIZE );
+
+frameMem.privateDesc[ 0 ] = (void*)0x000130c8;
+frameMem.privateDesc[ 1 ] = 0;
+frameMem.privateDesc[ 2 ] = 0;
+frameMem.align = (width)* 4;
+frameMem.fourCC = FOURCC_MVS0;
+frameMem.imgWidth = width;
+frameMem.imgHeight = height;
+frameMem.luStride = YUV_YSTRIDE(width) ;
+frameMem.cbStride = YUV_STRIDE((width)/2);
+frameMem.crStride = YUV_STRIDE((width)/2);
+
+将上面这部分写到camera_pthread.cpp中；
+
+
+11:10 2017/10/26
+instanceIdx	这个参数可能还存在问题！
+
+
+11:10 2017/10/26
+camera_data()算是整合完成吧，可能还存在问题！
+
+10:49 2017/10/26
+整合：camera_data_process(d_flag,clipper_id,video_id,bufs); 
+弄清楚buf，bufs
+struct nxp_vid_buffer bufs[MAX_BUFFER_COUNT];
+struct nxp_vid_buffer *buf = &bufs[capture_index];
+
+然后将例子程序中fwrite部分相关的变量等语句，
+复制过来！
+
+
+
+10:48 2017/10/26
+alloc_video()整合完成！
+int alloc_video(int ion_fd,int clipper_id, int width, int height, int format,struct nxp_vid_buffer* bufs);
+
+
+10:46 2017/10/26
+原先的alloc_buffers()中common.cpp中定义的，
+现在的cam_common.cpp就是原来的common.cpp了。
+
+10:39 2017/10/26
+alloc_video()中的调用用到了width和height，
+所以在alloc_video()中添加这两个参数；
+
+删除原先在cam_common.cpp中的
+int width = 1024;                                                
+int height = 768 ;
+
+
+10:36 2017/10/26
+MAX_BUFFER_COUNT在两处都有定义，
+需要删除一处，
+然后MAX_BUFFER_COUNT作为参数传给alloc_buffers(),
+暂时不修改这里；
+
+10:28 2017/10/26
+接下来整合aclloc_video();
+在camera_pthread.cpp中写的有
+struct nxp_vid_buffer bufs[MAX_BUFFER_COUNT];
+alloc_video(ion_fd,clipper_id,format,bufs);
+
+
+10:27 2017/10/26
+sensor_start()整合完成：
+int sensor_start(int clipper_id,int video_id,int sensor_id,int format, int width, int height); 
+
+10:26 2017/10/26
+在sensor_start中并没有用到ion_fd，
+所以在sensor_start()函数中去除这个参数的定义；
+
+将全部的CLIPPER_ID、VIDEO_ID、SENSOR_ID全部替换成小写形式！
+
+10:23 2017/10/26
+将一些新添加的东西，定义在cam_common.cpp最上面：
+int jpgHeaderSize = 0;
+unsigned char *jpgHeader = (unsigned char *)malloc( MAX_JPEG_HEADER_SIZE );
+FILE *fdOut = NULL;
+NX_VID_ENC_HANDLE hEnc;
+NX_VID_ENC_OUT encOut;
+NX_VID_ENC_INIT_PARAM encInitParam;
+NX_VID_MEMORY_INFO frameMem = { 0 };
+int instanceIdx;
+
+10:19 2017/10/26
+camera_pthread.cpp已经定义了ion_fd，并且已经ion_open()，
+所以移除在cam_common.cpp中的；
+
+10:15 2017/10/26
+在camera_pthread.cpp中使用cam_common.cpp中的函数，
+是不是应该引入cam_common.h的头文件！
+
+10:03 2017/10/26
+camera_pthread.cpp中
+struct nxp_vid_buffer bufs[MAX_BUFFER_COUNT];
+使用了MAX_BUFFER_COUNT，但是没有定义出来，
+所以在最上面添加宏定义！
+
+但是在cam_common.h中有定义MAX_BUFFER_COUNT；
+所以移除cam_common.h中的定义，写到camera_pthread.h中；
+
+其实是两边都得用，所以不移除cam_common.h中的宏定义！
+
+9:58 2017/10/26
+给com_common.h中的sensor_start()末尾添加两个参数：
+int width, int height
+
+然后在camera_pthread.cpp中的sensor_start()末尾添加IMG_WIDTH和IMG_HEIGHT
+
+9:55 2017/10/26
+在camera_pthread.cpp中添加：
+#define IMG_WIDTH   1280
+#define IMG_HEIGHT  720
+
+20:06 2017/10/25
+由于video_id等参数，儒煌在camera_pthread.cpp中已经定义过了，
+所以将自己写的宏定义删除了，再改为原来的形式！
+
+camera_pthread.cpp中写的：
+    int ion_fd = ion_open();
+    if (ion_fd < 0) {
+        fprintf(stderr, "can't open ion!!!\n");
+        return ((void*)1);
+    }
+    int clipper_id = nxp_v4l2_clipper0;
+    int sensor_id = nxp_v4l2_sensor0;
+    int video_id = nxp_v4l2_mlc0_video;
+    int format = V4L2_PIX_FMT_YUV420M;
+
+    sensor_start(ion_fd,clipper_id,video_id,sensor_id,format);
+
+    struct nxp_vid_buffer bufs[MAX_BUFFER_COUNT];
+    alloc_video(ion_fd,clipper_id,format,bufs);
+
+    camera_data_process(d_flag,clipper_id,video_id,bufs);
+
+    sensor_end(clipper_id,video_id);
+
+    close(ion_fd);
+
+    if(!(*d_flag)){
+        printf("the system start to suspend …… \n");
+        system("echo mem > /sys/power/state");
+    }
+
+
+
+16:35 2017/10/25
+写代码：(参考最新给的可以拍照的程序)
+
+函数调用顺序：sensor_start()	alloc_video()
+
+从可以使用的拍照程序的main()函数开始替换：
+
+(1)	在com_common.cpp中最前面添加了一些宏定义，
+且定义了ion_fd；
+对于一些值方便修改！
+
+===代码块：
+
+#define CLIPPER_ID  nxp_v4l2_clipper0	//将代码中的clipper_id全部替换为CLIPPER_ID(除形参外)
+#define SENSOR_ID   nxp_v4l2_sersor0	//将代码中的sensor_id全部替换为SENSOR_ID(除形参外)
+#define VIDEO_ID    nxp_v4l2_mlc0_video	//将代码中的video_id全部替换为VIDEO_ID(除形参外)
+#define IMG_WIDTH   1280	//将代码中的width全部替换为IMG_WIDTH(除形参外)
+#define IMG_HEIGHT  720		//将代码中的height全部替换为IMG_HEIGHT(除形参外)
+#define MODULE_CHANNEL  0	//这个宏定义其实可以不定义，因为已经把下面的值写成固定的了！
+	s.useClipper0 = true;
+	clipper_id = nxp_v4l2_clipper0;
+	sensor_id = nxp_v4l2_sensor0;
+
+
+#define V4L2_PIX_FMT	V4L2_PIX_FMT_YUV420M	//将原来代码中的format全部替换为V4L2_PIX_FMT
+
+static int ion_fd;  
+
+===代码块结束
+
+并且包含nx_video_api.h头文件，直接将这个头文件移动到当前目录下，
+然后在代码中写：
+#include "nx_video_api.h"   //  Video En/Decoder
+
+	19:16 2017/10/25
+	添加ion_open()相关头文件！
+
+	19:29 2017/10/25
+	将可以使用的拍照程序test-cam.cpp中的头文件全部写到一个文件myhead.h中，
+	然后在cam_common.cpp中include！
+	
+	19:34 2017/10/25
+	int jpgHeaderSize = 0;
+    unsigned char *jpgHeader = (unsigned char *)malloc( MAX_JPEG_HEADER_SIZE ); 
+	 FILE *fdOut = NULL;
+    NX_VID_ENC_HANDLE hEnc;
+    NX_VID_ENC_OUT encOut;
+    NX_VID_ENC_INIT_PARAM encInitParam;
+    NX_VID_MEMORY_INFO frameMem = { 0 };
+    int instanceIdx;
+
+	将这两句也定义成全局的！
+	
+	
+
+15:58 2017/10/25
+最多拍11张照片；
+	猜测是和count的大小有关系，
+	将count从100改为1000，
+	只拍了一张就报错了！
+	line 292 error!!!
+	
+	16:14 2017/10/25
+	上面的出错可能是偶然情况，
+	其实只修改count的值是不出错的！
+	通过修改count的值可以改变拍照片的数量！
+	
+15:53 2017/10/25
+将第二句注释之后，看是什么效果；
+//fwrite( encOut.outBuf, 1, encOut.bufSize, fdOut );
+	感觉不用测试，也知道是没有内容的！
+
+	16:00 2017/10/25
+	也不能看，文件大小全部是4k。
+	
+15:35 2017/10/25
+将fwrite( jpgHeader, 1, jpgHeaderSize, fdOut );注释掉，
+运行程序，看是什么结果；
+	15:50 2017/10/25
+	注释上面之后，生成的图片不能正常显示，
+	提示损坏或过大！
+	
+	使用YUVviewerPlus也不能查看，可能原因是文件太小，导致不能查看；直接到末尾了。end of file；
+
+15:53 2017/10/25
+fwrite( jpgHeader, 1, jpgHeaderSize, fdOut );
+fwrite( encOut.outBuf, 1, encOut.bufSize, fdOut );
+第一句应该是写成JPG文件的格式，
+第二句应该是往JPG格式的文件中写内容；	
+
+14:41 2017/10/25
+刚开始运行拍照的程序，
+提示打开设备/dev/nx_vpu失败，
+并且/dev/下确实没有nx_vpu这个设备；
+
+儒煌过来的解决方法是：
+首先lsmod，看有没有这个驱动，(没有)，
+然后在/lib/modules/3.10.30这个路径下找到了相关的.ko文件，
+然后是去/etc/init.d/下修改S01module文件，使系统启动时自动加载这些驱动；
+
+
+11:45 2017/10/25
+1、将拍照程序camera_test在板卡上运行一下，
+查看运行结果；
+主要看一些输出信息，
+是如何fwrite成图片的；
+
+2、将代码整合到主程序中；
+
+3、继续分析一下，如何获取到视频流！
+
+
+19:43 2017/10/24
+明日任务：
+1、继续分析代码；
+2、问清楚儒煌需要做的任务；
+
+
+15:55 2017/10/24
+小履带任务交接
+日志
+
+11:36 2017/10/24
+分析拍照程序：
+
+10:37 2017/10/24
+动态检测程序测试：
+测试结果已经给李岩发了邮件！
+
+9:58 2017/10/24
+今日计划：
+1、测试动态检测程序；
+2、运行摄像头其余测试用例；
+3、编写mmap()；
+
+20:25 2017/10/23
+按照网上mmap()的方法，自己写一个mmap()，
+同时保留原来存在的，
+使用两个mmap()，
+一个避免出错，
+另一个作为自己的，看能不能获取到视频数据!
+
+16:53 2017/10/23
+将while循环全部注释，
+然后在后面添加：
+132     struct nxp_vid_buffer *buf = &bufs[capture_index];
+133     CHECK_COMMAND(v4l2_dqbuf(clipper_id, buf->plane_num, &capture_index, NULL));
+134     CHECK_COMMAND(v4l2_qbuf(video_id, buf->plane_num, out_index, buf, -1, NULL));
+135     CHECK_COMMAND(v4l2_dqbuf(video_id, buf->plane_num, &out_dq_index, NULL));
+
+报了下面的错误：
+[  401.449000] ov5640_s_stream: enable 0, initialized 0
+[  401.455000] ...................................ov5640_video_probe 6340
+[  401.462000] OV5640 0-003c: reg_read: i2c read error, reg: 4730
+[  401.468000] OV5640 0-003c: reg_write: i2c write error, reg: 4730
+[  401.474000] OV5640 0-003c: reg_read: i2c read error, reg: 300a
+[  401.480000] OV5640 read error!!!!!!!!!!!!!!!
+[  401.484000] ov5640_s_power.............6089...........
+
+
+16:40 2017/10/23
+109         //CHECK_COMMAND(v4l2_dqbuf(clipper_id, buf->plane_num, &capture_index, NULL));
+110         //CHECK_COMMAND(v4l2_qbuf(video_id, buf->plane_num, out_index, buf, -1, NULL));  
+
+直接出错，可能是内存溢出吧；
+
+16:38 2017/10/23
+将count改为200；
+显示屏显示一会会，就不显示了，退出了while循环；
+
+
+16:35 2017/10/23
+做以下修改：
+121         if (out_q_count >= 2) {
+122            // CHECK_COMMAND(v4l2_dqbuf(video_id, buf->plane_num, &out_dq_index, NULL));
+123             out_q_count--;
+124         }
+
+注释掉之后，显示屏不显示摄像头的数据，
+说明这句代码和摄像头显示有关系；
+
+15:34 2017/10/23
+576，720，1080的测试结果，测完发邮件就行。
+
+15:16 2017/10/23
+camera_test运行的输出：
+width 1280, height 720, module 0
+alloc video
+vid_buf: 0xb6b14000, 0xb69bf000, 0xb686a000, 0xb6715000
+buf plane num: 3
+buf plane num: 3
+buf plane num: 3
+buf plane num: 3
+
+
+14:18 2017/10/23
+/home/miaoch/s5p4418/userdata/app/cam_test_bak下的test-cam.cpp是正确的
+CHECK_COMMAND(v4l2_dqbuf(clipper_id, buf->plane_num, &capture_index, NULL));
+
+CHECK_COMMAND(v4l2_dqbuf(clipper_id, buf->plane_num, &capture_index, NULL));
+
+11:54 2017/10/23
+先从儒煌的目录下复制一份camera_test，
+运行，看plane_num是什么东西；
+
+
+10:08 2017/10/23
+对比图片相似度程序时间：
+dynamicTest
+real    0m 0.57s
+user    0m 0.51s
+sys     0m 0.06s
+
+similarity
+[root@casky slpc]# time ./similarity image/2_0.jpg image/2_1.jpg 
+iDiffNum = 8
+two image are somewhat similar!
+tv_usec :1221923  vs
+real    0m 1.29s
+user    0m 1.20s
+sys     0m 0.08s
+
+pic
+[root@casky slpc]# time ./pic image/2_0.jpg image/2_1.jpg 
+no
+real    0m 0.28s
+user    0m 0.26s
+sys     0m 0.02s
+
+[root@casky slpc]# time ./hash image/2_0.jpg image/2_1.jpg 
+iDiffNum = 4
+two images are very similar!
+real    0m 0.26s
+user    0m 0.24s
+sys     0m 0.02s
+
+
+9:45 2017/10/23
+10月3th周工作情况汇报：
+	1、分析camera_test例子程序；
+	2、编写获取视频数据测试用例（还未调试成功）；
+本周计划：
+	1、继续调试获取视频数据的程序；
+	2、将获取视频数据的程序集成到主程序框架；
+
+10:10 2017/10/16
+10月2th周工作情况汇报：
+	1、熟悉v4l2框架；
+	2、通过使用usb摄像头实验，理解了v4l2拍照及获取视频的过程；
+本周计划：
+	1、根据提供的例子程序，实现s5p4418系统对ov5640视频数据的采集。
+	2、+
+13:56 2017/10/11
+调研V4L2基本框架，了解V4L2获取摄像头视频流以及拍照方法；
+编写测试用例，实现S5P4418系统对OV5640视频数据的采集；
+
+20:24 2017/10/19
+将video_id去掉
+
+17:20 2017/10/19
+在代码中添加initMmap()函数；
+模仿别的函数进行添加！
+
+
+10:46 2017/10/18
+今日计划：
+	先真正弄清楚别的代码是如何保存图片的，
+	把那个buf弄清楚，
+	然后在例子代码中添加【写图片】的相关函数！
+
+	
+20:06 2017/10/17
+printf 就可以输出调试信息
+
+18:08 2017/10/12
+拿到产品部的程序，测试两幅图片比较的时间，
+图片大小：576、720、1080
+
+
+
+14:46 2017/10/13
+ubuntu下查看usb摄像头：
+sudo apt-get install luvcview
+luvcview -d /dev/video0 -f yuv -s 640x480
+
+11:00 2017/10/12
+编程过程：
+(1)	将摄像头插在板卡上，看在/dev/下是什么设备，是不是/dev/video0;
+(2)	按照操作流程：
+	打开设备
+	查询设备属性，看设备的capability
+	设置视频的制式和帧格式(设置图像帧格式和像素大小)
+	………………
+
+
+19:19 2017/10/11
+看一下：
+/home/miaoch/s5p4418/system/usr/lib/src/libnxv4l2/nxp-v4l2-dev.cpp
+可以找到setFormat()，
+并且在其中可以找到VIDIOC_SUBDEV_S_FMT；
+算是找到最底层了！
+^
+查找VideoDev
+system/usr/lib/src/libnxv4l2/nxp-v4l2-dev.h:321:    V4l2Device *VideoDev;
+^
+system/usr/lib/src/libnxv4l2/nxp-v4l2-dev.h:27:class V4l2Device {
+在这个文件中查找setFormat()，
+出现：return VideoDev->setFormat(w, h, format);
+^
+system/usr/lib/src/libnxv4l2/nxp-v4l2-private.cpp:80:    struct DeviceInfo {
+根据struct DeviceInfo {}中V4l2Device *Device;
+^
+nxp-v4l2-private.cpp	setFormat	pInfo->Device->setFormat()	DeviceInfo *pInfo = getDevice(id)
+
+
+18:01 2017/10/11
+VideoDev
+
+17:58 2017/10/11
+V4l2Device
+system/usr/lib/src/libnxv4l2/nxp-v4l2-dev.h:27:class V4l2Device {
+
+17:45 2017/10/11
+DeviceInfo
+struct DeviceInfo {
+	DeviceInfo() {                                                                                                                         
+		memset(Devnode, 0, NXP_V4L2_MAX_DEVNAME_SIZE);
+		Device = NULL;
+	}
+	~DeviceInfo() {
+		if (Device != NULL) {
+			 delete Device;
+			 Device = NULL;
+		}
+	}
+	int id; /* entity id */
+	int pads;
+	int links;
+	char Devnode[NXP_V4L2_MAX_DEVNAME_SIZE];
+	V4l2Device *Device;
+	bool isM2M() {
+		return (id == nxp_v4l2_scaler || id == nxp_v4l2_deinterlacer);
+	}
+};
+
+
+
+17:10 2017/10/11
+nxp-v4l2-private.cpp	-->	nxp-v4l2.cpp	-->	test-cam.cpp
+init						v4l2_init
+setFormat					v4l2_set_format
+setCrop						v4l2_set_crop
+setCrop						v4l2_set_crop_with_pad
+setCtrl						v4l2_set_ctrl
+reqBuf						v4l2_reqbuf
+qBuf						v4l2_qbuf
+streamOn					v4l2_streamon
+dqBuf						v4l2_dqbuf
+streamOff					v4l2_streamoff
+							v4l2_exit
+												
+												
+												
+
+15:41 2017/10/11
+v4l2等函数的实现：
+./s5p4418/system/usr/lib/src/libnxv4l2/nxp-v4l2.cpp	
+#include "nxp-v4l2-private.cpp"			
+
+14:52 2017/10/11
+nxp-v4l2.h中：
+int v4l2_init(const struct V4l2UsageScheme *scheme);
+void v4l2_exit(void);
+int v4l2_link(int src_id, int dst_id);
+int v4l2_unlink(int src_id, int dst_id);
+int v4l2_set_format(int id, int w, int h, int f);                                             
+int v4l2_get_format(int id, int *w, int *h, int *f);
+int v4l2_set_crop(int id, int l, int t, int w, int h);
+int v4l2_set_crop_with_pad(int id, int pad, int l, int t, int w, int h);
+int v4l2_get_crop(int id, int *l, int *t, int *w, int *h);
+int v4l2_set_ctrl(int id, int ctrl_id, int value);
+int v4l2_get_ctrl(int id, int ctrl_id, int *value);
+int v4l2_reqbuf(int id, int buf_count);
+
+
+14:43 2017/10/11
+struct V4l2UsageScheme
+结构体定义在：./s5p4418/system/usr/lib/src/libnxv4l2/nxp-v4l2.h中；
+struct V4l2UsageScheme {
+    bool useClipper0;
+    bool useDecimator0;
+    bool useClipper1;
+    bool useDecimator1;
+    bool useScaler;
+    bool useDeinterlacer;
+    bool useMlc0Rgb;
+    bool useMlc0Video;
+    bool useMlc1Rgb;
+    bool useMlc1Video;
+    bool useResol;
+    bool useHdmi;
+    bool useTvout;
+};
+
+
+14:41 2017/10/11
+int clipper_id = nxp_v4l2_clipper0;
+int sensor_id = nxp_v4l2_sensor0;
+int video_id = nxp_v4l2_mlc0_video;
+int format = V4L2_PIX_FMT_YUV420M;
+
+这些特定的声明都在./s5p4418/system/usr/lib/src/libnxv4l2/nxp-v4l2.h中；
+14:40 2017/10/11
+分析test-cam.cpp：
+从main()开始，
+ion_open()的原型：
+http://blog.csdn.net/xinyuwuxian/article/details/8837303
+int ion_open()
+{
+	int fd = open("/dev/ion", O_RDWR);
+	if (fd < 0)
+			LOGE("open /dev/ion failed!\n");
+	return fd;
+}
+
+
+
+10:25 2017/10/10
+总结之前的两个算法，写报告！
+
+9:34 2017/10/10
+工作总结：
+	(1)	Opencv编译运行环境参考使用便携载荷的环境;
+	(2)	学习了Opencv动态检测相关算法，实现了静态比较两张图像的对比(感知哈希算法和像素点逐一比较);
+	
+	未完成：
+		Opencv动态检测测试用例的实现(基于SIFT、SURF算法)；
+	
+
+svn://172.17.50.51/sdg/2017/01新型便携/03中间产物/问题跟进
+http://download.csdn.net/download/jackyjackk/8268021
+
+9:54 2017/9/27
+本周工作计划：视频动态检测模块开发
+   ■ 调研Opencv动态检测实现方式以及相应的算法实现；
+   ■ Opencv库的移植以及编译环境以及运行环境的配置；
+   ■ 编写动态检测测试用例，实现两张图片的差异对比；
+   ■ 4418动态检测模块功能测试；
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+10:44 2017/9/30
+
+
+18:03 2017/9/28
+完成了感知哈希算法的测试，可以计算图片的相似度！
+
+9:31 2017/9/28
+图像相似度比较：
+PSNR
+
+
+19:59 2017/9/27
+明日计划：
+明确这周的任务！
+写C++程序判断两张图片不同的原理报告，提交一份！
+从图像相似度的方向去区分两张图片！
+抽点时间看便携二期的代码！
+
+19:55 2017/9/27
+今日总结：
+(1)	儒煌布置了周计划！
+(2)	李工开了会议，看概要设计说明书，布置了任务；
+(3)	调用是用C|C++，opencv2|opencv3；
+(4)	弄清楚动态检测的概念；
+(5)	调试C++程序，弄清楚了为什么不能在PC端执行，因为环境不一样，程序是交叉编译的，只能在板子上运行，
+	也学会了如何在板子上运行程序，包括tftp传输文件！
+
+
+18:52 2017/9/27
+Mat的常见属性：
+(1)	data	
+	uchar型指针，
+	Mat类分为两个部分：
+	矩阵头和指向矩阵数据部分的指针，
+	data就是指向矩阵数据的指针。
+(2)	dims
+	矩阵的维度，
+	如5*6矩阵式二维矩阵，则dims=2,三维矩阵dims=3；
+(3)	rows
+	矩阵的行数
+(4)	cols
+	矩阵的列数
+(5)	size
+	矩阵的大小,
+	size(cols, rows),
+	如果矩阵的维数大于2，
+	则是size(-1, -1)
+(6)	channels
+	矩阵元素拥有的通道数，
+	例如常见的彩色图像，
+	每一个像素由RGB三部分组成，
+	则channels=3.
+(7)	type
+	表示了矩阵中元素的类型以及矩阵的通道个数，
+	是一系列的预定义的常量，
+	命名规则：CV_(位数) + (数据类型) + (通道数)
+(8)	elemSize
+	矩阵一个元素占用的字节数；
+	例如：type是CV_16SC3，那么elemSize = 3 * 16 / 8 = 6 bytes
+(9)	elemSize1
+	矩阵元素一个通道占用的字节数：
+	type是CV_16CS3，那么elemSize1 = 16  / 8 = 2 bytes = elemSize / channels
+(10) total()
+	返回数组元素的总数；
+	
+16:17 2017/9/27
+Makefile对应的是交叉编译环境，
+所以不能在PC端运行，
+
+便携上有相关环境，
+编译好的程序可以在便携上运行，
+需要的一些库的目录为：
+[root@casky lib]# pwd
+/mnt/userdata/3rdparty/Opencv/lib
+
+可以在/mnt/userdata目录下创建一个工程目录，
+存放交叉编译之后的二进制文件！
+
+远程连接板子，telnet 172.17.1.105,
+
+板子上程序运行的目录(将程序下载到这个目录)为：
+[root@casky slpc]# pwd
+/mnt/userdata/slpc
+
+
+
+
+15:47 2017/9/27
+readelf -d libopencv_objdetect.so
+用来显示elf格式的目标文件的信息。
+
+14:40 2017/9/27
+g++ first.cpp -o first `pkg-config --libs --cflags opencv` -ldl
+
+14:21 2017/9/27
+用以下Makefile出的错误：
+opencv$ make
+arm-linux-gnueabihf-gcc -Wall -O3 -std=c++0x  -I /home/miaoch/opencv/include  -I ../ -L /home/miaoch/opencv/lib -L ../  -lopencv_video -lopencv_objdetect -lopencv_highgui -lopencv_imgproc -lopencv_core -lpthread  pic.cpp -o pic
+/home/sunst/opt/crosstools/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf/bin/../lib/gcc/arm-linux-gnueabihf/4.9.3/../../../../arm-linux-gnueabihf/bin/ld: warning: ../../lib/libopencv_imgproc.so, needed by /home/miaoch/opencv/lib/libopencv_video.so, not found (try using -rpath or -rpath-link)
+/home/sunst/opt/crosstools/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf/bin/../lib/gcc/arm-linux-gnueabihf/4.9.3/../../../../arm-linux-gnueabihf/bin/ld: warning: ../../lib/libopencv_core.so, needed by /home/miaoch/opencv/lib/libopencv_video.so, not found (try using -rpath or -rpath-link)
+/home/sunst/opt/crosstools/gcc-linaro-4.9-2014.11-x86_64_arm-linux-gnueabihf/bin/../lib/gcc/arm-linux-gnueabihf/4.9.3/../../../../arm-linux-gnueabihf/bin/ld: warning: ../../lib/libopencv_highgui.so, needed by /home/miaoch/opencv/lib/libopencv_objdetect.so, not found (try using -rpath or -rpath-link)
+
+13:46 2017/9/27
+TARGET=pic                                                                      
+BASE=$(TARGET).cpp
+
+CC = arm-linux-gnueabihf-g++
+CFLAGS  := -Wall -O3 -std=c++0x
+
+#OPENCV_INC_ROOT = /home/zhuorh/Opencv/include 
+#OPENCV_LIB_ROOT = /home/zhuorh/Opencv/lib
+
+OPENCV_INC_ROOT = `pwd`/include
+OPENCV_LIB_ROOT = `pwd`/lib
+
+MY_ROOT = ../
+
+OPENCV_INC= -I $(OPENCV_INC_ROOT)
+MY_INC = -I $(MY_ROOT)
+
+EXT_INC = $(OPENCV_INC) $(MY_INC)
+
+OPENCV_LIB_PATH = -L $(OPENCV_LIB_ROOT)
+MY_LIB_PATH = -L $(MY_ROOT)
+
+EXT_LIB = $(OPENCV_LIB_PATH) $(MY_LIB_PATH)
+
+OPENCV_LIB_NAME = -lopencv_video -lopencv_objdetect -lopencv_highgui -lopencv_imgproc -lopencv_core -lpthread
+
+#all:test
+
+$(TARGET):$(BASE)
+    $(CC) $(CFLAGS) $(BASE) $(EXT_INC) $(EXT_LIB) $(OPENCV_LIB_NAME) -o $(TARGET)
+clean:
+    rm -rf $(TARGET) *.swp *~
+
+arm-linux-gnueabihf-g++ -Wall -O3 -std=c++0x  pic.cpp -I /home/zhuorh/Opencv/include  -I ../ -L /home/zhuorh/Opencv/lib -L ../  -lopencv_video -lopencv_objdetect -lopencv_highgui -lopencv_imgproc -lopencv_core -lpthread  -o pic
+
+	
+11:49 2017/9/27
+调研用opencv2还是opencv3，
+2是C接口，
+3是C++接口！
+
+11:27 2017/9/27
+动态检测：
+对监控区域内物体的运动进行检测即为动态检测！
+
+9:55 2017/9/27
+Python的那个检测图片的代码由于太简单，
+可能在某些方面存在不足；
+测试代码保存在./tools/code中；
+
+
+现在的方案是调研图像相似度的算法，
+根据相似度做成可控比较程序，
+比如算法比较出两张图片的相似度为90%，
+自己定义的是：两张图片相似度大于95%才认为相同，
+就可以判断这两张图像存在差异！
+
+
+============================================
+周任务：
+1、搭建环境出一篇文档；
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++
+9:54 2017/9/27
+本周工作计划：视频动态检测模块开发
+   ■ 调研Opencv动态检测实现方式以及相应的算法实现；
+   ■ Opencv库的移植以及编译环境以及运行环境的配置；
+   ■ 编写动态检测测试用例，实现两张图片的差异对比；
+   ■ 4418动态检测模块功能测试；
+   
+
+SVN地址：http://172.17.1.67:8080/!/#Camera/view/head/SW
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+					   _oo0oo_
+                      o8888888o
+                      88" . "88
+                      (| -_- |)
+                      0\  =  /0
+                    ___/`---'\___
+                  .' \\|     |// '.
+                 / \\|||  :  |||// \
+                / _||||| -:- |||||- \
+               |   | \\\  -  /// |   |
+               | \_|  ''\---/''  |_/ |
+               \  .-\__  '-'  ___/-. /
+             ___'. .'  /--.--\  `. .'___
+          ."" '<  `.___\_<|>_/___.' >' "".
+         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+         \  \ `_.   \_ __\ /__ _/   .-` /  /
+     =====`-.____`.___ \_____/___.-`___.-'=====
+                       `=---='
